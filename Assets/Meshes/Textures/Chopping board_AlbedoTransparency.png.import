@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8vtia3wkck8x"
-path.s3tc="res://.godot/imported/Chopping board_AlbedoTransparency.png-108bd59ea95c5d55c4488f8b1ba295bd.s3tc.ctex"
+path.s3tc="res://.godot/imported/Chopping board_AlbedoTransparency.png-1357226a8e0ccc8b2a346d07499dca42.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/textures/Chopping board_AlbedoTransparency.png"
-dest_files=["res://.godot/imported/Chopping board_AlbedoTransparency.png-108bd59ea95c5d55c4488f8b1ba295bd.s3tc.ctex"]
+source_file="res://Assets/Meshes/Textures/Chopping board_AlbedoTransparency.png"
+dest_files=["res://.godot/imported/Chopping board_AlbedoTransparency.png-1357226a8e0ccc8b2a346d07499dca42.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnr5mexo7e3id"]
+
+[ext_resource type="PackedScene" uid="uid://ct7qi0e1dod43" path="res://Assets/Meshes/Tomato.fbx" id="1_5n4s3"]
+
+[node name="Tomato" instance=ExtResource("1_5n4s3")]
+transform = Transform3D(4.26, 0, 0, 0, 4.26, 0, 0, 0, 4.26, 0, 0, 0)

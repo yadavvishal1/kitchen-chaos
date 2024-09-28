@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqq14k78x8aoi"]
+
+[ext_resource type="PackedScene" uid="uid://bo3aino08ab0g" path="res://Assets/Meshes/Plate.fbx" id="1_7ww8c"]
+
+[node name="PlateVisual" type="Node3D"]
+
+[node name="Plate" parent="." instance=ExtResource("1_7ww8c")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)

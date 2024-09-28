@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://djrcnfn3nalo0"]
+
+[ext_resource type="PackedScene" uid="uid://eqadym11o682" path="res://Assets/Meshes/Bread bottom.fbx" id="1_pfv3x"]
+[ext_resource type="PackedScene" uid="uid://c0dnbw7vdtb8g" path="res://Assets/Meshes/Bread top.fbx" id="2_wfun1"]
+
+[node name="BreadVisual" type="Node3D"]
+
+[node name="Bread bottom" parent="." instance=ExtResource("1_pfv3x")]
+transform = Transform3D(3.88, 0, 0, 0, 3.88, 0, 0, 0, 3.88, 0, 0.144, 0)
+
+[node name="Bread top" parent="." instance=ExtResource("2_wfun1")]
+transform = Transform3D(3.43257, 1.01678, 0, -1.01678, 3.43257, 0, 0, 0, 3.58, 0.184, 0.298, -0.004)

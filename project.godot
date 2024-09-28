@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Kitchen Chaos"
-run/main_scene="res://Scenes/Game Scene.tscn"
+run/main_scene="res://Assets/Meshes/FBX's/Single door.fbx"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
@@ -23,8 +23,8 @@ enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg")
 
 folder_colors={
 "res://Assets/": "green",
-"res://Materials/": "orange",
-"res://Scenes/": "yellow"
+"res://Assets/Materials/": "orange",
+"res://Assets/Scenes/": "yellow"
 }
 
 [rendering]

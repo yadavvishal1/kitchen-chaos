@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddvkh4n6kc2sf"]
+
+[ext_resource type="PackedScene" uid="uid://bhfkbdbc6hk3" path="res://Assets/Meshes/Trash bin.fbx" id="1_bljqq"]
+
+[node name="Trash bin" instance=ExtResource("1_bljqq")]
+transform = Transform3D(2.6, 0, 0, 0, 2.6, 0, 0, 0, 2.6, 0, 0, 0)

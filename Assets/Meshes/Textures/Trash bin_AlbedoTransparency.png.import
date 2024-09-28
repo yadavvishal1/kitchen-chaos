@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cb48dro3nj81g"
-path.s3tc="res://.godot/imported/Trash bin_AlbedoTransparency.png-aaba3a9adbb27a4aa3baf44ae867edb4.s3tc.ctex"
+path.s3tc="res://.godot/imported/Trash bin_AlbedoTransparency.png-6395598f9a6bb9552a0598017cff8a4b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/textures/Trash bin_AlbedoTransparency.png"
-dest_files=["res://.godot/imported/Trash bin_AlbedoTransparency.png-aaba3a9adbb27a4aa3baf44ae867edb4.s3tc.ctex"]
+source_file="res://Assets/Meshes/Textures/Trash bin_AlbedoTransparency.png"
+dest_files=["res://.godot/imported/Trash bin_AlbedoTransparency.png-6395598f9a6bb9552a0598017cff8a4b.s3tc.ctex"]
 
 [params]
 

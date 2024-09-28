@@ -1,0 +1,89 @@
+[gd_scene load_steps=17 format=3 uid="uid://b3m5tjvcx81js"]
+
+[ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_svpcn"]
+[ext_resource type="PackedScene" uid="uid://bg1uhwfval8lg" path="res://Assets/Scenes/PlayerVisuals.tscn" id="2_3r8hw"]
+[ext_resource type="PackedScene" uid="uid://bh25ast8pxqha" path="res://Assets/Scenes/SceneVisuals/CountersVisuals/ClearCounter_Visuals.tscn" id="3_ii5el"]
+[ext_resource type="PackedScene" uid="uid://dvjkw11twuo1d" path="res://Assets/Scenes/SceneVisuals/CountersVisuals/CuttingCounter_Visual.tscn" id="4_c4buo"]
+[ext_resource type="PackedScene" uid="uid://c5a72a38ulq6x" path="res://Assets/Scenes/SceneVisuals/CountersVisuals/ContainerCounter_Visual.tscn" id="5_0voka"]
+[ext_resource type="PackedScene" uid="uid://b3ahmp5ivj006" path="res://Assets/Scenes/SceneVisuals/CountersVisuals/DeliveryCounter_Visual.tscn" id="6_nf0c7"]
+[ext_resource type="PackedScene" uid="uid://5fo05txw27uj" path="res://Assets/Scenes/SceneVisuals/CountersVisuals/PlatesCounter_Visual.tscn" id="7_dna6u"]
+[ext_resource type="PackedScene" uid="uid://dkah4js6xrjt8" path="res://Assets/Scenes/SceneVisuals/CountersVisuals/StoveCounter_Visual.tscn" id="8_cf1sa"]
+[ext_resource type="PackedScene" uid="uid://ddvkh4n6kc2sf" path="res://Assets/Scenes/SceneVisuals/CountersVisuals/TrashCounter_Visual.tscn" id="9_k80k0"]
+[ext_resource type="PackedScene" uid="uid://dnr5mexo7e3id" path="res://Assets/Scenes/SceneVisuals/KitchenObjectsVisuals/Tomato_Visual.tscn" id="10_p44w6"]
+[ext_resource type="PackedScene" uid="uid://c66ddj8jc7j40" path="res://Assets/Scenes/SceneVisuals/KitchenObjectsVisuals/Cabbage_Visual.tscn" id="11_up32d"]
+[ext_resource type="PackedScene" uid="uid://djrcnfn3nalo0" path="res://Assets/Scenes/SceneVisuals/KitchenObjectsVisuals/Bread_Visual.tscn" id="12_5mtum"]
+[ext_resource type="PackedScene" uid="uid://bf148xdknak0y" path="res://Assets/Scenes/SceneVisuals/KitchenObjectsVisuals/CabbageSliced_Visual.tscn" id="13_t4pgb"]
+[ext_resource type="PackedScene" uid="uid://fy8ghbhetdje" path="res://Assets/Scenes/SceneVisuals/KitchenObjectsVisuals/CheeseSlices_Visual.tscn" id="14_qy5bd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
+
+[sub_resource type="Environment" id="Environment_c747p"]
+background_mode = 1
+background_color = Color(0.5, 0.5, 0.5, 1)
+tonemap_mode = 3
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.5
+glow_bloom = 0.05
+fog_enabled = true
+fog_density = 0.0025
+volumetric_fog_density = 0.0
+adjustment_enabled = true
+adjustment_contrast = 1.1
+adjustment_saturation = 1.1
+
+[node name="Game Scene" type="Node3D"]
+
+[node name="Floor" type="CSGMesh3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("PlaneMesh_mabav")
+material = ExtResource("1_svpcn")
+
+[node name="PlayerVisuals" parent="." instance=ExtResource("2_3r8hw")]
+transform = Transform3D(0.842161, 0, 0.539227, 0, 1, 0, -0.539227, 0, 0.842161, -2.28549, -4.76837e-07, -0.185931)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.383022, -0.321394, 0, 0.642788, 0.766044, 0.5, -0.663414, 0.55667, -43.2286, 11, 23.2991)
+shadow_enabled = true
+
+[node name="ClearCounterVisuals" parent="." instance=ExtResource("3_ii5el")]
+
+[node name="ClearCounterVisuals2" parent="." instance=ExtResource("4_c4buo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.694658, 0.71934, 0, -0.71934, 0.694658, 0, 21.5, 21.3)
+fov = 20.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D"]
+environment = SubResource("Environment_c747p")
+
+[node name="ContainerCounterVisual" parent="." instance=ExtResource("5_0voka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="DeliveryCounterVisual" parent="." instance=ExtResource("6_nf0c7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="PlatesCounterVisual" parent="." instance=ExtResource("7_dna6u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.81584, 0, -0.0557079)
+
+[node name="StoveCounterVisual" parent="." instance=ExtResource("8_cf1sa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.71227, 0, 0.10278)
+
+[node name="Trash bin" parent="." instance=ExtResource("9_k80k0")]
+transform = Transform3D(2.6, 0, 0, 0, 2.6, 0, 0, 0, 2.6, 11.7573, 0, 0)
+
+[node name="Tomato" parent="." instance=ExtResource("10_p44w6")]
+transform = Transform3D(4.26, 0, 0, 0, 4.26, 0, 0, 0, 4.26, -2, 0, 2)
+
+[node name="CabbageVisual" parent="." instance=ExtResource("11_up32d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.869513, -1.19209e-07, 1.94979)
+
+[node name="BreadVisual" parent="." instance=ExtResource("12_5mtum")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.771831, 0, 1.9659)
+
+[node name="CabbageSlicedVisual" parent="." instance=ExtResource("13_t4pgb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89571, 0.0468121, 1.71784)
+
+[node name="CheeseSlicesVisual" parent="." instance=ExtResource("14_qy5bd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75746, 0, 1.7089)

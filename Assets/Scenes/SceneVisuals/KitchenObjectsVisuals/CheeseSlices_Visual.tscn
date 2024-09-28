@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://fy8ghbhetdje"]
+
+[ext_resource type="PackedScene" uid="uid://bsmlm00kruti1" path="res://Assets/Meshes/Cheese slice.fbx" id="1_i8fty"]
+
+[node name="CheeseSlicesVisual" type="Node3D"]
+
+[node name="Cheese slice" parent="." instance=ExtResource("1_i8fty")]
+transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, 0, 0, 0)
+
+[node name="Cheese slice2" parent="." instance=ExtResource("1_i8fty")]
+transform = Transform3D(1.04686, 0.75728, 2.70751, -0.36651, 2.90122, -0.66975, -2.78743, -0.0970635, 1.10491, 0.206, 0, -0.015)
+
+[node name="Cheese slice3" parent="." instance=ExtResource("1_i8fty")]
+transform = Transform3D(-1.16691, -0.194533, 2.7569, -0.360344, 2.97772, 0.0575923, -2.74016, -0.308742, -1.18161, -0.186, 0.043, -0.025)

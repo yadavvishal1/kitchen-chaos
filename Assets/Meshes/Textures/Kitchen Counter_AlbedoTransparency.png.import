@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://beug62m6l38yg"
-path.s3tc="res://.godot/imported/Kitchen Counter_AlbedoTransparency.png-a9d11ed515a1e97bc1366f023a71174e.s3tc.ctex"
+path.s3tc="res://.godot/imported/Kitchen Counter_AlbedoTransparency.png-d3673b401629f99321ca4729c3be0df7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/textures/Kitchen Counter_AlbedoTransparency.png"
-dest_files=["res://.godot/imported/Kitchen Counter_AlbedoTransparency.png-a9d11ed515a1e97bc1366f023a71174e.s3tc.ctex"]
+source_file="res://Assets/Meshes/Textures/Kitchen Counter_AlbedoTransparency.png"
+dest_files=["res://.godot/imported/Kitchen Counter_AlbedoTransparency.png-d3673b401629f99321ca4729c3be0df7.s3tc.ctex"]
 
 [params]
 

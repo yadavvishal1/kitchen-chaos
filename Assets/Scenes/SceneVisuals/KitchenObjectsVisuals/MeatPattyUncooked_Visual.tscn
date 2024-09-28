@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2wkxr7hcye3a"]
+
+[ext_resource type="PackedScene" uid="uid://i2d7heeupr3v" path="res://Assets/Meshes/Uncooked meat patty.fbx" id="1_yje6o"]
+
+[node name="MeatPattyUncookedVisual" type="Node3D"]
+
+[node name="Uncooked meat patty" parent="." instance=ExtResource("1_yje6o")]
+transform = Transform3D(3.2, 0, 0, 0, 3.2, 0, 0, 0, 3.2, 0, 0.05, 0)

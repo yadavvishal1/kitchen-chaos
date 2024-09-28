@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5a72a38ulq6x"]
+
+[ext_resource type="PackedScene" uid="uid://d1n4fk81o6pyk" path="res://Assets/Meshes/Counter_solid.fbx" id="1_eon0b"]
+[ext_resource type="PackedScene" uid="uid://b2yb25b14b0oo" path="res://Assets/Meshes/Counter_hole.fbx" id="2_ak0qs"]
+[ext_resource type="PackedScene" uid="uid://c25j4lc8a222e" path="res://Assets/Meshes/Single door.tscn" id="3_jh57x"]
+[ext_resource type="Texture2D" uid="uid://dmi7al4rol3fk" path="res://Assets/Textures/Icons/CheeseBlock.png" id="4_ar1m1"]
+
+[node name="ContainerCounterVisual" type="Node3D"]
+
+[node name="Counter_solid" parent="." instance=ExtResource("1_eon0b")]
+transform = Transform3D(1.65, 0, 0, 0, 1.5, 0, 0, 0, 1.65, 0, 0, 0)
+
+[node name="Counter_hole" parent="." instance=ExtResource("2_ak0qs")]
+transform = Transform3D(1.65, 0, 0, 0, -6.55671e-08, 1.65, 0, -1.5, -7.21238e-08, 0, 0.68, 0.63)
+
+[node name="Single door" parent="." instance=ExtResource("3_jh57x")]
+transform = Transform3D(-1.12295e-07, 2.159, 6.77527e-08, 0, -9.43729e-08, 1.55, 2.569, 9.43729e-08, 2.96156e-15, 0, 1.294, -0.406)
+
+[node name="Sprite3D" type="Sprite3D" parent="Single door"]
+transform = Transform3D(-9.00791e-09, -0.14, 7.85689e-17, 0.14, -9.00791e-09, -6.5322e-09, 6.5322e-09, -1.12147e-15, 0.14, 0.164, 0, 0.033)
+texture = ExtResource("4_ar1m1")

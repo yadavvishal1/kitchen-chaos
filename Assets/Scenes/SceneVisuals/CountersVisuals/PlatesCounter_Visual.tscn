@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://5fo05txw27uj"]
+
+[ext_resource type="PackedScene" uid="uid://68e2p652k7e6" path="res://Assets/Meshes/Kitchen Counter_Wood.tscn" id="1_nfsdw"]
+[ext_resource type="Texture2D" uid="uid://dmdhtwpvdbuqq" path="res://Assets/Textures/CircleDashed.png" id="2_h47rd"]
+
+[node name="PlatesCounterVisual" type="Node3D"]
+
+[node name="Kitchen Counter_Wood" parent="." instance=ExtResource("1_nfsdw")]
+transform = Transform3D(1.7, 0, 0, 0, 1.5, 0, 0, 0, 1.7, 0, 0, 0)
+
+[node name="Circle Sprite" type="Sprite3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, -3.0598e-08, -0.7, 0, 0.7, -3.0598e-08, 0, 1.268, 0)
+texture = ExtResource("2_h47rd")

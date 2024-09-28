@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buhhhn0tmhmag"
-path.s3tc="res://.godot/imported/Frying pan_Normal.png-0fbf0953f2722ee1473fcbd094364abf.s3tc.ctex"
+path.s3tc="res://.godot/imported/Frying pan_Normal.png-405a70c1b9647e0ab02dee180a674d41.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/textures/Frying pan_Normal.png"
-dest_files=["res://.godot/imported/Frying pan_Normal.png-0fbf0953f2722ee1473fcbd094364abf.s3tc.ctex"]
+source_file="res://Assets/Meshes/Textures/Frying pan_Normal.png"
+dest_files=["res://.godot/imported/Frying pan_Normal.png-405a70c1b9647e0ab02dee180a674d41.s3tc.ctex"]
 
 [params]
 

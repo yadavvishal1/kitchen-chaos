@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3ahmp5ivj006"]
+
+[ext_resource type="PackedScene" uid="uid://cu6gwrbb1ojxt" path="res://Assets/Meshes/Kitchen Counter_Blue.tscn" id="1_0qg8k"]
+
+[node name="DeliveryCounterVisual" type="Node3D"]
+
+[node name="Kitchen Counter" parent="." instance=ExtResource("1_0qg8k")]
+transform = Transform3D(1.65, 0, 0, 0, 1.5, 0, 0, 0, 1.65, 0, 0, 0)

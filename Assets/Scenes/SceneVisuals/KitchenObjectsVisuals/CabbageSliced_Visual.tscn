@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf148xdknak0y"]
+
+[ext_resource type="PackedScene" uid="uid://mabuwkdrdeuh" path="res://Assets/Meshes/Cabbage slice_shaped.fbx" id="1_psugx"]
+
+[node name="CabbageSlicedVisual" type="Node3D"]
+
+[node name="Cabbage slice_shaped" parent="." instance=ExtResource("1_psugx")]
+transform = Transform3D(-1.80817, 0, -0.854716, 0, 2, 0, 0.854716, 0, -1.80817, 0.001, 0.021, 0.161)
+
+[node name="Cabbage slice_shaped2" parent="." instance=ExtResource("1_psugx")]
+transform = Transform3D(-1.50253, 0, 1.32, 0, 2, 0, -1.32, 0, -1.50253, -0.136, 0.006, 0.06)
+
+[node name="Cabbage slice_shaped3" parent="." instance=ExtResource("1_psugx")]
+transform = Transform3D(-1.95107, 0, 0.439692, 0, 2, 0, -0.439692, 0, -1.95107, 0.199, 0.006, -0.007)
+
+[node name="Cabbage slice_shaped4" parent="." instance=ExtResource("1_psugx")]
+transform = Transform3D(0.256797, 0.0202104, 1.98334, -0.156918, 1.99383, 0, -1.97723, -0.155611, 0.257591, -0.139, 0.006, -0.147)
+
+[node name="Cabbage slice_shaped5" parent="." instance=ExtResource("1_psugx")]
+transform = Transform3D(-1.6275, -0.000324763, 1.16243, -0.0801384, 1.99527, -0.111643, -1.15966, -0.137427, -1.62367, 0.114, 0.026, -0.212)

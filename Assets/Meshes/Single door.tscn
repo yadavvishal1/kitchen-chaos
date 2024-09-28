@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c25j4lc8a222e"]
+
+[ext_resource type="PackedScene" uid="uid://snjmtauu08xs" path="res://Assets/Meshes/FBX's/Single door.fbx" id="1_26m6c"]
+
+[node name="Single door" instance=ExtResource("1_26m6c")]
+
+[node name="Counter_004" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

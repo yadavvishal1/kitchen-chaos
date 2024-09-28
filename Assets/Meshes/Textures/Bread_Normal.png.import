@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvyat63ohaft5"
-path.s3tc="res://.godot/imported/Bread_Normal.png-97b26a6801b5f8247b3a671a084683a5.s3tc.ctex"
+path.s3tc="res://.godot/imported/Bread_Normal.png-54b3f9cd7ea2cf84e6410a67d32c4ba5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/textures/Bread_Normal.png"
-dest_files=["res://.godot/imported/Bread_Normal.png-97b26a6801b5f8247b3a671a084683a5.s3tc.ctex"]
+source_file="res://Assets/Meshes/Textures/Bread_Normal.png"
+dest_files=["res://.godot/imported/Bread_Normal.png-54b3f9cd7ea2cf84e6410a67d32c4ba5.s3tc.ctex"]
 
 [params]
 

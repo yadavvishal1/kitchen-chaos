@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://msegi4qyuflj"
-path.s3tc="res://.godot/imported/Meat_AlbedoTransparency.png-cf5f131e447fb62820a5fbf5e7df950f.s3tc.ctex"
+path.s3tc="res://.godot/imported/Meat_AlbedoTransparency.png-0536fea36787a92a03af76e732f87045.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Meshes/textures/Meat_AlbedoTransparency.png"
-dest_files=["res://.godot/imported/Meat_AlbedoTransparency.png-cf5f131e447fb62820a5fbf5e7df950f.s3tc.ctex"]
+source_file="res://Assets/Meshes/Textures/Meat_AlbedoTransparency.png"
+dest_files=["res://.godot/imported/Meat_AlbedoTransparency.png-0536fea36787a92a03af76e732f87045.s3tc.ctex"]
 
 [params]
 

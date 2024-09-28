@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgy58y27xxvo6"]
+
+[ext_resource type="PackedScene" uid="uid://dxd0k7yv6elqn" path="res://Assets/Meshes/Burned meat patty.fbx" id="1_0wf8q"]
+
+[node name="MeatPattyBurnedVisual" type="Node3D"]
+
+[node name="Burned meat patty" parent="." instance=ExtResource("1_0wf8q")]
+transform = Transform3D(3.2, 0, 0, 0, 3.2, 0, 0, 0, 3.2, 0, 0.05, 0)

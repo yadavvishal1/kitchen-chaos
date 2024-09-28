@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://ct2g88wfiayne"]
+
+[ext_resource type="Texture2D" uid="uid://beug62m6l38yg" path="res://Assets/Meshes/Textures/Kitchen Counter_AlbedoTransparency.png" id="1_ycfut"]
+[ext_resource type="Texture2D" uid="uid://dw5dbmupww3gm" path="res://Assets/Meshes/Textures/Kitchen Counter_Normal.png" id="2_bnnyh"]
+
+[resource]
+resource_name = "Kitchen Counter"
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("1_ycfut")
+emission_enabled = true
+normal_enabled = true
+normal_scale = 0.0
+normal_texture = ExtResource("2_bnnyh")

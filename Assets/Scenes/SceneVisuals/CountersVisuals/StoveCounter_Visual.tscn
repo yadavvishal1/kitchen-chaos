@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkah4js6xrjt8"]
+
+[ext_resource type="PackedScene" uid="uid://68e2p652k7e6" path="res://Assets/Meshes/Kitchen Counter_Wood.tscn" id="1_q83bi"]
+[ext_resource type="PackedScene" uid="uid://dur87s752275j" path="res://Assets/Meshes/Stove Counter.fbx" id="2_styd5"]
+[ext_resource type="PackedScene" uid="uid://bp6mc362c00ok" path="res://Assets/Meshes/Frying Pan.fbx" id="3_4jx3g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dim6j"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.75, 0, 0, 1)
+emission_energy_multiplier = 3.15
+
+[sub_resource type="QuadMesh" id="QuadMesh_n3ki0"]
+material = SubResource("StandardMaterial3D_dim6j")
+orientation = 1
+
+[node name="StoveCounterVisual" type="Node3D"]
+
+[node name="Kitchen Counter_Wood" parent="." instance=ExtResource("1_q83bi")]
+transform = Transform3D(1.65, 0, 0, 0, 1.5, 0, 0, 0, 1.65, 0, 0, 0)
+
+[node name="Stove Counter" parent="." instance=ExtResource("2_styd5")]
+transform = Transform3D(1.67, 0, 0, 0, 1.67, 0, 0, 0, 1.67, 0.043, 1.431, 0.07)
+
+[node name="Frying Pan" parent="." instance=ExtResource("3_4jx3g")]
+transform = Transform3D(1.37924, 0, 1.44834, 0, 2, 0, -1.44834, 0, 1.37924, 0.048, 1.375, 0)
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(0.834, 0, 0, 0, 0.921, 0, 0, 0, 1, 0.047, 1.395, -0.039)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1.00357, 0, 0, 0, 1.00357, 0, 0, 0, 1.00357, 0, 0, 0)
+mesh = SubResource("QuadMesh_n3ki0")
