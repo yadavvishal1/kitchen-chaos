@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3m5tjvcx81js"]
+
+[ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_svpcn"]
+[ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://Assets/Scenes/Player/player.tscn" id="2_gq4xo"]
+[ext_resource type="Script" path="res://Assets/Scripts/FPS Info.gd" id="3_e4fox"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
+
+[sub_resource type="Gradient" id="Gradient_e0olu"]
+offsets = PackedFloat32Array(0.291667, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ikfqo"]
+gradient = SubResource("Gradient_e0olu")
+
+[sub_resource type="Environment" id="Environment_c747p"]
+background_mode = 1
+background_color = Color(0.35, 0.35, 0.35, 1)
+tonemap_mode = 2
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.25
+glow_bloom = 0.31
+fog_enabled = true
+fog_density = 0.0025
+volumetric_fog_density = 0.0
+adjustment_enabled = true
+adjustment_contrast = 1.15
+adjustment_saturation = 1.1
+adjustment_color_correction = SubResource("GradientTexture1D_ikfqo")
+
+[sub_resource type="Compositor" id="Compositor_6ub2l"]
+compositor_effects = Array[CompositorEffect]([null])
+
+[node name="Game Scene" type="Node3D"]
+
+[node name="Floor" type="CSGMesh3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("PlaneMesh_mabav")
+material = ExtResource("1_svpcn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.383022, -0.321394, 0, 0.642788, 0.766044, 0.5, -0.663414, 0.55667, -43.2286, 11, 23.2991)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.694658, 0.71934, 0, -0.71934, 0.694658, 0, 21.5, 21.3)
+fov = 20.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D"]
+environment = SubResource("Environment_c747p")
+compositor = SubResource("Compositor_6ub2l")
+
+[node name="Player" parent="." instance=ExtResource("2_gq4xo")]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+script = ExtResource("3_e4fox")
