@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bg1uhwfval8lg"]
 
-[ext_resource type="Material" uid="uid://c640igme7uqdf" path="res://Assets/Materials/PlayerBody.material" id="1_4j1rn"]
+[ext_resource type="Material" uid="uid://c640igme7uqdf" path="res://Assets/Materials/PlayerBody_Yellow.material" id="1_4j1rn"]
 [ext_resource type="Material" uid="uid://c1m01hh7dk2gl" path="res://Assets/Materials/Black.material" id="2_x84y8"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_o5kru"]

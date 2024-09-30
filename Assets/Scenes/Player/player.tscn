@@ -1,12 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm10p530ybs53"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Character Controller.gd" id="1_y3xct"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_gv0ts"]
+[ext_resource type="PackedScene" uid="uid://bg1uhwfval8lg" path="res://Assets/Scenes/PlayerVisuals.tscn" id="2_vl8ff"]
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_y3xct")
+rot_speed = 6.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 0.7, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_gv0ts")
+[node name="PlayerVisuals" parent="." instance=ExtResource("2_vl8ff")]
