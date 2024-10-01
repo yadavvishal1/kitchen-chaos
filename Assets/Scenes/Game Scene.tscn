@@ -7,25 +7,29 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
 
 [sub_resource type="Gradient" id="Gradient_e0olu"]
-offsets = PackedFloat32Array(0.291667, 1)
+offsets = PackedFloat32Array(0.259804, 0.987745)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ikfqo"]
 gradient = SubResource("Gradient_e0olu")
 
 [sub_resource type="Environment" id="Environment_c747p"]
 background_mode = 1
-background_color = Color(0.35, 0.35, 0.35, 1)
+background_color = Color(0.6, 0.5064, 0.444, 1)
 tonemap_mode = 2
+tonemap_exposure = 0.6
 glow_enabled = true
 glow_normalized = true
-glow_intensity = 1.25
-glow_bloom = 0.31
+glow_intensity = 4.0
+glow_strength = 0.52
+glow_bloom = 0.5
+glow_blend_mode = 1
 fog_enabled = true
-fog_density = 0.0025
+fog_light_energy = 1.17
+fog_density = 0.005
 volumetric_fog_density = 0.0
 adjustment_enabled = true
 adjustment_contrast = 1.15
-adjustment_saturation = 1.1
+adjustment_saturation = 1.25
 adjustment_color_correction = SubResource("GradientTexture1D_ikfqo")
 
 [sub_resource type="Compositor" id="Compositor_6ub2l"]
