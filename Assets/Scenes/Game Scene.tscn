@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3m5tjvcx81js"]
+[gd_scene load_steps=11 format=3 uid="uid://b3m5tjvcx81js"]
 
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_svpcn"]
 [ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://Assets/Scenes/Player/player.tscn" id="2_gq4xo"]
@@ -31,6 +31,10 @@ adjustment_color_correction = SubResource("GradientTexture1D_ikfqo")
 [sub_resource type="Compositor" id="Compositor_6ub2l"]
 compositor_effects = Array[CompositorEffect]([null])
 
+[sub_resource type="BoxMesh" id="BoxMesh_db8n8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vekpd"]
+
 [node name="Game Scene" type="Node3D"]
 
 [node name="Floor" type="CSGMesh3D" parent="."]
@@ -57,3 +61,14 @@ offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 script = ExtResource("3_e4fox")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.465585, 3.7726)
+mesh = SubResource("BoxMesh_db8n8")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+disable_mode = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_vekpd")

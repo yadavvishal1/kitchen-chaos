@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cm10p530ybs53"]
+[gd_scene load_steps=19 format=3 uid="uid://cm10p530ybs53"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Character Controller.gd" id="1_y3xct"]
 [ext_resource type="Script" path="res://Assets/Scenes/PlayerAnimator.gd" id="2_3lbkm"]
@@ -49,7 +49,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Body:position:x")
+tracks/3/path = NodePath("Body:position:z")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -71,7 +71,7 @@ tracks/4/keys = {
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Body:position:z")
+tracks/5/path = NodePath("Body:position:x")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -149,7 +149,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Body:position:x")
+tracks/3/path = NodePath("Body:position:z")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -171,7 +171,7 @@ tracks/4/keys = {
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Body:position:z")
+tracks/5/path = NodePath("Body:position:x")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -218,7 +218,11 @@ states/Start/position = Vector2(222, 148)
 transitions = ["Player_Idle", "Player_Walk", SubResource("AnimationNodeStateMachineTransition_p0nqm"), "Player_Walk", "Player_Idle", SubResource("AnimationNodeStateMachineTransition_7nxmg"), "Start", "Player_Idle", SubResource("AnimationNodeStateMachineTransition_1njrj")]
 graph_offset = Vector2(-217, 21)
 
-[node name="Player" type="Node3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l6str"]
+radius = 0.670296
+height = 2.00664
+
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_y3xct")
 
 [node name="PlayerVisuals" type="Node3D" parent="." node_paths=PackedStringArray("player")]
@@ -255,3 +259,7 @@ advance_expression_base_node = NodePath("")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/Idle = false
 parameters/conditions/IsWalking = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965, 0)
+shape = SubResource("CapsuleShape3D_l6str")
