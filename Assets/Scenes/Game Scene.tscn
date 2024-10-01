@@ -63,7 +63,7 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 script = ExtResource("3_e4fox")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.465585, 3.7726)
+transform = Transform3D(4.08486, 0, 0, 0, 1, 0, 0, 0, 5.18978, -3.76216, 0.465585, 3.7726)
 mesh = SubResource("BoxMesh_db8n8")
 skeleton = NodePath("")
 
