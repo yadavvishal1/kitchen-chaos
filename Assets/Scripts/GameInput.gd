@@ -1,6 +1,6 @@
 extends Node
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func get_movement_vector_normalized():
 	var input_vector: Vector3 = Vector3.ZERO
 	
