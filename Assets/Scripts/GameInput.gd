@@ -1,7 +1,9 @@
 extends Node
 
+# Declare the signal
+signal interact_pressed
 
-func get_movement_vector_normalized():
+func get_movement_vector_normalized() -> Vector3:
 	var input_vector: Vector3 = Vector3.ZERO
 	
 	if Input.is_action_pressed("Up"):
@@ -16,3 +18,7 @@ func get_movement_vector_normalized():
 	input_vector = input_vector.normalized()
 	
 	return input_vector
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Interact"):
+		emit_signal("interact_pressed")  # Emit the signal when the interact action is pressed
