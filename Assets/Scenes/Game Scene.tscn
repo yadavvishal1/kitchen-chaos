@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3m5tjvcx81js"]
+[gd_scene load_steps=10 format=3 uid="uid://b3m5tjvcx81js"]
 
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_svpcn"]
 [ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://Assets/Scenes/Player/player.tscn" id="2_gq4xo"]
 [ext_resource type="Script" path="res://Assets/Scripts/FPS Info.gd" id="3_e4fox"]
 [ext_resource type="PackedScene" uid="uid://cujp26t32rxu0" path="res://Assets/Scenes/Scenes/clear_counter.tscn" id="4_kuaq3"]
-[ext_resource type="PackedScene" uid="uid://cqxkpl3kffuce" path="res://Assets/Scenes/Scenes/container_counter.tscn" id="5_74vds"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
 
@@ -67,5 +66,5 @@ script = ExtResource("3_e4fox")
 [node name="Clear Counter" parent="." instance=ExtResource("4_kuaq3")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.384147, 0.0431207, 2.65712)
 
-[node name="Container Counter" parent="." instance=ExtResource("5_74vds")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.12385, 0, 2.63816)
+[node name="Clear Counter2" parent="." instance=ExtResource("4_kuaq3")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.01636, 0.0431207, 2.65712)
