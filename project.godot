@@ -11,17 +11,17 @@ config_version=5
 [application]
 
 config/name="Kitchen Chaos"
-run/main_scene="res://Assets/Scenes/Game Scene.tscn"
+run/main_scene="res://Scenes/Game Scene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameInput="*res://Assets/Scripts/GameInput.gd"
-ClearCounter="*res://Assets/Scripts/Clear Counter.gd"
+GameInput="*res://Scripts/GameInput.gd"
 
 [display]
 
+window/size/always_on_top=true
 window/vsync/vsync_mode=0
 
 [editor_plugins]
@@ -33,12 +33,9 @@ enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg")
 folder_colors={
 "res://Assets/": "green",
 "res://Assets/Materials/": "orange",
-"res://Assets/Scenes/": "yellow"
+"res://Scenes/": "yellow",
+"res://Scripts/": "blue"
 }
-
-[global_group]
-
-counters=""
 
 [input]
 

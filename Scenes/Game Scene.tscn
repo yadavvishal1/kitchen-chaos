@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://b3m5tjvcx81js"]
 
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_svpcn"]
-[ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://Assets/Scenes/Player/player.tscn" id="2_gq4xo"]
-[ext_resource type="Script" path="res://Assets/Scripts/FPS Info.gd" id="3_e4fox"]
-[ext_resource type="PackedScene" uid="uid://cujp26t32rxu0" path="res://Assets/Scenes/Scenes/clear_counter.tscn" id="4_kuaq3"]
+[ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://Scenes/Player/player.tscn" id="2_gq4xo"]
+[ext_resource type="Script" path="res://Scripts/FPS Info.gd" id="3_e4fox"]
+[ext_resource type="PackedScene" uid="uid://cujp26t32rxu0" path="res://Scenes/Scenes/counter.tscn" id="4_kuaq3"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
 
@@ -56,6 +56,7 @@ environment = SubResource("Environment_c747p")
 compositor = SubResource("Compositor_6ub2l")
 
 [node name="Player" parent="." instance=ExtResource("2_gq4xo")]
+unique_name_in_owner = true
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
@@ -63,8 +64,11 @@ offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 script = ExtResource("3_e4fox")
 
-[node name="Clear Counter" parent="." instance=ExtResource("4_kuaq3")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.384147, 0.0431207, 2.65712)
-
 [node name="Clear Counter2" parent="." instance=ExtResource("4_kuaq3")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.01636, 0.0431207, 2.65712)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.98468, 0.0431207, 2.65712)
+
+[node name="Clear Counter3" parent="." instance=ExtResource("4_kuaq3")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.90086, 0.0431207, 2.65712)
+
+[node name="Counter 1" parent="." instance=ExtResource("4_kuaq3")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.263045, 0, 2.67644)

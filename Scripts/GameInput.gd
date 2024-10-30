@@ -19,6 +19,6 @@ func get_movement_vector_normalized() -> Vector3:
 	
 	return input_vector
 
-func _process(delta: float) -> void:
+func _input(event):
 	if Input.is_action_just_pressed("Interact"):
 		emit_signal("interact_pressed")  # Emit the signal when the interact action is pressed
