@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cujp26t32rxu0"]
+
+[ext_resource type="PackedScene" uid="uid://bh25ast8pxqha" path="res://scenes/SceneVisuals/CountersVisuals/counter_visuals.tscn" id="1_2khji"]
+[ext_resource type="Script" path="res://scripts/Counter.gd" id="1_ywk2e"]
+[ext_resource type="Resource" uid="uid://gxnhb2umxacw" path="res://resources/kitchen_objects/cheese_block_res.tres" id="2_72inl"]
+[ext_resource type="PackedScene" uid="uid://dj73sd35stcsf" path="res://scenes/SceneVisuals/CountersVisuals/counter_visuals_selected.tscn" id="3_uuqjt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2pfrj"]
+size = Vector3(1.50415, 1.26769, 1.44189)
+
+[node name="Counter" type="StaticBody3D" node_paths=PackedStringArray("selected_object", "counter_top_point") groups=["counters"]]
+script = ExtResource("1_ywk2e")
+selected_object = NodePath("CounterVisualsSelected")
+kitchen_object = ExtResource("2_72inl")
+counter_top_point = NodePath("CounterTopPoint")
+
+[node name="CounterVisuals" parent="." instance=ExtResource("1_2khji")]
+
+[node name="CounterVisualsSelected" parent="." instance=ExtResource("3_uuqjt")]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.629505, 0.0276878)
+shape = SubResource("BoxShape3D_2pfrj")
+
+[node name="CounterTopPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)

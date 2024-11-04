@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://cm10p530ybs53"]
 
-[ext_resource type="Script" path="res://Scripts/Character Controller.gd" id="1_y3xct"]
-[ext_resource type="Script" path="res://Scenes/PlayerAnimator.gd" id="2_3lbkm"]
+[ext_resource type="Script" path="res://scripts/character_controller.gd" id="1_y3xct"]
+[ext_resource type="Script" path="res://scripts/PlayerAnimator.gd" id="2_3lbkm"]
 [ext_resource type="Material" uid="uid://c640igme7uqdf" path="res://Assets/Materials/PlayerBody_Yellow.material" id="3_34cok"]
 [ext_resource type="Material" uid="uid://c1m01hh7dk2gl" path="res://Assets/Materials/Black.material" id="4_skpiv"]
 
