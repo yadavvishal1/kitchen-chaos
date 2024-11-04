@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccap4fndf8be1"]
+
+[ext_resource type="PackedScene" uid="uid://dd40nnr7kpoir" path="res://Assets/Meshes/Cheese block.fbx" id="1_wxllk"]
+
+[node name="CheeseBlockVisual" type="Node3D"]
+
+[node name="CheeseBlock" parent="." instance=ExtResource("1_wxllk")]
+transform = Transform3D(2.75, 0, 0, 0, 2.75, 0, 0, 0, 2.75, 0, 0.048, 0)

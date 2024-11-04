@@ -8,7 +8,6 @@ signal selected_counter_changed
 var is_walking: bool = false
 var selected_counter: Counter
 
-
 @onready var raycast: RayCast3D = $RayCast3D
 
 func _ready() -> void:
@@ -34,9 +33,9 @@ func handle_interactions() -> void:
 			selected_counter = null
 	else:
 		selected_counter = null
-	deselect_counters()
+	deselect_counter()
 
-func deselect_counters():
+func deselect_counter():
 	for counter in get_tree().get_nodes_in_group("counters"):
 		if counter is Counter:
 			if selected_counter != counter:
