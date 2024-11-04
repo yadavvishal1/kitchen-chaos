@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://dj73sd35stcsf"]
+[gd_scene load_steps=5 format=4 uid="uid://2gwbkon4o6t6"]
 
-[ext_resource type="PackedScene" uid="uid://bh25ast8pxqha" path="res://scenes/SceneVisuals/CountersVisuals/counter_visuals.tscn" id="1_njn23"]
+[ext_resource type="PackedScene" uid="uid://7u4h0s6nhvcl" path="res://scenes/SceneVisuals/CountersVisuals/counter_visuals.tscn" id="1_njn23"]
 [ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="2_0es2u"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rpcu8"]

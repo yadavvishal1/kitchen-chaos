@@ -4,7 +4,7 @@ extends Node3D
 @export var player: Node3D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	update_animation_parameters()
 
 func update_animation_parameters():

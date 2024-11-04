@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://bh25ast8pxqha"]
+[gd_scene load_steps=6 format=4 uid="uid://7u4h0s6nhvcl"]
 
 [ext_resource type="Texture2D" uid="uid://beug62m6l38yg" path="res://Assets/Meshes/Textures/Kitchen Counter_AlbedoTransparency.png" id="1_i3j0j"]
 [ext_resource type="Texture2D" uid="uid://dw5dbmupww3gm" path="res://Assets/Meshes/Textures/Kitchen Counter_Normal.png" id="2_wjgnb"]

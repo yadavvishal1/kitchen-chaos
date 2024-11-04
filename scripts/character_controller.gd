@@ -1,7 +1,5 @@
 extends CharacterBody3D
 
-signal selected_counter_changed
-
 @export var move_speed: float = 6.0
 @export var rot_speed: float = 10.0
 
