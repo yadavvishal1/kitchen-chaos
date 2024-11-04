@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cujp26t32rxu0"]
+
+[ext_resource type="PackedScene" uid="uid://bh25ast8pxqha" path="res://Scenes/SceneVisuals/CountersVisuals/ClearCounter_Visuals.tscn" id="1_2khji"]
+[ext_resource type="Script" path="res://Scripts/Counter.gd" id="1_ywk2e"]
+[ext_resource type="PackedScene" uid="uid://dj73sd35stcsf" path="res://Scenes/SceneVisuals/CountersVisuals/clear_counter_visuals_selected.tscn" id="3_uuqjt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2pfrj"]
+size = Vector3(1.50415, 1.26769, 1.44189)
+
+[node name="Counter" type="StaticBody3D" node_paths=PackedStringArray("selected_object") groups=["counters"]]
+script = ExtResource("1_ywk2e")
+selected_object = NodePath("ClearCounterVisuals_Selected")
+
+[node name="ClearCounterVisuals" parent="." instance=ExtResource("1_2khji")]
+
+[node name="ClearCounterVisuals_Selected" parent="." instance=ExtResource("3_uuqjt")]
+visible = false
+script = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.629505, 0.0276878)
+shape = SubResource("BoxShape3D_2pfrj")

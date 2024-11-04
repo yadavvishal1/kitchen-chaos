@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cj3tnngiyru6f"]
-
-[ext_resource type="Texture2D" uid="uid://blkdiy7jngajc" path="res://Assets/Textures/Icons/Tomato.png" id="1_akojq"]
-
-[node name="TomatoIcon" type="Node3D"]
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource("1_akojq")

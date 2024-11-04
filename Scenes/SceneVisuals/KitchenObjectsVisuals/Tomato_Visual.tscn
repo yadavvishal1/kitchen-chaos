@@ -37,7 +37,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cqvvi")
 
-[node name="TomatoVisual" instance=ExtResource("1_5n4s3")]
+[node name="Tomato" instance=ExtResource("1_5n4s3")]
 transform = Transform3D(4.26, 0, 0, 0, 4.26, 0, 0, 0, 4.26, 0, 0, 0)
 
 [node name="Tomato" parent="." index="0"]
