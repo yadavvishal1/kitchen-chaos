@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=4 uid="uid://7u4h0s6nhvcl"]
 
-[ext_resource type="Texture2D" uid="uid://beug62m6l38yg" path="res://Assets/Meshes/Textures/Kitchen Counter_AlbedoTransparency.png" id="1_i3j0j"]
-[ext_resource type="Texture2D" uid="uid://dw5dbmupww3gm" path="res://Assets/Meshes/Textures/Kitchen Counter_Normal.png" id="2_wjgnb"]
+[ext_resource type="Texture2D" uid="uid://beug62m6l38yg" path="res://Assets/Meshes/Textures/Kitchen Counter_AlbedoTransparency.png" id="1_iwt8x"]
+[ext_resource type="Texture2D" uid="uid://dw5dbmupww3gm" path="res://Assets/Meshes/Textures/Kitchen Counter_Normal.png" id="2_5tlxk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_skfbj"]
 resource_local_to_scene = true
 resource_name = "Kitchen Counter"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_i3j0j")
+albedo_texture = ExtResource("1_iwt8x")
 emission_enabled = true
 normal_enabled = true
 normal_scale = 0.0
-normal_texture = ExtResource("2_wjgnb")
+normal_texture = ExtResource("2_5tlxk")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_rpcu8"]
 _surfaces = [{
@@ -47,12 +47,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rpcu8")
 
-[node name="CounterVisuals" type="Node3D"]
+[node name="ClearCounterVisuals" type="Node3D"]
 
-[node name="KitchenCounter" type="Node3D" parent="."]
+[node name="KitchenCounter" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.65, 0, 0, 0, 1.5, 0, 0, 0, 1.65, 0, 0, 0)
-
-[node name="Counter" type="MeshInstance3D" parent="KitchenCounter"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00543338, 0, 0)
 mesh = SubResource("ArrayMesh_5jtvc")
 skeleton = NodePath("")

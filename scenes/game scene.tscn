@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://scenes/Player/player.tscn" id="2_ihev2"]
 [ext_resource type="Script" path="res://scripts/fps_info.gd" id="3_vlh2t"]
 [ext_resource type="PackedScene" uid="uid://cujp26t32rxu0" path="res://scenes/counters/counter.tscn" id="4_e43ec"]
-[ext_resource type="PackedScene" uid="uid://bfvefviabx2st" path="res://scenes/kitchen_objects/tomato.tscn" id="5_b4ny1"]
-[ext_resource type="PackedScene" uid="uid://b8ja5ypjr0scp" path="res://scenes/kitchen_objects/cheese_block.tscn" id="6_pskkt"]
+[ext_resource type="PackedScene" uid="uid://ccap4fndf8be1" path="res://scenes/kitchen_objects/cheese_block.tscn" id="5_ungmb"]
+[ext_resource type="PackedScene" uid="uid://dnr5mexo7e3id" path="res://scenes/kitchen_objects/tomato.tscn" id="6_lcnsw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
 
@@ -68,12 +68,12 @@ script = ExtResource("3_vlh2t")
 
 [node name="Counter" parent="." instance=ExtResource("4_e43ec")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 4.38426)
-kitchen_object = ExtResource("5_b4ny1")
+kitchen_object = ExtResource("5_ungmb")
 
 [node name="Counter2" parent="." instance=ExtResource("4_e43ec")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.59709, 0, 4.38426)
-kitchen_object = ExtResource("6_pskkt")
+kitchen_object = ExtResource("6_lcnsw")
 
 [node name="Counter3" parent="." instance=ExtResource("4_e43ec")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.64153, 0, 4.38426)
-kitchen_object = ExtResource("5_b4ny1")
+kitchen_object = ExtResource("5_ungmb")

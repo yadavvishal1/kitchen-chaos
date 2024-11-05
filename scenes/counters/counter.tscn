@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cujp26t32rxu0"]
 
-[ext_resource type="PackedScene" uid="uid://7u4h0s6nhvcl" path="res://scenes/SceneVisuals/CountersVisuals/counter_visuals.tscn" id="1_2khji"]
+[ext_resource type="PackedScene" uid="uid://7u4h0s6nhvcl" path="res://scenes/SceneVisuals/CountersVisuals/clear_counter_visuals.tscn" id="1_2khji"]
 [ext_resource type="Script" path="res://scripts/counter.gd" id="1_ywk2e"]
 [ext_resource type="PackedScene" uid="uid://2gwbkon4o6t6" path="res://scenes/SceneVisuals/CountersVisuals/counter_visuals_selected.tscn" id="3_uuqjt"]
 
@@ -12,7 +12,7 @@ script = ExtResource("1_ywk2e")
 selected_object = NodePath("CounterVisualsSelected")
 counter_top_point = NodePath("CounterTopPoint")
 
-[node name="CounterVisuals" parent="." instance=ExtResource("1_2khji")]
+[node name="ClearCounterVisuals" parent="." instance=ExtResource("1_2khji")]
 
 [node name="CounterVisualsSelected" parent="." instance=ExtResource("3_uuqjt")]
 visible = false
