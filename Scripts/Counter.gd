@@ -1,19 +1,18 @@
 class_name Counter extends StaticBody3D
 
 @export var selected_object: Node3D
-@export var kitchen_object: PackedScene
+@export var kitchen_object: KitchenObjects
 @export var counter_top_point: Node3D
 
-func interact():
+var has_object: bool = false
+
+func interact() -> void:
 	print("Interact Called")
-	if kitchen_object:
-		var object = kitchen_object.instantiate()
+	if kitchen_object != null && has_object == false:
+		var object = kitchen_object.scene.instantiate()
 		add_child(object)
 		object.position = counter_top_point.position
-		if object.has_method("get_kitchen_object_resource"):
-			object.kitchen_object_resource = kitchen_object
-			print("Object placed on counter:", object.kitchen_object_resource.object_name)
-		print(name)
+		has_object = true
 
 func select():
 	selected_object.visible = true
