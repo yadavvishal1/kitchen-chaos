@@ -66,10 +66,9 @@ offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 script = ExtResource("3_vlh2t")
 
-[node name="Counter" parent="." node_paths=PackedStringArray("second_clear_counter") instance=ExtResource("4_e43ec")]
+[node name="Counter" parent="." instance=ExtResource("4_e43ec")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0.0296267, 0, -3.60915)
 kitchen_object_res = ExtResource("5_an5v1")
-second_clear_counter = NodePath("../Counter2")
 
 [node name="Counter2" parent="." instance=ExtResource("4_e43ec")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 1.62672, 0, -3.60915)

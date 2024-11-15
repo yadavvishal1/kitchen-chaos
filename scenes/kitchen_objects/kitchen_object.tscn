@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1v8i5phg6fgp"]
+
+[ext_resource type="Script" path="res://scripts/kitchen_object.gd" id="1_eislj"]
+
+[node name="KitchenObject" type="Node3D"]
+script = ExtResource("1_eislj")

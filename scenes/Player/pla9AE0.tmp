@@ -1,10 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://cm10p530ybs53"]
+[gd_scene load_steps=19 format=3 uid="uid://cm10p530ybs53"]
 
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="1_y3xct"]
 [ext_resource type="Script" path="res://scripts/player_animator.gd" id="2_3lbkm"]
 [ext_resource type="Material" uid="uid://c640igme7uqdf" path="res://Assets/Materials/PlayerBody_Yellow.material" id="3_34cok"]
 [ext_resource type="Material" uid="uid://c1m01hh7dk2gl" path="res://Assets/Materials/Black.material" id="4_skpiv"]
-[ext_resource type="Script" path="res://scripts/kitchen_object_parent.gd" id="5_u782n"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_4dbug"]
 material = ExtResource("3_34cok")
@@ -269,6 +268,5 @@ shape = SubResource("CapsuleShape3D_l6str")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 target_position = Vector3(0, 0, 1)
 
-[node name="KitchenObjectParent" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 1)
-script = ExtResource("5_u782n")
+[node name="Slot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1719, 1.00086)

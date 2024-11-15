@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 @export var move_speed: float = 6.0
@@ -5,8 +6,13 @@ extends CharacterBody3D
 
 var is_walking: bool = false
 var selected_counter: Counter
+var picked_object: KitchenObject = null  # The object the player is currently holding
+
+# Add KitchenObjectParent as a property in Player (Composition)
+@onready var kitchen_object_parent:Node3D = $KitchenObjectParent
 
 @onready var raycast: RayCast3D = $RayCast3D
+@onready var object_slot: Node3D = $KitchenObjectParent  # Slot node where the object will be attached when picked up
 
 func _ready() -> void:
 	# Connect to the interact_pressed signal from the GameInput script
@@ -14,11 +20,8 @@ func _ready() -> void:
 
 func _on_interact_pressed() -> void:
 	if selected_counter != null:
-		selected_counter.interact() #interact if there is a Selected Counter
-		if selected_counter.has_object() && not player_has_object(): #if selected counter has object in slot and player do not
-			var object: Node3D = selected_counter.get_node("Slot").get_child(0)
-			object.reparent(get_node("Slot"))
-			object.position = Vector3.ZERO
+		selected_counter.interact(self) #interact if there is a Selected Counter
+
 
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
@@ -36,15 +39,16 @@ func handle_interactions() -> void:
 		selected_counter = null
 	deselect_counter()
 
+# Deselection logic for other counters
 func deselect_counter():
 	for counter in get_tree().get_nodes_in_group("counters"):
 		if counter is Counter:
 			if selected_counter != counter:
 				counter.deselect()
 
+# Handle player movement based on input
 func handle_movement(delta: float) -> void:
 	var input_vector = GameInput.get_movement_vector_normalized()
-	
 	if input_vector.length() > 0:
 		var move_dir: Vector3 = Vector3(input_vector.x, 0, input_vector.z).normalized() * move_speed
 
@@ -63,4 +67,4 @@ func handle_movement(delta: float) -> void:
 	move_and_slide()
 
 func player_has_object() -> bool:
-	return get_node("Slot").get_child_count()>0
+	return picked_object != null

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="KitchenObjects" load_steps=4 format=3 uid="uid://b0hpu03x2v6dy"]
+[gd_resource type="Resource" script_class="KitchenObjectsResource" load_steps=4 format=3 uid="uid://b0hpu03x2v6dy"]
 
 [ext_resource type="Texture2D" uid="uid://dmi7al4rol3fk" path="res://Assets/Textures/Icons/CheeseBlock.png" id="1_uqoyd"]
 [ext_resource type="PackedScene" uid="uid://ccap4fndf8be1" path="res://scenes/kitchen_objects/cheese_block.tscn" id="2_k1dvp"]
