@@ -224,8 +224,6 @@ height = 2.00664
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_y3xct")
-move_speed = null
-rot_speed = null
 
 [node name="PlayerVisuals" type="Node3D" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("2_3lbkm")
@@ -269,3 +267,6 @@ shape = SubResource("CapsuleShape3D_l6str")
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 target_position = Vector3(0, 0, 1)
+
+[node name="Slot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1719, 1.00086)

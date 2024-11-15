@@ -14,9 +14,12 @@ func _ready() -> void:
 
 func _on_interact_pressed() -> void:
 	if selected_counter != null:
-		selected_counter.interact()
+		selected_counter.interact() #interact if there is a Selected Counter
+		if selected_counter.has_object() && not player_has_object(): #if selected counter has object in slot and player do not
+			var object: Node3D = selected_counter.get_node("Slot").get_child(0)
+			object.reparent(get_node("Slot"))
+			object.position = Vector3.ZERO
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 	handle_interactions()
@@ -58,3 +61,6 @@ func handle_movement(delta: float) -> void:
 
 	# Call move_and_slide without any arguments
 	move_and_slide()
+
+func player_has_object() -> bool:
+	return get_node("Slot").get_child_count()>0

@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/fps_info.gd" id="3_vlh2t"]
 [ext_resource type="PackedScene" uid="uid://cujp26t32rxu0" path="res://scenes/counters/counter.tscn" id="4_e43ec"]
 [ext_resource type="Resource" uid="uid://ds6i74361l4tm" path="res://resources/kitchen_objects_resources/tomato_res.tres" id="5_an5v1"]
-[ext_resource type="Resource" uid="uid://b0hpu03x2v6dy" path="res://resources/kitchen_objects_resources/cheese_res.tres" id="6_iltjv"]
+[ext_resource type="Resource" uid="uid://b0hpu03x2v6dy" path="res://resources/kitchen_objects_resources/cheese_block_res.tres" id="6_iltjv"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
 
@@ -66,14 +66,15 @@ offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 script = ExtResource("3_vlh2t")
 
-[node name="Counter" parent="." instance=ExtResource("4_e43ec")]
+[node name="Counter" parent="." node_paths=PackedStringArray("second_clear_counter") instance=ExtResource("4_e43ec")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0.0296267, 0, -3.60915)
-kitchen_object = ExtResource("5_an5v1")
+kitchen_object_res = ExtResource("5_an5v1")
+second_clear_counter = NodePath("../Counter2")
 
 [node name="Counter2" parent="." instance=ExtResource("4_e43ec")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 1.62672, 0, -3.60915)
-kitchen_object = ExtResource("6_iltjv")
+kitchen_object_res = ExtResource("6_iltjv")
 
 [node name="Counter3" parent="." instance=ExtResource("4_e43ec")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -1.6119, 0, -3.60915)
-kitchen_object = ExtResource("6_iltjv")
+kitchen_object_res = ExtResource("5_an5v1")

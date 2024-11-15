@@ -7,10 +7,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_2pfrj"]
 size = Vector3(1.50415, 1.26769, 1.44189)
 
-[node name="Counter" type="StaticBody3D" node_paths=PackedStringArray("selected_object", "counter_top_point") groups=["counters"]]
+[node name="Counter" type="StaticBody3D" node_paths=PackedStringArray("selected_counter_visual") groups=["counters"]]
 script = ExtResource("1_ywk2e")
-selected_object = NodePath("CounterVisualsSelected")
-counter_top_point = NodePath("CounterTopPoint")
+selected_counter_visual = NodePath("CounterVisualsSelected")
 
 [node name="ClearCounterVisuals" parent="." instance=ExtResource("1_2khji")]
 
@@ -21,5 +20,5 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.629505, 0.0276878)
 shape = SubResource("BoxShape3D_2pfrj")
 
-[node name="CounterTopPoint" type="Marker3D" parent="."]
+[node name="Slot" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
