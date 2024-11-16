@@ -10,66 +10,45 @@ var kitchen_object: KitchenObject
 # Interact with the counter to either spawn, pick, or drop the object
 func interact(player: Player) -> void:
 	print("Interact Pressed")
-	if !has_kitchen_object() and player.picked_object == null:
-		 # If there is no kitchen object on the counter, spawn a new one
-		var new_kitchen_object = kitchen_object_res.scene.instantiate()  # Create a new kitchen object from the resource
-		new_kitchen_object.position = Vector3.ZERO  # Position it at the counter's origin
-		set_kitchen_object(new_kitchen_object)  # Set the kitchen object for the counter
+	if !kitchen_object and player.picked_object == null:
+		spawn_kitchen_object()
 
-	elif has_kitchen_object() and player.picked_object == null:
+	elif kitchen_object and player.picked_object == null:
 		pick_up_kitchen_object(player)
 
 	elif player.picked_object != null:
 		drop_kitchen_object(player)
 
-## Spawn a new kitchen object on the counter
-#func spawn_kitchen_object() -> void:
-	#var new_kitchen_object = kitchen_object_res.scene.instantiate()
-	#set_kitchen_object(new_kitchen_object)
+# Spawn a new kitchen object on the counter
+func spawn_kitchen_object() -> void:
+	var new_kitchen_object = kitchen_object_res.scene.instantiate()
+	new_kitchen_object.position = Vector3.ZERO
+	new_kitchen_object.set_kitchen_object(new_kitchen_object)
+	kitchen_object = new_kitchen_object  # Store the new kitchen object on the counter
+	kitchen_object_parent.add_child(kitchen_object)  # Add the new object to the parent
 
 # Pick up the kitchen object from the counter
 func pick_up_kitchen_object(player: Player) -> void:
-	var slot = get_node("KitchenObjectParent")  # Reference to the Slot node where the kitchen object is expected to be
-	if slot.get_child_count() > 0:
-		var object: Node3D = slot.get_child(0)  # Get the first child in the slot
-		if object != null:
-			object.reparent(player.get_node("KitchenObjectParent"))  # Reparent object to the player's slot
-			object.position = Vector3.ZERO  # Reset position relative to the player
-			player.picked_object = object as KitchenObject  # Store the picked object reference
-			clear_kitchen_object()  # Clear the counter's object
+	if kitchen_object:
+		kitchen_object.reparent(player.kitchen_object_parent)  # Reparent object to the player's slot
+		kitchen_object.position = Vector3.ZERO  # Reset position relative to the player
+		player.picked_object = kitchen_object  # Store the picked object reference
+		print(kitchen_object.get_parent().get_parent().name, ": has kitchen object!", )
+		kitchen_object = null
 	else:
 		print("No kitchen object to pick up from this counter.")
 
-
 # Drop the object back onto the counter
 func drop_kitchen_object(player: Player) -> void:
-	set_kitchen_object(player.picked_object)
-	player.picked_object.reparent(kitchen_object_parent)
-	player.picked_object.position = Vector3.ZERO
-	player.picked_object = null
+	if player.picked_object != null and !kitchen_object:
+		var dropped_object = player.picked_object
+		dropped_object.reparent(kitchen_object_parent)
+		dropped_object.position = Vector3.ZERO
+		kitchen_object = dropped_object
+		player.picked_object = null
 
 func select():
 	selected_counter_visual.visible = true
 	
 func deselect():
 	selected_counter_visual.visible = false
-	
-# Function to check if the counter has a kitchen object
-func has_kitchen_object() -> bool:
-	return kitchen_object != null
-
-# Set the kitchen object on the counter
-func set_kitchen_object(new_kitchen_object: KitchenObject) -> void:
-	if kitchen_object != null:
-		push_error("Counter already has a kitchen object.")
-		return
-
-	kitchen_object = new_kitchen_object
-	kitchen_object_parent.add_child(kitchen_object)  # Add the object to the counter's parent (slot or designated container)
-	kitchen_object.position = Vector3.ZERO  # Reset the object's position relative to the counter
-
-func get_kitchen_object():
-	return kitchen_object
-
-func clear_kitchen_object() -> void:
-	kitchen_object = null
