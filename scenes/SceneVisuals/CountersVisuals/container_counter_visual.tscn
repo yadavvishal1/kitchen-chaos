@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5a72a38ulq6x"]
+[gd_scene load_steps=11 format=3 uid="uid://c5a72a38ulq6x"]
 
 [ext_resource type="PackedScene" uid="uid://d1n4fk81o6pyk" path="res://Assets/Meshes/Counter_solid.fbx" id="1_0rd6n"]
 [ext_resource type="Script" path="res://scripts/container_counter_visual.gd" id="1_ks6j2"]
@@ -49,33 +49,6 @@ _data = {
 "container_counter_open_close": ExtResource("5_kxvj4")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1rsml"]
-animation = &"RESET"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_80gk7"]
-animation = &"container_counter_open_close"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oy7nn"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0lf26"]
-advance_mode = 2
-advance_condition = &"open_close"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_urjol"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"close"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_erh4q"]
-states/RESET/node = SubResource("AnimationNodeAnimation_1rsml")
-states/RESET/position = Vector2(426, 125)
-states/Start/position = Vector2(429, 29)
-states/container_counter_open_close/node = SubResource("AnimationNodeAnimation_80gk7")
-states/container_counter_open_close/position = Vector2(426, 231)
-transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_oy7nn"), "RESET", "container_counter_open_close", SubResource("AnimationNodeStateMachineTransition_0lf26"), "container_counter_open_close", "RESET", SubResource("AnimationNodeStateMachineTransition_urjol")]
-graph_offset = Vector2(48, 66)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq6tx"]
 albedo_color = Color(0, 0, 0, 1)
 
@@ -104,14 +77,6 @@ libraries = {
 "": SubResource("AnimationLibrary_h2ke2")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_erh4q")
-anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/close = false
-parameters/conditions/open_close = false
-
 [node name="Black" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.683325, 0, 0, 0, 1, 0, 0, 0, 0.512203, 0, 1.268, 0)
 mesh = SubResource("PlaneMesh_ssbmg")
-
-[connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

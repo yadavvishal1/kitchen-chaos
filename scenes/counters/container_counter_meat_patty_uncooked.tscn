@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2bye1vffusog"]
+
+[ext_resource type="PackedScene" uid="uid://d2i33e88d6plv" path="res://scenes/counters/container_counter_cheese_main.tscn" id="1_tv8wc"]
+[ext_resource type="Resource" uid="uid://p72gnx0nummc" path="res://resources/kitchen_objects_resources/meat_patty_uncooked.tres" id="2_pj21l"]
+[ext_resource type="Texture2D" uid="uid://opqhtko6oc1s" path="res://Assets/Textures/Icons/MeatPattyUncooked.png" id="3_jhubv"]
+
+[node name="ContainerCounterMeatPattyUncooked" instance=ExtResource("1_tv8wc")]
+kitchen_object_res = ExtResource("2_pj21l")
+
+[node name="Sprite3D" parent="ContainerCounterVisual/Single door" index="1"]
+texture = ExtResource("3_jhubv")
+
+[node name="Single door" parent="ContainerCounterVisualSelected" index="2"]
+transform = Transform3D(-9.29975e-06, 2.159, 0, 9.29975e-06, 2.82922e-11, 1.55, 2.569, 7.81556e-06, -5.61098e-06, 0, 1.294, -0.406)
+
+[editable path="ContainerCounterVisual"]
+[editable path="ContainerCounterVisualSelected/Counter_solid"]
+[editable path="ContainerCounterVisualSelected/Counter_hole"]
+[editable path="ContainerCounterVisualSelected/Single door"]

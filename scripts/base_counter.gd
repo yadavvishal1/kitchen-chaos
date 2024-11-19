@@ -10,13 +10,6 @@ var kitchen_object: KitchenObject
 # Interact with the counter to either spawn, pick, or drop the object
 func interact(player: Player) -> void:
 	print("Interact Pressed")
-	if kitchen_object and player.picked_object == null:
-		pick_up_kitchen_object(player)
-
-	elif player.picked_object != null:
-		drop_kitchen_object(player)
-
-
 
 # Pick up the kitchen object from the counter
 func pick_up_kitchen_object(player: Player) -> void:

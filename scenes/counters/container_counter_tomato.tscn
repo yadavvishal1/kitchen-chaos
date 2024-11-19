@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://klhgi22w35ah"]
+
+[ext_resource type="PackedScene" uid="uid://d2i33e88d6plv" path="res://scenes/counters/container_counter_cheese_main.tscn" id="1_ibtog"]
+[ext_resource type="Texture2D" uid="uid://blkdiy7jngajc" path="res://Assets/Textures/Icons/Tomato.png" id="2_6tco3"]
+
+[node name="ContainerCounterTomato" instance=ExtResource("1_ibtog")]
+
+[node name="Sprite3D" parent="ContainerCounterVisual/Single door" index="1"]
+texture = ExtResource("2_6tco3")
+
+[node name="Single door" parent="ContainerCounterVisualSelected" index="2"]
+transform = Transform3D(-9.29975e-06, 2.159, 0, 9.29975e-06, 2.82922e-11, 1.55, 2.569, 7.81556e-06, -5.61098e-06, 0, 1.294, -0.406)
+
+[editable path="ContainerCounterVisual"]
+[editable path="ContainerCounterVisualSelected/Counter_solid"]
+[editable path="ContainerCounterVisualSelected/Counter_hole"]
+[editable path="ContainerCounterVisualSelected/Single door"]

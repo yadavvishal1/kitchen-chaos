@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="KitchenObjectsResource" load_steps=4 format=3 uid="uid://p72gnx0nummc"]
+
+[ext_resource type="Texture2D" uid="uid://opqhtko6oc1s" path="res://Assets/Textures/Icons/MeatPattyUncooked.png" id="1_1vqex"]
+[ext_resource type="Script" path="res://resources/kitchen_objects_resources/kitchen_objects_res.gd" id="1_f0w8i"]
+[ext_resource type="PackedScene" uid="uid://d0whg0f6pdj22" path="res://scenes/kitchen_objects/meat_patty_uncooked.tscn" id="2_a5tjp"]
+
+[resource]
+script = ExtResource("1_f0w8i")
+object_name = "Meat Patty Uncooked"
+scene = ExtResource("2_a5tjp")
+icon = ExtResource("1_1vqex")

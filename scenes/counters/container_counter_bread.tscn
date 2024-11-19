@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6tivgvw62ki8"]
+
+[ext_resource type="PackedScene" uid="uid://d2i33e88d6plv" path="res://scenes/counters/container_counter_cheese_main.tscn" id="1_ymwi2"]
+[ext_resource type="Texture2D" uid="uid://ccuvrpsvk27hg" path="res://Assets/Textures/Icons/Bread.png" id="2_kekdv"]
+[ext_resource type="Resource" uid="uid://jkx23srcilaj" path="res://resources/kitchen_objects_resources/bread.tres" id="2_oy0cu"]
+
+[node name="ContainerCounterBread" instance=ExtResource("1_ymwi2")]
+kitchen_object_res = ExtResource("2_oy0cu")
+
+[node name="Sprite3D" parent="ContainerCounterVisual/Single door" index="1"]
+texture = ExtResource("2_kekdv")
+
+[node name="Single door" parent="ContainerCounterVisualSelected" index="2"]
+transform = Transform3D(-9.29975e-06, 2.159, 0, 9.29975e-06, 2.82922e-11, 1.55, 2.569, 7.81556e-06, -5.61098e-06, 0, 1.294, -0.406)
+
+[editable path="ContainerCounterVisual"]
+[editable path="ContainerCounterVisualSelected/Counter_solid"]
+[editable path="ContainerCounterVisualSelected/Counter_hole"]
+[editable path="ContainerCounterVisualSelected/Single door"]

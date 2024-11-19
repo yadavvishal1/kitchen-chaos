@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c66ddj8jc7j40"]
-
-[ext_resource type="PackedScene" uid="uid://doput3iy44k7w" path="res://Assets/Meshes/Cabbage.fbx" id="1_buqjg"]
-
-[node name="CabbageVisual" type="Node3D"]
-
-[node name="Cabbage" parent="." instance=ExtResource("1_buqjg")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

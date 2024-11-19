@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://d2i33e88d6plv"]
+[gd_scene load_steps=15 format=3 uid="uid://d2i33e88d6plv"]
 
 [ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_gdfi5"]
 [ext_resource type="Script" path="res://scripts/cotainer_counter.gd" id="2_i1g2a"]
 [ext_resource type="PackedScene" uid="uid://c5a72a38ulq6x" path="res://scenes/SceneVisuals/CountersVisuals/container_counter_visual.tscn" id="2_uolmo"]
+[ext_resource type="Resource" uid="uid://b0hpu03x2v6dy" path="res://resources/kitchen_objects_resources/cheese_block_res.tres" id="3_eoapi"]
 [ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="3_ka05q"]
 [ext_resource type="PackedScene" uid="uid://d1n4fk81o6pyk" path="res://Assets/Meshes/Counter_solid.fbx" id="4_ax1ep"]
 [ext_resource type="Script" path="res://scripts/container_counter_visual.gd" id="4_rp5vb"]
@@ -52,33 +53,6 @@ _data = {
 "container_counter_open_close": ExtResource("9_jijop")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1rsml"]
-animation = &"RESET"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_80gk7"]
-animation = &"container_counter_open_close"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oy7nn"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0lf26"]
-advance_mode = 2
-advance_condition = &"open_close"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_urjol"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"close"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_erh4q"]
-states/RESET/node = SubResource("AnimationNodeAnimation_1rsml")
-states/RESET/position = Vector2(426, 125)
-states/Start/position = Vector2(429, 29)
-states/container_counter_open_close/node = SubResource("AnimationNodeAnimation_80gk7")
-states/container_counter_open_close/position = Vector2(426, 231)
-transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_oy7nn"), "RESET", "container_counter_open_close", SubResource("AnimationNodeStateMachineTransition_0lf26"), "container_counter_open_close", "RESET", SubResource("AnimationNodeStateMachineTransition_urjol")]
-graph_offset = Vector2(48, 66)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq6tx"]
 albedo_color = Color(0, 0, 0, 1)
 
@@ -87,12 +61,14 @@ material = SubResource("StandardMaterial3D_aq6tx")
 
 [node name="ContainerCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_gdfi5")]
 script = ExtResource("2_i1g2a")
+kitchen_object_res = ExtResource("3_eoapi")
 selected_counter_visual = NodePath("ContainerCounterVisualSelected")
 
 [node name="ContainerCounterVisual" parent="." index="0" instance=ExtResource("2_uolmo")]
 
 [node name="ContainerCounterVisualSelected" type="Node3D" parent="." index="1"]
 transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0, 0)
+visible = false
 script = ExtResource("4_rp5vb")
 
 [node name="Counter_solid" parent="ContainerCounterVisualSelected" index="0" instance=ExtResource("4_ax1ep")]
@@ -119,13 +95,7 @@ libraries = {
 "": SubResource("AnimationLibrary_h2ke2")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="ContainerCounterVisualSelected" index="4"]
-tree_root = SubResource("AnimationNodeStateMachine_erh4q")
-anim_player = NodePath("../AnimationPlayer")
-parameters/conditions/close = false
-parameters/conditions/open_close = false
-
-[node name="Black" type="MeshInstance3D" parent="ContainerCounterVisualSelected" index="5"]
+[node name="Black" type="MeshInstance3D" parent="ContainerCounterVisualSelected" index="4"]
 transform = Transform3D(0.683325, 0, 0, 0, 1, 0, 0, 0, 0.512203, 0, 1.268, 0)
 mesh = SubResource("PlaneMesh_ssbmg")
 
