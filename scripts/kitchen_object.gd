@@ -30,3 +30,9 @@ func get_kitchen_object():
 
 func clear_kitchen_object() -> void:
 	kitchen_object = null
+
+static func spawn(kitchen_object_res: KitchenObjectsResource, kitchen_object_parent: Node3D) -> KitchenObject:
+	var new_kitchen_object = kitchen_object_res.scene.instantiate()
+	kitchen_object_parent.add_child(new_kitchen_object)
+	new_kitchen_object.position = Vector3.ZERO
+	return new_kitchen_object

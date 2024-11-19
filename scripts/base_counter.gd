@@ -8,8 +8,11 @@ var kitchen_object: KitchenObject
 @onready var kitchen_object_parent: Node3D = $KitchenObjectParent
 
 # Interact with the counter to either spawn, pick, or drop the object
-func interact(player: Player) -> void:
+func interact(_player: Player) -> void:
 	print("Interact Pressed")
+
+func interact_alternate(_player: Player) -> void:
+	print("interact alternate pressed")
 
 # Pick up the kitchen object from the counter
 func pick_up_kitchen_object(player: Player) -> void:

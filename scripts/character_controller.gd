@@ -17,11 +17,15 @@ var picked_object: KitchenObject = null  # The object the player is currently ho
 func _ready() -> void:
 	# Connect to the interact_pressed signal from the GameInput script
 	GameInput.connect("interact_pressed", Callable(self, "_on_interact_pressed"))
+	GameInput.connect("interact_alternate_pressed", Callable(self, "_on_interact_alternate_pressed"))
 
 func _on_interact_pressed() -> void:
 	if selected_counter != null:
 		selected_counter.interact(self) #interact if there is a Selected Counter
 
+func _on_interact_alternate_pressed() -> void:
+	if selected_counter != null:
+		selected_counter.interact_alternate(self) #interact if there is a Selected Counter
 
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvyvnojaijgwo"]
+
+[ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_sukx0"]
+[ext_resource type="Script" path="res://scripts/cutting_counter.gd" id="2_5bbfw"]
+[ext_resource type="PackedScene" uid="uid://dvjkw11twuo1d" path="res://scenes/SceneVisuals/CountersVisuals/CuttingCounter_Visual.tscn" id="2_l74b5"]
+[ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="4_lja5k"]
+
+[node name="CuttingCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_sukx0")]
+script = ExtResource("2_5bbfw")
+selected_counter_visual = NodePath("ClearCounterVisualsSelected")
+
+[node name="ClearCounterVisuals" parent="." index="0" instance=ExtResource("2_l74b5")]
+
+[node name="ClearCounterVisualsSelected" parent="." index="1" instance=ExtResource("2_l74b5")]
+visible = false
+
+[node name="Counter" parent="ClearCounterVisualsSelected/Kitchen Counter" index="0"]
+surface_material_override/0 = ExtResource("4_lja5k")
+
+[node name="Knife" parent="ClearCounterVisualsSelected" index="2"]
+visible = false
+
+[editable path="ClearCounterVisualsSelected"]
+[editable path="ClearCounterVisualsSelected/Knife"]

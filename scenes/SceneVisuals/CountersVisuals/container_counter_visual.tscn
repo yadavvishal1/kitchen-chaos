@@ -73,6 +73,7 @@ transform = Transform3D(-9.00791e-09, -0.14, 7.85689e-17, 0.14, -9.00791e-09, -6
 texture = ExtResource("4_2cnno")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_h2ke2")
 }

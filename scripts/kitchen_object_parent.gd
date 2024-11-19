@@ -24,3 +24,7 @@ func  get_kitchen_object_parent() -> Node3D:
 	if kitchen_object_parent == null:
 		push_error("Kitchen Object Parent already has a Kitchen Object.")
 	return kitchen_object_parent
+
+func clear_kitchen_object() -> void:
+	if kitchen_object_parent != null:
+		kitchen_object_parent.get_child(0).queue_free()
