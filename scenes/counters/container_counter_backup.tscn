@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqxkpl3kffuce"]
+
+[ext_resource type="PackedScene" uid="uid://cujp26t32rxu0" path="res://scenes/counters/counter_backup.tscn" id="1_3jd67"]
+[ext_resource type="PackedScene" uid="uid://c5a72a38ulq6x" path="res://scenes/SceneVisuals/CountersVisuals/container_counter_visual.tscn" id="2_q3wfn"]
+
+[node name="Container Counter" instance=ExtResource("1_3jd67")]
+
+[node name="ContainerCounterVisual" parent="." index="1" instance=ExtResource("2_q3wfn")]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckpfdqncquc3m"]
+
+[ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_g80g7"]
+[ext_resource type="Script" path="res://scripts/clear_counter.gd" id="2_doalx"]
+[ext_resource type="PackedScene" uid="uid://7u4h0s6nhvcl" path="res://scenes/SceneVisuals/CountersVisuals/clear_counter_visuals.tscn" id="2_uxebv"]
+[ext_resource type="PackedScene" uid="uid://2gwbkon4o6t6" path="res://scenes/SceneVisuals/CountersVisuals/counter_visuals_selected.tscn" id="3_eyd7x"]
+
+[node name="ClearCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_g80g7")]
+script = ExtResource("2_doalx")
+selected_counter_visual = NodePath("CounterVisualsSelected")
+
+[node name="ClearCounterVisuals" parent="." index="0" instance=ExtResource("2_uxebv")]
+
+[node name="CounterVisualsSelected" parent="." index="1" instance=ExtResource("3_eyd7x")]
+visible = false

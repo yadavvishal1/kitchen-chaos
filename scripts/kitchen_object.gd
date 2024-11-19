@@ -1,10 +1,18 @@
 class_name KitchenObject
 extends Node3D
 
+@export var sprite: Sprite3D
+
+var object_name: String
+var icon: Texture2D
+
 var kitchen_object: KitchenObject = null
 
-#signal object_added(kitchen_object: Node)
-#signal object_removed(kitchen_object: Node)
+#func setup(kitchen_object_name: String, object_icon: Texture2D):
+	#self.object_name = kitchen_object_name
+	##self.icon = icon
+	##if icon:
+		##sprite.texture = icon  # Assign the icon if available
 
 # Function to check if the counter has a kitchen object
 func has_kitchen_object() -> bool:

@@ -3,9 +3,9 @@
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_7mef0"]
 [ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://scenes/Player/player.tscn" id="2_ihev2"]
 [ext_resource type="Script" path="res://scripts/fps_info.gd" id="3_vlh2t"]
-[ext_resource type="PackedScene" uid="uid://cujp26t32rxu0" path="res://scenes/counters/counter.tscn" id="4_e43ec"]
-[ext_resource type="Resource" uid="uid://ds6i74361l4tm" path="res://resources/kitchen_objects_resources/tomato_res.tres" id="5_an5v1"]
-[ext_resource type="Resource" uid="uid://b0hpu03x2v6dy" path="res://resources/kitchen_objects_resources/cheese_block_res.tres" id="6_iltjv"]
+[ext_resource type="PackedScene" uid="uid://d2i33e88d6plv" path="res://scenes/counters/container_counter.tscn" id="5_1lsmk"]
+[ext_resource type="Resource" uid="uid://b0hpu03x2v6dy" path="res://resources/kitchen_objects_resources/cheese_block_res.tres" id="6_cx5a1"]
+[ext_resource type="PackedScene" uid="uid://ckpfdqncquc3m" path="res://scenes/counters/clear_counter.tscn" id="7_pb6pn"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
 
@@ -66,14 +66,16 @@ offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 script = ExtResource("3_vlh2t")
 
-[node name="Counter" parent="." instance=ExtResource("4_e43ec")]
-transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0.0296267, 0, -3.60915)
-kitchen_object_res = ExtResource("5_an5v1")
+[node name="ClearCounter" parent="." instance=ExtResource("7_pb6pn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.5)
 
-[node name="Counter2" parent="." instance=ExtResource("4_e43ec")]
-transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 1.62672, 0, -3.60915)
-kitchen_object_res = ExtResource("6_iltjv")
+[node name="ClearCounter2" parent="." instance=ExtResource("7_pb6pn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -3.5)
 
-[node name="Counter3" parent="." instance=ExtResource("4_e43ec")]
-transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, -1.6119, 0, -3.60915)
-kitchen_object_res = ExtResource("5_an5v1")
+[node name="ContainerCounter" parent="." instance=ExtResource("5_1lsmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -3.5)
+kitchen_object_res = ExtResource("6_cx5a1")
+
+[node name="ContainerCounter2" parent="." instance=ExtResource("5_1lsmk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 5)
+kitchen_object_res = ExtResource("6_cx5a1")

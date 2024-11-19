@@ -1,18 +1,7 @@
 class_name KitchenObjectParent
 extends Node
 
-@export var sprite: Sprite3D
-
-var object_name: String
-var icon: Texture2D
-
 var kitchen_object_parent: Node3D = null
-
-#func setup(kitchen_object_name: String, object_icon: Texture2D):
-	#self.object_name = kitchen_object_name
-	##self.icon = icon
-	##if icon:
-		##sprite.texture = icon  # Assign the icon if available
 
 func set_kitchen_object_parent(new_kitchen_object_parent: Node3D) -> void:
 	if new_kitchen_object_parent == null:

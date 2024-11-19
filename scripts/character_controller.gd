@@ -5,7 +5,7 @@ extends CharacterBody3D
 @export var rot_speed: float = 10.0
 
 var is_walking: bool = false
-var selected_counter: Counter
+var selected_counter: BaseCounter
 var picked_object: KitchenObject = null  # The object the player is currently holding
 
 # Add KitchenObjectParent as a property in Player (Composition)
@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 func handle_interactions() -> void:
 	if raycast.is_colliding():
 		var counter = raycast.get_collider()
-		if counter is Counter:
+		if counter is BaseCounter:
 			counter.select()
 			selected_counter = counter
 		else:
@@ -42,7 +42,7 @@ func handle_interactions() -> void:
 # Deselection logic for other counters
 func deselect_counter():
 	for counter in get_tree().get_nodes_in_group("counters"):
-		if counter is Counter:
+		if counter is BaseCounter:
 			if selected_counter != counter:
 				counter.deselect()
 

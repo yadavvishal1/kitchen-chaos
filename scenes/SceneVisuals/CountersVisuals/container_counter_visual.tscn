@@ -1,14 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://d2i33e88d6plv"]
+[gd_scene load_steps=17 format=3 uid="uid://c5a72a38ulq6x"]
 
-[ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_gdfi5"]
-[ext_resource type="Script" path="res://scripts/cotainer_counter.gd" id="2_i1g2a"]
-[ext_resource type="PackedScene" uid="uid://c5a72a38ulq6x" path="res://scenes/SceneVisuals/CountersVisuals/container_counter_visual.tscn" id="2_uolmo"]
-[ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="3_ka05q"]
-[ext_resource type="PackedScene" uid="uid://d1n4fk81o6pyk" path="res://Assets/Meshes/Counter_solid.fbx" id="4_ax1ep"]
-[ext_resource type="Script" path="res://scripts/container_counter_visual.gd" id="4_rp5vb"]
-[ext_resource type="PackedScene" uid="uid://b2yb25b14b0oo" path="res://Assets/Meshes/Counter_hole.fbx" id="6_x27bl"]
-[ext_resource type="PackedScene" uid="uid://c25j4lc8a222e" path="res://Assets/Meshes/Single door.tscn" id="7_6l67l"]
-[ext_resource type="Animation" uid="uid://7fqva4uqgohk" path="res://animations/container_counter_open_close.res" id="9_jijop"]
+[ext_resource type="PackedScene" uid="uid://d1n4fk81o6pyk" path="res://Assets/Meshes/Counter_solid.fbx" id="1_0rd6n"]
+[ext_resource type="Script" path="res://scripts/container_counter_visual.gd" id="1_ks6j2"]
+[ext_resource type="PackedScene" uid="uid://b2yb25b14b0oo" path="res://Assets/Meshes/Counter_hole.fbx" id="2_q3sa4"]
+[ext_resource type="PackedScene" uid="uid://c25j4lc8a222e" path="res://Assets/Meshes/Single door.tscn" id="3_3g8va"]
+[ext_resource type="Texture2D" uid="uid://dmi7al4rol3fk" path="res://Assets/Textures/Icons/CheeseBlock.png" id="4_2cnno"]
+[ext_resource type="Animation" uid="uid://7fqva4uqgohk" path="res://animations/container_counter_open_close.res" id="5_kxvj4"]
 
 [sub_resource type="Animation" id="Animation_kgq20"]
 length = 0.001
@@ -49,7 +46,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h2ke2"]
 _data = {
 "RESET": SubResource("Animation_kgq20"),
-"container_counter_open_close": ExtResource("9_jijop")
+"container_counter_open_close": ExtResource("5_kxvj4")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1rsml"]
@@ -85,52 +82,36 @@ albedo_color = Color(0, 0, 0, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_ssbmg"]
 material = SubResource("StandardMaterial3D_aq6tx")
 
-[node name="ContainerCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_gdfi5")]
-script = ExtResource("2_i1g2a")
-selected_counter_visual = NodePath("ContainerCounterVisualSelected")
+[node name="ContainerCounterVisual" type="Node3D"]
+script = ExtResource("1_ks6j2")
 
-[node name="ContainerCounterVisual" parent="." index="0" instance=ExtResource("2_uolmo")]
-
-[node name="ContainerCounterVisualSelected" type="Node3D" parent="." index="1"]
-transform = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0, 0)
-script = ExtResource("4_rp5vb")
-
-[node name="Counter_solid" parent="ContainerCounterVisualSelected" index="0" instance=ExtResource("4_ax1ep")]
+[node name="Counter_solid" parent="." instance=ExtResource("1_0rd6n")]
 transform = Transform3D(1.65, 0, 0, 0, 1.5, 0, 0, 0, 1.65, 0, 0, 0)
 
-[node name="Counter_003" parent="ContainerCounterVisualSelected/Counter_solid" index="0"]
-surface_material_override/0 = ExtResource("3_ka05q")
-
-[node name="Counter_hole" parent="ContainerCounterVisualSelected" index="1" instance=ExtResource("6_x27bl")]
+[node name="Counter_hole" parent="." instance=ExtResource("2_q3sa4")]
 transform = Transform3D(1.65, 0, 0, 0, -6.55671e-08, 1.65, 0, -1.5, -7.21238e-08, 0, 0.68, 0.63)
 
-[node name="Counter_001" parent="ContainerCounterVisualSelected/Counter_hole" index="0"]
-surface_material_override/0 = ExtResource("3_ka05q")
-
-[node name="Single door" parent="ContainerCounterVisualSelected" index="2" instance=ExtResource("7_6l67l")]
+[node name="Single door" parent="." instance=ExtResource("3_3g8va")]
 transform = Transform3D(-9.29975e-06, 2.159, 0, 9.29975e-06, 2.82922e-11, 1.55, 2.569, 7.81556e-06, -5.61098e-06, 0, 1.294, -0.406)
 rotation_order = 1
 
-[node name="Counter_004" parent="ContainerCounterVisualSelected/Single door" index="0"]
-surface_material_override/0 = ExtResource("3_ka05q")
+[node name="Sprite3D" type="Sprite3D" parent="Single door"]
+transform = Transform3D(-9.00791e-09, -0.14, 7.85689e-17, 0.14, -9.00791e-09, -6.5322e-09, 6.5322e-09, -1.12147e-15, 0.14, 0.164, 0, 0.033)
+texture = ExtResource("4_2cnno")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ContainerCounterVisualSelected" index="3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_h2ke2")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="ContainerCounterVisualSelected" index="4"]
+[node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_erh4q")
 anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/close = false
 parameters/conditions/open_close = false
 
-[node name="Black" type="MeshInstance3D" parent="ContainerCounterVisualSelected" index="5"]
+[node name="Black" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.683325, 0, 0, 0, 1, 0, 0, 0, 0.512203, 0, 1.268, 0)
 mesh = SubResource("PlaneMesh_ssbmg")
 
-[connection signal="player_grabbed_object" from="." to="ContainerCounterVisual" method="_on_container_counter_player_grabbed_object"]
-
-[editable path="ContainerCounterVisualSelected/Counter_solid"]
-[editable path="ContainerCounterVisualSelected/Counter_hole"]
-[editable path="ContainerCounterVisualSelected/Single door"]
+[connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]

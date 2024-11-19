@@ -217,7 +217,7 @@ states/Player_Walk/node = SubResource("AnimationNodeAnimation_xlajj")
 states/Player_Walk/position = Vector2(550, 148)
 states/Start/position = Vector2(222, 148)
 transitions = ["Player_Idle", "Player_Walk", SubResource("AnimationNodeStateMachineTransition_p0nqm"), "Player_Walk", "Player_Idle", SubResource("AnimationNodeStateMachineTransition_7nxmg"), "Start", "Player_Idle", SubResource("AnimationNodeStateMachineTransition_1njrj")]
-graph_offset = Vector2(-217, 21)
+graph_offset = Vector2(-107, 67)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l6str"]
 radius = 0.670296
