@@ -17,22 +17,31 @@ func interact_alternate(_player: Player) -> void:
 # Pick up the kitchen object from the counter
 func pick_up_kitchen_object(player: Player) -> void:
 	if kitchen_object:
-		kitchen_object.reparent(player.kitchen_object_parent)  # Reparent object to the player's slot
-		kitchen_object.position = Vector3.ZERO  # Reset position relative to the player
-		player.picked_object = kitchen_object  # Store the picked object reference
-		print(kitchen_object.get_parent().get_parent().name, ": has kitchen object!", )
-		kitchen_object = null
+		if player.picked_object == null:
+			kitchen_object.reparent(player.kitchen_object_parent)  # Reparent object to the player's slot
+			kitchen_object.position = Vector3.ZERO  # Reset position relative to the player
+			player.picked_object = kitchen_object  # Store the picked object reference
+			print(kitchen_object.get_parent().get_parent().name, ": has kitchen object!", )
+			kitchen_object = null
+		else:
+			print("player is already holding an object")
 	else:
 		print("No kitchen object to pick up from this counter.")
 
 # Drop the object back onto the counter
 func drop_kitchen_object(player: Player) -> void:
-	if player.picked_object != null and !kitchen_object:
+	if player.picked_object != null and kitchen_object == null:
 		var dropped_object = player.picked_object
 		dropped_object.reparent(kitchen_object_parent)
 		dropped_object.position = Vector3.ZERO
 		kitchen_object = dropped_object
 		player.picked_object = null
+
+func spawn(kicthen_object_res: KitchenObjectsResource) -> KitchenObject:
+	var new_kitchen_object = kicthen_object_res.scene.instantiate() # Instantiate the kitchen object
+	kitchen_object_parent.add_child(new_kitchen_object) # First add it to the counter's parent node
+	new_kitchen_object.position = Vector3.ZERO  # Reset position relative to player
+	return new_kitchen_object
 
 func select():
 	selected_counter_visual.visible = true
