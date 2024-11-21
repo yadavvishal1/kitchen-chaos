@@ -1,12 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvyvnojaijgwo"]
+[gd_scene load_steps=10 format=3 uid="uid://dvyvnojaijgwo"]
 
 [ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_sukx0"]
 [ext_resource type="Script" path="res://scripts/cutting_counter.gd" id="2_5bbfw"]
 [ext_resource type="PackedScene" uid="uid://dvjkw11twuo1d" path="res://scenes/SceneVisuals/CountersVisuals/CuttingCounter_Visual.tscn" id="2_l74b5"]
+[ext_resource type="Script" path="res://resources/cutting_recipe_res/cutting_recipe_res.gd" id="3_l2twf"]
+[ext_resource type="Resource" uid="uid://dk56ilwgdfmkw" path="res://resources/kitchen_objects_resources/tomato_slices.tres" id="3_l7t57"]
 [ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="4_lja5k"]
+[ext_resource type="Resource" uid="uid://bjismwnu4sn8f" path="res://resources/cutting_recipe_res/tomato_to_tomato_slices.tres" id="4_puacd"]
+[ext_resource type="Resource" uid="uid://s5xdbqc0y41c" path="res://resources/cutting_recipe_res/cheeseblock_to_cheese_slices.tres" id="5_cxut2"]
+[ext_resource type="Resource" uid="uid://dn858x47u1w0f" path="res://resources/cutting_recipe_res/cabbage_to_cabbage_slices.tres" id="6_jvuhg"]
 
 [node name="CuttingCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_sukx0")]
 script = ExtResource("2_5bbfw")
+cutting_recipe_res_array = Array[ExtResource("3_l2twf")]([ExtResource("4_puacd"), ExtResource("5_cxut2"), ExtResource("6_jvuhg")])
+cut_kicthen_object_res = ExtResource("3_l7t57")
 selected_counter_visual = NodePath("ClearCounterVisualsSelected")
 
 [node name="ClearCounterVisuals" parent="." index="0" instance=ExtResource("2_l74b5")]

@@ -1,6 +1,7 @@
 class_name KitchenObject
 extends Node3D
 
+#@export var kitchen_object_res: KitchenObjectsResource
 @export var sprite: Sprite3D
 
 var object_name: String
