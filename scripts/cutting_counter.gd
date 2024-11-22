@@ -1,7 +1,6 @@
 extends BaseCounter
 
-@export var cutting_recipe_res_array: Array[CuttingRecipeResource]
-@export var cut_kicthen_object_res: KitchenObjectsResource
+@export var cutting_recipe_res_array: Array[CuttingRecipeResource] = []
 
 func interact(player: Player) -> void:
 	print("Interact Pressed")
@@ -14,9 +13,10 @@ func interact(player: Player) -> void:
 
 func interact_alternate(_player: Player) -> void:
 	if kitchen_object:
+		var output_kitchen_object_res = _get_output_for_input(kitchen_object.kitchen_object_res)
 		kitchen_object.queue_free()
 		kitchen_object = null
-		var new_kitchen_object = KitchenObject.spawn(cut_kicthen_object_res, kitchen_object_parent)
+		var new_kitchen_object = KitchenObject.spawn(output_kitchen_object_res, kitchen_object_parent)
 		kitchen_object = new_kitchen_object  # Store the new kitchen object on the player
 
 

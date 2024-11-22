@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://ccap4fndf8be1"]
+[gd_scene load_steps=8 format=4 uid="uid://ccap4fndf8be1"]
 
 [ext_resource type="Script" path="res://scripts/kitchen_object.gd" id="1_dryrc"]
 [ext_resource type="Texture2D" uid="uid://4ntb0hotycqh" path="res://Assets/Meshes/Textures/Cheese_AlbedoTransparency.png" id="1_wlqsl"]
 [ext_resource type="Texture2D" uid="uid://ch45v55mij7im" path="res://Assets/Meshes/Textures/Cheese_Normal.png" id="2_c6jf3"]
+[ext_resource type="Resource" uid="uid://b0hpu03x2v6dy" path="res://resources/kitchen_objects_resources/cheese_block_res.tres" id="2_oweur"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m06ob"]
 resource_name = "Cheese"
@@ -49,6 +50,7 @@ shadow_mesh = SubResource("ArrayMesh_cw2rk")
 
 [node name="CheeseBlock" type="Node3D"]
 script = ExtResource("1_dryrc")
+kitchen_object_res = ExtResource("2_oweur")
 
 [node name="CheeseBlockVisual" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.75, 0, 0, 0, 2.75, 0, 0, 0, 2.75, 0, 0.048, 0)

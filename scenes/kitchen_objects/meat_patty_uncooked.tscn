@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0whg0f6pdj22"]
+[gd_scene load_steps=4 format=3 uid="uid://d0whg0f6pdj22"]
 
 [ext_resource type="Script" path="res://scripts/kitchen_object.gd" id="1_oyin5"]
 [ext_resource type="PackedScene" uid="uid://d2wkxr7hcye3a" path="res://scenes/SceneVisuals/kitchen_objects_visuals/MeatPattyUncooked_Visual.tscn" id="2_kv1c7"]
+[ext_resource type="Resource" uid="uid://p72gnx0nummc" path="res://resources/kitchen_objects_resources/meat_patty_uncooked.tres" id="2_uqafu"]
 
 [node name="MeatPattyUncooked" type="Node3D"]
 script = ExtResource("1_oyin5")
+kitchen_object_res = ExtResource("2_uqafu")
 
 [node name="MeatPattyUncookedVisual" parent="." instance=ExtResource("2_kv1c7")]

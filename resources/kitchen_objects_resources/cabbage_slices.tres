@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="KitchenObjectsResource" load_steps=4 format=3 uid="uid://ddncor0hfiaen"]
+[gd_resource type="Resource" script_class="KitchenObjectsResource" load_steps=3 format=3 uid="uid://ddncor0hfiaen"]
 
 [ext_resource type="Texture2D" uid="uid://8xx1bd5akkok" path="res://Assets/Textures/Icons/CabbageSlices.png" id="1_2ctcq"]
 [ext_resource type="Script" path="res://resources/kitchen_objects_resources/kitchen_objects_res.gd" id="1_klf0t"]
-[ext_resource type="PackedScene" uid="uid://dxu4wlirck7rq" path="res://scenes/kitchen_objects/cabbage_slices.tscn" id="2_n2g44"]
 
 [resource]
 script = ExtResource("1_klf0t")
 object_name = "Cabbage Slices"
-scene = ExtResource("2_n2g44")
+scene = "res://scenes/kitchen_objects/cabbage_slices.tscn"
 icon = ExtResource("1_2ctcq")

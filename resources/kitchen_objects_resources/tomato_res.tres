@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="KitchenObjectsResource" load_steps=4 format=3 uid="uid://ds6i74361l4tm"]
+[gd_resource type="Resource" script_class="KitchenObjectsResource" load_steps=3 format=3 uid="uid://ds6i74361l4tm"]
 
 [ext_resource type="Script" path="res://resources/kitchen_objects_resources/kitchen_objects_res.gd" id="1_1iror"]
 [ext_resource type="Texture2D" uid="uid://blkdiy7jngajc" path="res://Assets/Textures/Icons/Tomato.png" id="1_my3tq"]
-[ext_resource type="PackedScene" uid="uid://dnr5mexo7e3id" path="res://scenes/kitchen_objects/tomato.tscn" id="2_fcyma"]
 
 [resource]
 script = ExtResource("1_1iror")
 object_name = "Tomato"
-scene = ExtResource("2_fcyma")
+scene = "res://scenes/kitchen_objects/tomato.tscn"
 icon = ExtResource("1_my3tq")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://c66ddj8jc7j40"]
+[gd_scene load_steps=8 format=4 uid="uid://c66ddj8jc7j40"]
 
 [ext_resource type="Script" path="res://scripts/kitchen_object.gd" id="1_c85v8"]
 [ext_resource type="Texture2D" uid="uid://dkmc4x1p30s20" path="res://Assets/Meshes/Textures/Lettuce_AlbedoTransparency.png" id="1_unc7n"]
 [ext_resource type="Texture2D" uid="uid://cdwixuaf6xe44" path="res://Assets/Meshes/Textures/Lettuce_Normal.png" id="2_a1qah"]
+[ext_resource type="Resource" uid="uid://8e4ju4ofkbpe" path="res://resources/kitchen_objects_resources/cabbage.tres" id="2_ags6q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvhin"]
 resource_name = "Lettuce"
@@ -49,6 +50,7 @@ shadow_mesh = SubResource("ArrayMesh_abqij")
 
 [node name="Cabbage" type="Node3D"]
 script = ExtResource("1_c85v8")
+kitchen_object_res = ExtResource("2_ags6q")
 
 [node name="CabbageVisual" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.32481, 0.897443, 1.11122, 0, 2.40251, -1.08382, -1.04376, 1.1391, 1.41044, 0, 0, 0)

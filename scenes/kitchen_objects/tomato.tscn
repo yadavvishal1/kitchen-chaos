@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://dnr5mexo7e3id"]
+[gd_scene load_steps=6 format=4 uid="uid://dnr5mexo7e3id"]
 
 [ext_resource type="Material" uid="uid://c2c3wb3ci73p8" path="res://Assets/Materials/Tomato.tres" id="1_1kv4s"]
 [ext_resource type="Script" path="res://scripts/kitchen_object.gd" id="1_6d5oe"]
+[ext_resource type="Resource" uid="uid://ds6i74361l4tm" path="res://resources/kitchen_objects_resources/tomato_res.tres" id="2_thh4w"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cqvvi"]
 _surfaces = [{
@@ -39,6 +40,7 @@ shadow_mesh = SubResource("ArrayMesh_cqvvi")
 
 [node name="Tomato" type="Node3D"]
 script = ExtResource("1_6d5oe")
+kitchen_object_res = ExtResource("2_thh4w")
 
 [node name="TomatoVisual" type="MeshInstance3D" parent="."]
 transform = Transform3D(4.26, 0, 0, 0, 4.26, 0, 0, 0, 4.26, 0, 0, 0)
