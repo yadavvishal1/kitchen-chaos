@@ -1,6 +1,7 @@
 class_name KitchenObject
 extends Node3D
 
+@export var kitchen_object_res: KitchenObjectsResource
 var kitchen_object: KitchenObject = null
 
 # Function to check if the counter has a kitchen object
@@ -20,8 +21,8 @@ func get_kitchen_object():
 func clear_kitchen_object() -> void:
 	kitchen_object = null
 
-static func spawn(kitchen_object_res: KitchenObjectsResource, kitchen_object_parent: Node3D) -> KitchenObject:
-	var new_kitchen_object = kitchen_object_res.get_scene().instantiate()
+static func spawn(kitchen_object_resource: KitchenObjectsResource, kitchen_object_parent: Node3D) -> KitchenObject:
+	var new_kitchen_object = kitchen_object_resource.get_scene().instantiate()
 	kitchen_object_parent.add_child(new_kitchen_object)
 	new_kitchen_object.position = Vector3.ZERO
 	return new_kitchen_object

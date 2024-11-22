@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvyvnojaijgwo"]
+[gd_scene load_steps=9 format=3 uid="uid://dvyvnojaijgwo"]
 
 [ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_sukx0"]
 [ext_resource type="Script" path="res://scripts/cutting_counter.gd" id="2_5bbfw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://bjismwnu4sn8f" path="res://resources/cutting_recipe_res/tomato_to_tomato_slices.tres" id="4_puacd"]
 [ext_resource type="Resource" uid="uid://s5xdbqc0y41c" path="res://resources/cutting_recipe_res/cheeseblock_to_cheese_slices.tres" id="5_cxut2"]
 [ext_resource type="Resource" uid="uid://dn858x47u1w0f" path="res://resources/cutting_recipe_res/cabbage_to_cabbage_slices.tres" id="6_jvuhg"]
+[ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="8_e04xw"]
 
 [node name="CuttingCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_sukx0")]
 script = ExtResource("2_5bbfw")
@@ -16,10 +17,23 @@ selected_counter_visual = NodePath("ClearCounterVisualsSelected")
 [node name="ClearCounterVisuals" parent="." index="0" instance=ExtResource("2_l74b5")]
 
 [node name="ClearCounterVisualsSelected" parent="." index="1" instance=ExtResource("2_l74b5")]
-visible = false
+
+[node name="Counter" parent="ClearCounterVisualsSelected/Kitchen Counter" index="0"]
+surface_material_override/0 = ExtResource("8_e04xw")
+
+[node name="Cube_005" parent="ClearCounterVisualsSelected/Chopping Board" index="0"]
+surface_material_override/0 = ExtResource("8_e04xw")
 
 [node name="Knife" parent="ClearCounterVisualsSelected" index="2"]
+transform = Transform3D(-7.09518e-06, 0, -1.96, 0, 1.96, 0, 1.96, 0, -7.09518e-06, -0.327, 1.284, 0.5)
 visible = false
 
+[node name="Plane_002" parent="ClearCounterVisualsSelected/Knife" index="0"]
+surface_material_override/0 = ExtResource("8_e04xw")
+
+[node name="Sprite3D" parent="ClearCounterVisualsSelected/Knife" index="1"]
+transform = Transform3D(-6.51598e-07, -4.56333e-07, -0.18, 0, -0.18, 4.56333e-07, -0.18, 1.65192e-12, 6.51598e-07, 0.249, 0, -0.21)
+
 [editable path="ClearCounterVisualsSelected"]
+[editable path="ClearCounterVisualsSelected/Chopping Board"]
 [editable path="ClearCounterVisualsSelected/Knife"]
