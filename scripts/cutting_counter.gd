@@ -26,3 +26,5 @@ func _get_output_for_input(input_kitchen_object_res: KitchenObjectsResource) -> 
 			return cutting_recipe_res.output
 
 	return null
+
+#func _has_recipe_with_input()
