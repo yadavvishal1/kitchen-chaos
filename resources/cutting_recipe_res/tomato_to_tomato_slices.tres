@@ -8,3 +8,4 @@
 script = ExtResource("1_imp38")
 input = ExtResource("1_7fwd7")
 output = ExtResource("2_dj744")
+cutting_progress_max = 3

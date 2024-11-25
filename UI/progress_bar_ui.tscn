@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfpsxj0447bxg"]
+
+[ext_resource type="Texture2D" uid="uid://dyyym55yw1dvh" path="res://Assets/Textures/White_1x1.png" id="1_njf1e"]
+[ext_resource type="Script" path="res://scripts/progress_bar_ui.gd" id="2_hauj4"]
+
+[node name="ProgressBarUI" type="TextureProgressBar"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -54.0
+offset_bottom = 505.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.2)
+step = 0.0
+value = 50.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_njf1e")
+texture_progress = ExtResource("1_njf1e")
+tint_under = Color(0.270381, 0.118959, 0.0862252, 1)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(0.94902, 0.694118, 0.141176, 1)
+script = ExtResource("2_hauj4")

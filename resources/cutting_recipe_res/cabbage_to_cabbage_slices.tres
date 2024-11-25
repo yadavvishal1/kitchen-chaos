@@ -8,3 +8,4 @@
 script = ExtResource("1_hpsx5")
 input = ExtResource("1_5t4s6")
 output = ExtResource("2_61ohw")
+cutting_progress_max = 5

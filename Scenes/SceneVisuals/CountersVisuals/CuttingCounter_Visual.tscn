@@ -120,7 +120,7 @@ _data = {
 "cutting_counter_cut": ExtResource("5_vg4ps")
 }
 
-[node name="ClearCounterVisuals" type="Node3D"]
+[node name="CuttingCounterVisual" type="Node3D"]
 
 [node name="Kitchen Counter" type="Node3D" parent="."]
 transform = Transform3D(1.65, 0, 0, 0, 1.5, 0, 0, 0, 1.65, 0, 0, 0)
