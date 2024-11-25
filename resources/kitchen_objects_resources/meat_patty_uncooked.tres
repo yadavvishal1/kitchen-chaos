@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="KitchenObjectsResource" load_steps=3 format=3 uid="uid://p72gnx0nummc"]
 
 [ext_resource type="Texture2D" uid="uid://opqhtko6oc1s" path="res://Assets/Textures/Icons/MeatPattyUncooked.png" id="1_1vqex"]
-[ext_resource type="Script" path="res://resources/kitchen_objects_resources/kitchen_objects_res.gd" id="1_f0w8i"]
+[ext_resource type="Script" path="res://scripts/resources/kitchen_objects_res.gd" id="1_f0w8i"]
 
 [resource]
 script = ExtResource("1_f0w8i")

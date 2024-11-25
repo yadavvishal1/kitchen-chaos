@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="KitchenObjectsResource" load_steps=3 format=3 uid="uid://b0hpu03x2v6dy"]
 
 [ext_resource type="Texture2D" uid="uid://dmi7al4rol3fk" path="res://Assets/Textures/Icons/CheeseBlock.png" id="1_uqoyd"]
-[ext_resource type="Script" path="res://resources/kitchen_objects_resources/kitchen_objects_res.gd" id="3_yuoq2"]
+[ext_resource type="Script" path="res://scripts/resources/kitchen_objects_res.gd" id="3_yuoq2"]
 
 [resource]
 script = ExtResource("3_yuoq2")

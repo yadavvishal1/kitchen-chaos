@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://du4l1kec7n360"]
+
+[ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_lskbi"]
+[ext_resource type="Script" path="res://scripts/counters/trash_counter.gd" id="2_s06vj"]
+[ext_resource type="PackedScene" uid="uid://ddvkh4n6kc2sf" path="res://scenes/SceneVisuals/CountersVisuals/TrashCounter_Visual.tscn" id="3_6uhbe"]
+[ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="4_g561f"]
+
+[node name="TrashCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_lskbi")]
+script = ExtResource("2_s06vj")
+selected_counter_visual = NodePath("Selected")
+
+[node name="Trash bin" parent="." index="0" instance=ExtResource("3_6uhbe")]
+
+[node name="Selected" parent="." index="1" instance=ExtResource("3_6uhbe")]
+visible = false
+
+[node name="trash bin" parent="Selected" index="0"]
+surface_material_override/0 = ExtResource("4_g561f")
+
+[editable path="Selected"]

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="CuttingRecipeResource" load_steps=4 format=3 uid="uid://bjismwnu4sn8f"]
 
 [ext_resource type="Resource" uid="uid://ds6i74361l4tm" path="res://resources/kitchen_objects_resources/tomato_res.tres" id="1_7fwd7"]
-[ext_resource type="Script" path="res://resources/cutting_recipe_res/cutting_recipe_res.gd" id="1_imp38"]
+[ext_resource type="Script" path="res://scripts/resources/cutting_recipe_res.gd" id="1_imp38"]
 [ext_resource type="Resource" uid="uid://dk56ilwgdfmkw" path="res://resources/kitchen_objects_resources/tomato_slices.tres" id="2_dj744"]
 
 [resource]

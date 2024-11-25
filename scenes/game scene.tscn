@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d2bye1vffusog" path="res://scenes/counters/container_counter_meat_patty_uncooked.tscn" id="10_6iktt"]
 [ext_resource type="PackedScene" uid="uid://b6tivgvw62ki8" path="res://scenes/counters/container_counter_bread.tscn" id="10_dcwaa"]
 [ext_resource type="PackedScene" uid="uid://dvyvnojaijgwo" path="res://scenes/counters/cutting_counter.tscn" id="11_k160w"]
+[ext_resource type="PackedScene" uid="uid://du4l1kec7n360" path="res://scenes/counters/trash_counter.tscn" id="12_evmnr"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
 
@@ -40,9 +41,6 @@ adjustment_contrast = 1.15
 adjustment_saturation = 1.25
 adjustment_color_correction = SubResource("GradientTexture1D_ikfqo")
 
-[sub_resource type="Compositor" id="Compositor_6ub2l"]
-compositor_effects = Array[CompositorEffect]([null])
-
 [node name="Game Scene" type="Node3D"]
 
 [node name="Floor" type="CSGMesh3D" parent="."]
@@ -60,7 +58,6 @@ fov = 20.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D"]
 environment = SubResource("Environment_c747p")
-compositor = SubResource("Compositor_6ub2l")
 
 [node name="Player" parent="." instance=ExtResource("2_ihev2")]
 unique_name_in_owner = true
@@ -80,10 +77,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3.5)
 
 [node name="ClearCounter5" parent="Counters" instance=ExtResource("7_pb6pn")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 0, 5)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.5, 0, 5)
+
+[node name="ClearCounter7" parent="Counters" instance=ExtResource("7_pb6pn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3, 0, 5)
+
+[node name="ClearCounter8" parent="Counters" instance=ExtResource("7_pb6pn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 0, 5)
+
+[node name="ClearCounter9" parent="Counters" instance=ExtResource("7_pb6pn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.5, 0, 5)
 
 [node name="ClearCounter6" parent="Counters" instance=ExtResource("7_pb6pn")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, 0, 5)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3, 0, 5)
 
 [node name="ClearCounter4" parent="Counters" instance=ExtResource("7_pb6pn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -3.5)
@@ -95,11 +101,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -3.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -3.5)
 
 [node name="ContainerCounterTomato" parent="Counters" instance=ExtResource("7_h4dog")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1, 0, 5)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0, 5)
 kitchen_object_res = ExtResource("7_qlq6b")
 
 [node name="ContainerCounterCabbage" parent="Counters" instance=ExtResource("9_fr8sx")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.5, 0, 5)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 5)
 
 [node name="ContainerCounterMeatPattyUncooked" parent="Counters" instance=ExtResource("10_6iktt")]
 transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 7, 0, -3.5)
@@ -111,4 +117,7 @@ transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -3, 0, -
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -3.5)
 
 [node name="CuttingCounter2" parent="Counters" instance=ExtResource("11_k160w")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.5, 0, 5)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.5, 0, 5)
+
+[node name="TrashCounter" parent="Counters" instance=ExtResource("12_evmnr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 3.5)
