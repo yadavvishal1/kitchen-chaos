@@ -1,0 +1,56 @@
+[gd_scene load_steps=12 format=3 uid="uid://bvvytnomdilnu"]
+
+[ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_etwqx"]
+[ext_resource type="Script" path="res://scripts/stove_counter.gd" id="2_jk443"]
+[ext_resource type="Script" path="res://scripts/resources/frying_recipe_res.gd" id="3_n01nu"]
+[ext_resource type="PackedScene" uid="uid://dkah4js6xrjt8" path="res://scenes/SceneVisuals/CountersVisuals/StoveCounter_Visual.tscn" id="3_wu8vu"]
+[ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="4_sci5m"]
+[ext_resource type="Resource" uid="uid://c13xxv6prvdiq" path="res://resources/frying_recipe_res/meat_patty_uncooked_to_meat_patty_cooked.tres" id="4_syx7q"]
+[ext_resource type="Script" path="res://scripts/resources/burning_recipe_res.gd" id="5_1jqyr"]
+[ext_resource type="Resource" uid="uid://cu4alynjsffbv" path="res://resources/burning_recipe_res/meat_patty_cooked_to_meat_patty_burned.tres" id="6_q7dgf"]
+[ext_resource type="PackedScene" uid="uid://dfpsxj0447bxg" path="res://scenes/UI/progress_bar_ui.tscn" id="9_cp0wp"]
+[ext_resource type="PackedScene" uid="uid://bryproei4dbsh" path="res://components/progress_handler.tscn" id="10_eslo3"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_hbwqw"]
+viewport_path = NodePath("ProgressBarUI/SubViewport")
+
+[node name="StoveCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_etwqx")]
+script = ExtResource("2_jk443")
+frying_recipe_res_array = Array[ExtResource("3_n01nu")]([ExtResource("4_syx7q")])
+burning_recipe_res_array = Array[ExtResource("5_1jqyr")]([ExtResource("6_q7dgf")])
+selected_counter_visual = NodePath("Selected")
+
+[node name="StoveCounterVisual" parent="." index="0" instance=ExtResource("3_wu8vu")]
+
+[node name="Selected" parent="." index="1" instance=ExtResource("3_wu8vu")]
+visible = false
+
+[node name="Counter" parent="Selected/Kitchen Counter_Wood" index="0"]
+surface_material_override/0 = ExtResource("4_sci5m")
+
+[node name="Cube_004" parent="Selected/Stove" index="0"]
+surface_material_override/0 = ExtResource("4_sci5m")
+
+[node name="KitchenObjectParent" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0542427, 1.456, -0.00235839)
+
+[node name="ProgressBarUI" type="Sprite3D" parent="." index="4"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.5, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_hbwqw")
+
+[node name="SubViewport" type="SubViewport" parent="ProgressBarUI" index="0"]
+transparent_bg = true
+
+[node name="ProgressBarUI" parent="ProgressBarUI/SubViewport" index="0" node_paths=PackedStringArray("has_progress_game_object") instance=ExtResource("9_cp0wp")]
+has_progress_game_object = NodePath("../../..")
+
+[node name="ProgressHandler" parent="." index="5" instance=ExtResource("10_eslo3")]
+
+[connection signal="OnStateChanged" from="." to="StoveCounterVisual" method="_on_stove_counter_on_state_changed"]
+[connection signal="OnprogressChanged" from="." to="ProgressBarUI/SubViewport/ProgressBarUI" method="_on_stove_counter_onprogress_changed"]
+
+[editable path="Selected"]
+[editable path="Selected/Kitchen Counter_Wood"]
+[editable path="Selected/Stove"]
+[editable path="Selected/Frying Pan"]

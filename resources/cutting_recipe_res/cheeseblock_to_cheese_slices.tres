@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="CuttingRecipeResource" load_steps=4 format=3 uid="uid://s5xdbqc0y41c"]
 
-[ext_resource type="Script" path="res://scripts/resources/cutting_recipe_res.gd" id="1_1b5df"]
+[ext_resource type="Script" path="res://scripts/resources/cutting_recipe_res.gd" id="1_gd0ge"]
 [ext_resource type="Resource" uid="uid://b0hpu03x2v6dy" path="res://resources/kitchen_objects_resources/cheese_block_res.tres" id="1_vwok0"]
 [ext_resource type="Resource" uid="uid://bmeana6ucnokf" path="res://resources/kitchen_objects_resources/cheese_slices_res.tres" id="2_h5qey"]
 
 [resource]
-script = ExtResource("1_1b5df")
+script = ExtResource("1_gd0ge")
 input = ExtResource("1_vwok0")
 output = ExtResource("2_h5qey")
-cutting_progress_max = 3
+cutting_progress_max = 3.0

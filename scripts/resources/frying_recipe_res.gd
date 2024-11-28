@@ -1,6 +1,6 @@
-class_name CuttingRecipeResource
+class_name FryingRecipeResource
 extends Resource
 
 @export var input: KitchenObjectsResource
 @export var output: KitchenObjectsResource
-@export var cutting_progress_max: float
+@export var frying_timer_max: float

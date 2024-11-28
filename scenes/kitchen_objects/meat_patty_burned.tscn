@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://ppp677hkh8q5"]
+
+[ext_resource type="Script" path="res://scripts/kitchen_object.gd" id="1_sjmbw"]
+[ext_resource type="Resource" uid="uid://dqqk6djtbws4x" path="res://resources/kitchen_objects_resources/meat_patty_burned.tres" id="2_ji3f7"]
+[ext_resource type="PackedScene" uid="uid://cgy58y27xxvo6" path="res://scenes/SceneVisuals/kitchen_objects_visuals/MeatPattyBurned_Visual.tscn" id="3_i34a8"]
+
+[node name="MeatPattyBurned" type="Node3D"]
+script = ExtResource("1_sjmbw")
+kitchen_object_res = ExtResource("2_ji3f7")
+
+[node name="MeatPattyBurnedVisual" parent="." instance=ExtResource("3_i34a8")]

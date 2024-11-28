@@ -1,33 +1,107 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkah4js6xrjt8"]
+[gd_scene load_steps=16 format=3 uid="uid://dkah4js6xrjt8"]
 
 [ext_resource type="PackedScene" uid="uid://68e2p652k7e6" path="res://Assets/Meshes/Kitchen Counter_Wood.tscn" id="1_q83bi"]
+[ext_resource type="Script" path="res://scripts/counters/stove_counter_visual.gd" id="1_s8cbn"]
 [ext_resource type="PackedScene" uid="uid://dur87s752275j" path="res://Assets/Meshes/Stove Counter.fbx" id="2_styd5"]
 [ext_resource type="PackedScene" uid="uid://bp6mc362c00ok" path="res://Assets/Meshes/Frying Pan.fbx" id="3_4jx3g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dim6j"]
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
-emission = Color(0.75, 0, 0, 1)
-emission_energy_multiplier = 10.0
+emission = Color(0.884283, 0.000267029, 0.000147858, 1)
+emission_energy_multiplier = 15.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_n3ki0"]
 material = SubResource("StandardMaterial3D_dim6j")
 orientation = 1
 
-[node name="StoveCounterVisual" type="Node3D"]
+[sub_resource type="Curve" id="Curve_05250"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 1.4, 0.0, 0, 0]
+point_count = 3
+metadata/_snap_enabled = true
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_o5wr2"]
+curve_y = SubResource("Curve_05250")
+
+[sub_resource type="Curve" id="Curve_i3xwu"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_e4r4d"]
+curve = SubResource("Curve_i3xwu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rh1hm"]
+velocity_pivot = Vector3(0, 1, 0)
+direction = Vector3(0, 1, 0)
+spread = 60.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+directional_velocity_min = 1.99998
+directional_velocity_max = 3.99998
+directional_velocity_curve = SubResource("CurveXYZTexture_o5wr2")
+gravity = Vector3(0, -19.6, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+scale_min = 0.1
+scale_max = 0.25
+scale_curve = SubResource("CurveTexture_e4r4d")
+
+[sub_resource type="Gradient" id="Gradient_i58vp"]
+offsets = PackedFloat32Array(0, 0.734848)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vict3"]
+gradient = SubResource("Gradient_i58vp")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lfe3c"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 4.0
+emission_operator = 1
+emission_texture = SubResource("GradientTexture2D_vict3")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_0hx7b"]
+material = SubResource("StandardMaterial3D_lfe3c")
+
+[node name="StoveCounterVisual" type="Node3D" node_paths=PackedStringArray("stove_on_visual", "sizzling_particles")]
+script = ExtResource("1_s8cbn")
+stove_on_visual = NodePath("StoveOnVisual")
+sizzling_particles = NodePath("SizzlingParticles")
 
 [node name="Kitchen Counter_Wood" parent="." instance=ExtResource("1_q83bi")]
 transform = Transform3D(1.65, 0, 0, 0, 1.5, 0, 0, 0, 1.65, 0, 0, 0)
 
-[node name="Stove Counter" parent="." instance=ExtResource("2_styd5")]
+[node name="Stove" parent="." instance=ExtResource("2_styd5")]
 transform = Transform3D(1.67, 0, 0, 0, 1.67, 0, 0, 0, 1.67, 0.043, 1.431, 0.07)
 
 [node name="Frying Pan" parent="." instance=ExtResource("3_4jx3g")]
 transform = Transform3D(1.37924, 0, 1.44834, 0, 2, 0, -1.44834, 0, 1.37924, 0.048, 1.375, 0)
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="StoveOnVisual" type="Node3D" parent="."]
 transform = Transform3D(0.834, 0, 0, 0, 0.921, 0, 0, 0, 1, 0.047, 1.395, -0.039)
+visible = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StoveOnVisual"]
 transform = Transform3D(1.00357, 0, 0, 0, 1.00357, 0, 0, 0, 1.00357, 0, 0, 0)
 mesh = SubResource("QuadMesh_n3ki0")
+
+[node name="SizzlingParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43, 0)
+visible = false
+amount = 20
+amount_ratio = 0.5
+lifetime = 0.5
+speed_scale = 4.0
+process_material = SubResource("ParticleProcessMaterial_rh1hm")
+draw_pass_1 = SubResource("QuadMesh_0hx7b")

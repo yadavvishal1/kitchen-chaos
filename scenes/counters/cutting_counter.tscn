@@ -1,22 +1,43 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvyvnojaijgwo"]
+[gd_scene load_steps=18 format=3 uid="uid://dvyvnojaijgwo"]
 
 [ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_sukx0"]
 [ext_resource type="Script" path="res://scripts/counters/cutting_counter.gd" id="2_5bbfw"]
 [ext_resource type="PackedScene" uid="uid://dvjkw11twuo1d" path="res://scenes/SceneVisuals/CountersVisuals/CuttingCounter_Visual.tscn" id="2_l74b5"]
-[ext_resource type="Script" path="res://scripts/resources/cutting_recipe_res.gd" id="3_l2twf"]
-[ext_resource type="Resource" uid="uid://bjismwnu4sn8f" path="res://resources/cutting_recipe_res/tomato_to_tomato_slices.tres" id="4_puacd"]
-[ext_resource type="Resource" uid="uid://s5xdbqc0y41c" path="res://resources/cutting_recipe_res/cheeseblock_to_cheese_slices.tres" id="5_cxut2"]
-[ext_resource type="Resource" uid="uid://dn858x47u1w0f" path="res://resources/cutting_recipe_res/cabbage_to_cabbage_slices.tres" id="6_jvuhg"]
-[ext_resource type="Script" path="res://scripts/cuttinng_counter_visual.gd" id="8_4w0dl"]
+[ext_resource type="Script" path="res://scripts/resources/cutting_recipe_res.gd" id="3_1lhoj"]
+[ext_resource type="Resource" uid="uid://ds6i74361l4tm" path="res://resources/kitchen_objects_resources/tomato_res.tres" id="4_vlref"]
+[ext_resource type="Resource" uid="uid://dk56ilwgdfmkw" path="res://resources/kitchen_objects_resources/tomato_slices.tres" id="5_oa277"]
+[ext_resource type="Resource" uid="uid://b0hpu03x2v6dy" path="res://resources/kitchen_objects_resources/cheese_block_res.tres" id="6_wxrqg"]
+[ext_resource type="Resource" uid="uid://bmeana6ucnokf" path="res://resources/kitchen_objects_resources/cheese_slices_res.tres" id="7_p8rrr"]
+[ext_resource type="Script" path="res://scripts/counters/cutting_counter_visual.gd" id="8_4w0dl"]
 [ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="8_e04xw"]
-[ext_resource type="PackedScene" uid="uid://dfpsxj0447bxg" path="res://UI/progress_bar_ui.tscn" id="9_nio7h"]
+[ext_resource type="Resource" uid="uid://8e4ju4ofkbpe" path="res://resources/kitchen_objects_resources/cabbage.tres" id="8_s073y"]
+[ext_resource type="Resource" uid="uid://ddncor0hfiaen" path="res://resources/kitchen_objects_resources/cabbage_slices.tres" id="9_7bgu1"]
+[ext_resource type="PackedScene" uid="uid://dfpsxj0447bxg" path="res://scenes/UI/progress_bar_ui.tscn" id="9_nio7h"]
+
+[sub_resource type="Resource" id="Resource_lxfe4"]
+script = ExtResource("3_1lhoj")
+input = ExtResource("4_vlref")
+output = ExtResource("5_oa277")
+cutting_progress_max = 3.0
+
+[sub_resource type="Resource" id="Resource_5sd0l"]
+script = ExtResource("3_1lhoj")
+input = ExtResource("6_wxrqg")
+output = ExtResource("7_p8rrr")
+cutting_progress_max = 3.0
+
+[sub_resource type="Resource" id="Resource_1qyvq"]
+script = ExtResource("3_1lhoj")
+input = ExtResource("8_s073y")
+output = ExtResource("9_7bgu1")
+cutting_progress_max = 5.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fjylk"]
-viewport_path = NodePath("Sprite3D/SubViewport")
+viewport_path = NodePath("ProgressBarUI/SubViewport")
 
 [node name="CuttingCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_sukx0")]
 script = ExtResource("2_5bbfw")
-cutting_recipe_res_array = Array[ExtResource("3_l2twf")]([ExtResource("5_cxut2"), ExtResource("6_jvuhg"), ExtResource("4_puacd")])
+cutting_recipe_res_array = Array[ExtResource("3_1lhoj")]([SubResource("Resource_lxfe4"), SubResource("Resource_5sd0l"), SubResource("Resource_1qyvq")])
 selected_counter_visual = NodePath("ClearCounterVisualsSelected")
 
 [node name="ClearCounterVisuals" parent="." index="0" instance=ExtResource("2_l74b5")]
@@ -32,23 +53,27 @@ surface_material_override/0 = ExtResource("8_e04xw")
 surface_material_override/0 = ExtResource("8_e04xw")
 
 [node name="Knife" parent="ClearCounterVisualsSelected" index="2"]
+transform = Transform3D(-7.09518e-06, 0, -1.96, 0, 1.96, 0, 1.96, 0, -7.09518e-06, -0.327, 1.284, 0.5)
 visible = false
 
 [node name="Plane_002" parent="ClearCounterVisualsSelected/Knife" index="0"]
 surface_material_override/0 = ExtResource("8_e04xw")
 
-[node name="Sprite3D" type="Sprite3D" parent="." index="4"]
+[node name="Sprite3D" parent="ClearCounterVisualsSelected/Knife" index="1"]
+transform = Transform3D(-6.51598e-07, -4.56333e-07, -0.18, 0, -0.18, 4.56333e-07, -0.18, 1.65192e-12, 6.51598e-07, 0.249, 0, -0.21)
+
+[node name="ProgressBarUI" type="Sprite3D" parent="." index="4"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.5, 0)
 billboard = 2
 texture = SubResource("ViewportTexture_fjylk")
 
-[node name="SubViewport" type="SubViewport" parent="Sprite3D" index="0"]
+[node name="SubViewport" type="SubViewport" parent="ProgressBarUI" index="0"]
 transparent_bg = true
 
-[node name="ProgressBarUI" parent="Sprite3D/SubViewport" index="0" instance=ExtResource("9_nio7h")]
+[node name="ProgressBarUI" parent="ProgressBarUI/SubViewport" index="0" instance=ExtResource("9_nio7h")]
 
 [connection signal="OnCut" from="." to="ClearCounterVisuals" method="_on_cutting_counter_on_cut"]
-[connection signal="OnprogressChanged" from="." to="Sprite3D/SubViewport/ProgressBarUI" method="_on_cutting_counter_onprogress_changed"]
+[connection signal="OnprogressChanged" from="." to="ProgressBarUI/SubViewport/ProgressBarUI" method="_on_cutting_counter_onprogress_changed"]
 
 [editable path="ClearCounterVisualsSelected"]
 [editable path="ClearCounterVisualsSelected/Chopping Board"]

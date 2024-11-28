@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://b0hpu03x2v6dy" path="res://resources/kitchen_objects_resources/cheese_block_res.tres" id="3_eoapi"]
 [ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="3_ka05q"]
 [ext_resource type="PackedScene" uid="uid://d1n4fk81o6pyk" path="res://Assets/Meshes/Counter_solid.fbx" id="4_ax1ep"]
-[ext_resource type="Script" path="res://scripts/container_counter_visual.gd" id="4_rp5vb"]
+[ext_resource type="Script" path="res://scripts/counters/container_counter_visual.gd" id="4_rp5vb"]
 [ext_resource type="PackedScene" uid="uid://b2yb25b14b0oo" path="res://Assets/Meshes/Counter_hole.fbx" id="6_x27bl"]
 [ext_resource type="PackedScene" uid="uid://c25j4lc8a222e" path="res://Assets/Meshes/Single door.tscn" id="7_6l67l"]
 [ext_resource type="Animation" uid="uid://7fqva4uqgohk" path="res://animations/container_counter_open_close.res" id="9_jijop"]

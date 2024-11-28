@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://sdk0i6183yoi"]
+[gd_scene load_steps=4 format=3 uid="uid://sdk0i6183yoi"]
 
 [ext_resource type="Script" path="res://scripts/kitchen_object.gd" id="1_oaunv"]
 [ext_resource type="PackedScene" uid="uid://djrcnfn3nalo0" path="res://scenes/SceneVisuals/kitchen_objects_visuals/Bread_Visual.tscn" id="2_sc6qa"]
+[ext_resource type="Resource" uid="uid://jkx23srcilaj" path="res://resources/kitchen_objects_resources/bread.tres" id="2_schyh"]
 
 [node name="Bread" type="Node3D"]
 script = ExtResource("1_oaunv")
+kitchen_object_res = ExtResource("2_schyh")
 
 [node name="BreadVisual" parent="." instance=ExtResource("2_sc6qa")]

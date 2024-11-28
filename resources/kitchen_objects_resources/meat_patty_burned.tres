@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="KitchenObjectsResource" load_steps=3 format=3 uid="uid://dqqk6djtbws4x"]
+
+[ext_resource type="Texture2D" uid="uid://dh4bdcspe4msm" path="res://Assets/Textures/Icons/MeatPattyBurned.png" id="1_ksymi"]
+[ext_resource type="Script" path="res://scripts/resources/kitchen_objects_res.gd" id="2_udbum"]
+
+[resource]
+script = ExtResource("2_udbum")
+object_name = "Meat Patty Burned"
+scene = "res://scenes/kitchen_objects/meat_patty_burned.tscn"
+icon = ExtResource("1_ksymi")
