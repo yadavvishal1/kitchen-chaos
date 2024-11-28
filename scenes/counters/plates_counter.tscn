@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcwtp8o7eiw1"]
+
+[ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_yux1d"]
+[ext_resource type="Script" path="res://scripts/counters/plates_counter.gd" id="2_0dfdw"]
+[ext_resource type="PackedScene" uid="uid://5fo05txw27uj" path="res://scenes/SceneVisuals/CountersVisuals/PlatesCounter_Visual.tscn" id="2_vm4uw"]
+[ext_resource type="Resource" uid="uid://dgt01xdop1ycw" path="res://resources/kitchen_objects_resources/plate.tres" id="3_iq1sa"]
+[ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="3_whm86"]
+[ext_resource type="Script" path="res://scripts/counters/plates_counter_visual.gd" id="5_pumuw"]
+[ext_resource type="PackedScene" uid="uid://cqq14k78x8aoi" path="res://scenes/SceneVisuals/kitchen_objects_visuals/Plate_Visual.tscn" id="6_8fa5p"]
+
+[node name="PlatesCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_yux1d")]
+script = ExtResource("2_0dfdw")
+plate_kitchen_object_res = ExtResource("3_iq1sa")
+selected_counter_visual = NodePath("Selected")
+
+[node name="PlatesCounterVisual" parent="." index="0" node_paths=PackedStringArray("kitchen_object_parent") instance=ExtResource("2_vm4uw")]
+script = ExtResource("5_pumuw")
+kitchen_object_parent = NodePath("../KitchenObjectParent")
+plate_visual_scene = ExtResource("6_8fa5p")
+
+[node name="Selected" parent="." index="1" instance=ExtResource("2_vm4uw")]
+visible = false
+
+[node name="Counter" parent="Selected/Kitchen Counter_Wood" index="0"]
+surface_material_override/0 = ExtResource("3_whm86")
+
+[connection signal="OnPlateSpawned" from="." to="PlatesCounterVisual" method="_on_plate_spawned"]
+[connection signal="OnplateRemoved" from="." to="PlatesCounterVisual" method="_on_plates_counter_onplate_removed"]
+
+[editable path="Selected"]
+[editable path="Selected/Kitchen Counter_Wood"]

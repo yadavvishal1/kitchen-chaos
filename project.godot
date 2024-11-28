@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameInput="*res://scripts/game_input.gd"
+Utils="*res://scripts/utils.gd"
 
 [display]
 
