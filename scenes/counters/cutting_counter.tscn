@@ -46,9 +46,6 @@ script = ExtResource("8_4w0dl")
 [node name="ClearCounterVisualsSelected" parent="." index="1" instance=ExtResource("2_l74b5")]
 visible = false
 
-[node name="Counter" parent="ClearCounterVisualsSelected/Kitchen Counter" index="0"]
-surface_material_override/0 = ExtResource("8_e04xw")
-
 [node name="Cube_005" parent="ClearCounterVisualsSelected/Chopping Board" index="0"]
 surface_material_override/0 = ExtResource("8_e04xw")
 

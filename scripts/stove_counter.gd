@@ -71,10 +71,13 @@ func interact(player: Player) -> void:
 	else:
 		if player.picked_object:
 			print("Player is Carrying Something")
+
 		else:
 			pick_up_kitchen_object(player)
 			state = State.Idle
 			OnStateChanged.emit(state)
+			var normalized_progress = 0.0
+			OnprogressChanged.emit(normalized_progress)  # Emit signal with progress
 
 func _get_output_for_input(input_kitchen_object_res: KitchenObjectsResource) -> KitchenObjectsResource:
 	var frying_recipe_res: FryingRecipeResource = _get_frying_recipe_res_with_input(input_kitchen_object_res)
