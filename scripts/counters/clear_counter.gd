@@ -1,33 +1,25 @@
 extends BaseCounter
 
+# Assuming kitchen_object is a reference to the object on the counter
+# Assuming player.picked_object is the object the player is currently holding
+
 func interact(player: Player) -> void:
 	print("Interact Pressed")
-
-	# Case 1: The counter is empty (no kitchen object)
-	if kitchen_object == null:
-		if player.picked_object == null:
-			pass  # Player is not carrying anything, so nothing happens
-		else:
-			drop_kitchen_object(player)
-
-# Case 2: The counter has a kitchen object
-	else:
-		if player.picked_object == null:
-			pick_up_kitchen_object(player)
-
-		elif kitchen_object == null:
-			Utils.set_parent(player.picked_object, self)
-			#player.picked_object.reparent(self.get_node("KitchenObjectParent"))
-			kitchen_object.global_position = kitchen_object.get_parent().global_position
-			player.picked_object = null
-		else:
-			# Player is carrying something, check if it's the correct Plate
-			if player.picked_object is PlateKitchenObject:
-				kitchen_object.reparent(player.picked_object.get_node("KitchenObjectSlot"))
-				kitchen_object.global_position = kitchen_object.get_parent().global_position
-				var plate_kitchen_object = player.picked_object as PlateKitchenObject
-				plate_kitchen_object.add_ingredient(kitchen_object.kitchen_object_res)
-				print("Player is holding a Plate")
-
+	
+	if kitchen_object:  # Check if there is a kitchen object on the counter
+		if player.picked_object != null:  # Player is carrying something
+			if player.picked_object is PlateKitchenObject:  # If the player is holding a Plate
+				var plate_kitchen_object: PlateKitchenObject = player.picked_object as PlateKitchenObject
+				if plate_kitchen_object.try_add_ingredient(kitchen_object.kitchen_object_res):
+					kitchen_object.queue_free()
 			else:
-				pass # Player is carrying something else, do nothing or handle other cases
+				# Handle other objects the player might be carrying
+				drop_kitchen_object(player)
+		else:
+			print("Player is not carrying anything")
+			# Handle logic for when the player is not carrying anything (not defined in your C# snippet)
+	else:
+		if player.picked_object != null:  # Player is carrying something and the counter has no kitchen object
+			drop_kitchen_object(player)
+		else:
+			print("Player not carrying anything, and counter is empty")

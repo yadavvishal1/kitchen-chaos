@@ -9,6 +9,3 @@ script = ExtResource("1_df263")
 kitchen_object_res = ExtResource("2_gyx6m")
 
 [node name="PlateVisual" parent="." instance=ExtResource("3_2gxud")]
-
-[node name="KitchenObjectSlot" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.035282, 0)
