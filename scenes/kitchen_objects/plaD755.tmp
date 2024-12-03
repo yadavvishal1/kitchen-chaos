@@ -1,0 +1,37 @@
+[gd_scene load_steps=12 format=3 uid="uid://br2245wit7bwo"]
+
+[ext_resource type="Script" path="res://scripts/plate_kicthen_object.gd" id="1_df263"]
+[ext_resource type="Resource" uid="uid://dgt01xdop1ycw" path="res://resources/kitchen_objects_resources/plate.tres" id="2_gyx6m"]
+[ext_resource type="PackedScene" uid="uid://cqq14k78x8aoi" path="res://scenes/SceneVisuals/kitchen_objects_visuals/Plate_Visual.tscn" id="3_2gxud"]
+[ext_resource type="Resource" uid="uid://jkx23srcilaj" path="res://resources/kitchen_objects_resources/bread.tres" id="3_kbuds"]
+[ext_resource type="Resource" uid="uid://ddncor0hfiaen" path="res://resources/kitchen_objects_resources/cabbage_slices.tres" id="4_dtfn7"]
+[ext_resource type="Resource" uid="uid://bmeana6ucnokf" path="res://resources/kitchen_objects_resources/cheese_slices_res.tres" id="5_nba8q"]
+[ext_resource type="Resource" uid="uid://dqqk6djtbws4x" path="res://resources/kitchen_objects_resources/meat_patty_burned.tres" id="6_t627c"]
+[ext_resource type="Resource" uid="uid://30pu7m186ddb" path="res://resources/kitchen_objects_resources/meat_patty_cooked.tres" id="7_gi8ry"]
+[ext_resource type="Resource" uid="uid://dk56ilwgdfmkw" path="res://resources/kitchen_objects_resources/tomato_slices.tres" id="8_6dqmq"]
+[ext_resource type="PackedScene" uid="uid://botd0krp5h4w" path="res://scenes/SceneVisuals/plate_complete_visual.tscn" id="11_vqvnj"]
+
+[sub_resource type="GDScript" id="GDScript_o7m8g"]
+script/source = "class_name KitchenObjectsResource
+extends Resource
+
+@export var object_name: String
+@export_file(\"*.tscn\") var scene
+@export var icon: Texture2D
+
+# You can add a function to get the PackedScene when needed
+func get_scene() -> PackedScene:
+	return load(scene) as PackedScene
+"
+
+[node name="Plate" type="Node3D"]
+script = ExtResource("1_df263")
+valid_kitchen_object_res_array = Array[SubResource("GDScript_o7m8g")]([ExtResource("3_kbuds"), ExtResource("4_dtfn7"), ExtResource("5_nba8q"), ExtResource("6_t627c"), ExtResource("7_gi8ry"), ExtResource("8_6dqmq")])
+kitchen_object_res = ExtResource("2_gyx6m")
+
+[node name="PlateVisual" parent="." instance=ExtResource("3_2gxud")]
+
+[node name="PlateCompleteVisual" parent="." node_paths=PackedStringArray("plate_kitchen_object") instance=ExtResource("11_vqvnj")]
+plate_kitchen_object = NodePath("..")
+
+[connection signal="OnIngredientAdded" from="." to="PlateCompleteVisual" method="_on_plate_on_ingredient_added"]

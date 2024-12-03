@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="KitchenObjectResKitchenObject" load_steps=3 format=3 uid="uid://clm4wgbbb65dt"]
+
+[ext_resource type="Resource" uid="uid://jkx23srcilaj" path="res://resources/kitchen_objects_resources/bread.tres" id="1_i36mp"]
+[ext_resource type="Script" path="res://scripts/resources/kitchen_object_res_kitchen_object.gd" id="1_p1b6d"]
+
+[resource]
+script = ExtResource("1_p1b6d")
+kitchen_object = NodePath("Bread")
+kitchen_object_res = ExtResource("1_i36mp")

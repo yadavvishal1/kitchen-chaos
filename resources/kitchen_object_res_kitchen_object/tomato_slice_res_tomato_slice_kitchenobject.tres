@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="KitchenObjectResKitchenObject" load_steps=3 format=3 uid="uid://b7fhijthbu512"]
+
+[ext_resource type="Resource" uid="uid://dk56ilwgdfmkw" path="res://resources/kitchen_objects_resources/tomato_slices.tres" id="1_f8xll"]
+[ext_resource type="Script" path="res://scripts/resources/kitchen_object_res_kitchen_object.gd" id="1_t7kle"]
+
+[resource]
+script = ExtResource("1_t7kle")
+kitchen_object = NodePath("TomatoSlices")
+kitchen_object_res = ExtResource("1_f8xll")
