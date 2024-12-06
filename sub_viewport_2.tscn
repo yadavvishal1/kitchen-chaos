@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs2fcoruc57ii"]
+
+[ext_resource type="Script" path="res://scripts/ui/plate_icon_ui.gd" id="1_pgabu"]
+[ext_resource type="PackedScene" uid="uid://bl1v2if06h0dw" path="res://scenes/UI/plate/icon_template.tscn" id="2_6141o"]
+
+[node name="SubViewport2" type="SubViewport"]
+transparent_bg = true
+size = Vector2i(1000, 1000)
+
+[node name="Grid" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="GridContainer" parent="Grid" node_paths=PackedStringArray("plate_kicthen_object")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -388.0
+offset_top = -388.0
+offset_right = 388.0
+offset_bottom = 388.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
+columns = 3
+script = ExtResource("1_pgabu")
+plate_kicthen_object = NodePath("")
+icon_template = ExtResource("2_6141o")
+
+[node name="IconTemplate" parent="Grid/Container" instance=ExtResource("2_6141o")]
+layout_mode = 2
+
+[node name="IconTemplate2" parent="Grid/Container" instance=ExtResource("2_6141o")]
+layout_mode = 2
+
+[node name="IconTemplate3" parent="Grid/Container" instance=ExtResource("2_6141o")]
+layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://br2245wit7bwo"]
+[gd_scene load_steps=22 format=3 uid="uid://br2245wit7bwo"]
 
 [ext_resource type="Script" path="res://scripts/plate_kicthen_object.gd" id="1_df263"]
 [ext_resource type="Resource" uid="uid://dgt01xdop1ycw" path="res://resources/kitchen_objects_resources/plate.tres" id="2_gyx6m"]
@@ -18,6 +18,11 @@
 [ext_resource type="Resource" uid="uid://d1c7xmcirqoko" path="res://resources/kitchen_object_res_kitchen_object/cheese_slice_res_to_cheese_slice.tres" id="16_nkxam"]
 [ext_resource type="Resource" uid="uid://ik32yhfyyqkr" path="res://resources/kitchen_object_res_kitchen_object/meat_patty_cooked_res_to_meat_patty_cooked.tres" id="17_u2o0d"]
 [ext_resource type="Resource" uid="uid://b0pghbj6toylf" path="res://resources/kitchen_object_res_kitchen_object/meat_patty_burned_res_to_meat_patty_burned.tres" id="18_hxwr8"]
+[ext_resource type="Script" path="res://scripts/ui/plate_icon_ui.gd" id="19_c8528"]
+[ext_resource type="PackedScene" uid="uid://bl1v2if06h0dw" path="res://scenes/UI/plate/icon_template.tscn" id="20_uy6gv"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5fvvg"]
+viewport_path = NodePath("Sprite3D/SubViewport")
 
 [node name="Plate" type="Node3D"]
 script = ExtResource("1_df263")
@@ -30,4 +35,39 @@ kitchen_object_res = ExtResource("2_gyx6m")
 kitchen_object_res_kitchen_object_list = Array[ExtResource("12_7qs2k")]([ExtResource("13_ngml2"), ExtResource("14_0lo2y"), ExtResource("15_m7e70"), ExtResource("16_nkxam"), ExtResource("17_u2o0d"), ExtResource("18_hxwr8")])
 plate_kitchen_object = NodePath("..")
 
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.16, 0, 0, 0, 0.16, 0, 0, 0, 0.16, 0, 1, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_5fvvg")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+transparent_bg = true
+size = Vector2i(1000, 1000)
+
+[node name="Grid" type="Control" parent="Sprite3D/SubViewport"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = -500.0
+offset_bottom = -500.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="GridContainer" parent="Sprite3D/SubViewport/Grid" node_paths=PackedStringArray("plate_kicthen_object")]
+layout_mode = 0
+offset_right = 816.0
+offset_bottom = 492.0
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
+columns = 3
+script = ExtResource("19_c8528")
+plate_kicthen_object = NodePath("../../../..")
+icon_template = ExtResource("20_uy6gv")
+
 [connection signal="OnIngredientAdded" from="." to="PlateCompleteVisual" method="on_ingredient_added"]
+[connection signal="OnIngredientAdded" from="." to="Sprite3D/SubViewport/Grid/Container" method="on_ingredient_added"]

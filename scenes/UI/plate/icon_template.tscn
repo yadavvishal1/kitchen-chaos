@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl1v2if06h0dw"]
+
+[ext_resource type="Texture2D" uid="uid://ccuvrpsvk27hg" path="res://Assets/Textures/Icons/Bread.png" id="1_jshn0"]
+[ext_resource type="Script" path="res://scripts/ui/plate_icon_single_ui.gd" id="1_vj0or"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pvawe"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[node name="IconTemplate" type="PanelContainer" node_paths=PackedStringArray("texture_rect")]
+custom_minimum_size = Vector2(256, 256)
+offset_right = 256.0
+offset_bottom = 256.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pvawe")
+script = ExtResource("1_vj0or")
+texture_rect = NodePath("Icon")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_jshn0")
+stretch_mode = 3

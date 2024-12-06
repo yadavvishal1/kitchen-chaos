@@ -14,3 +14,6 @@ func try_add_ingredient(_kitchen_object_res: KitchenObjectsResource) -> bool:
 		kitchen_object_res_array.append(_kitchen_object_res)
 		OnIngredientAdded.emit(_kitchen_object_res)
 		return true
+
+func get_kitchen_object_res_array() -> Array[KitchenObjectsResource]:
+	return kitchen_object_res_array
