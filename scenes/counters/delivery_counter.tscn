@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://5c4quy5os7pp"]
+
+[ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_pdavd"]
+[ext_resource type="Script" path="res://scripts/counters/delivery_counter.gd" id="2_74h00"]
+[ext_resource type="PackedScene" uid="uid://b3ahmp5ivj006" path="res://scenes/SceneVisuals/CountersVisuals/DeliveryCounter_Visual.tscn" id="2_gg0qr"]
+[ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="3_okx0v"]
+[ext_resource type="Shader" uid="uid://4jvadxpuqux8" path="res://shaders/moving_visual_shader.tres" id="5_jpxxh"]
+[ext_resource type="Texture2D" uid="uid://dnue3dpkypt41" path="res://Assets/Textures/Arrow.png" id="6_tw6mu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s5tn0"]
+render_priority = 0
+shader = ExtResource("5_jpxxh")
+shader_parameter/Vector2Parameter = Vector2(-1, 0)
+shader_parameter/Texture2DParameter = ExtResource("6_tw6mu")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8oi7l"]
+material = SubResource("ShaderMaterial_s5tn0")
+size = Vector2(1, 1)
+
+[node name="DeliveryCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_pdavd")]
+script = ExtResource("2_74h00")
+selected_counter_visual = NodePath("Selected")
+
+[node name="DeliveryCounterVisual" parent="." index="0" instance=ExtResource("2_gg0qr")]
+
+[node name="Selected" parent="." index="1" instance=ExtResource("2_gg0qr")]
+visible = false
+
+[node name="Counter" parent="Selected/Kitchen Counter" index="0"]
+surface_material_override/0 = ExtResource("3_okx0v")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.26188, 0)
+mesh = SubResource("PlaneMesh_8oi7l")
+skeleton = NodePath("../KitchenObjectParent")
+
+[editable path="Selected"]
+[editable path="Selected/Kitchen Counter"]
