@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RecipeRes" load_steps=8 format=3 uid="uid://tfqe80v4qfa6"]
+
+[ext_resource type="Script" path="res://scripts/resources/kitchen_objects_res.gd" id="1_13enj"]
+[ext_resource type="Resource" uid="uid://30pu7m186ddb" path="res://resources/kitchen_objects_resources/meat_patty_cooked.tres" id="2_x0h7r"]
+[ext_resource type="Resource" uid="uid://jkx23srcilaj" path="res://resources/kitchen_objects_resources/bread.tres" id="3_vwc4l"]
+[ext_resource type="Resource" uid="uid://bmeana6ucnokf" path="res://resources/kitchen_objects_resources/cheese_slices_res.tres" id="4_dtpoh"]
+[ext_resource type="Script" path="res://scripts/resources/recipe_res.gd" id="5_hi5ay"]
+[ext_resource type="Resource" uid="uid://dk56ilwgdfmkw" path="res://resources/kitchen_objects_resources/tomato_slices.tres" id="5_pdrpj"]
+[ext_resource type="Resource" uid="uid://ddncor0hfiaen" path="res://resources/kitchen_objects_resources/cabbage_slices.tres" id="6_0h88f"]
+
+[resource]
+script = ExtResource("5_hi5ay")
+kitchen_object_res_list = Array[ExtResource("1_13enj")]([ExtResource("2_x0h7r"), ExtResource("3_vwc4l"), ExtResource("4_dtpoh"), ExtResource("5_pdrpj"), ExtResource("6_0h88f")])
+recipe_name = "MEGA Burger"

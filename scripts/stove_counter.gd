@@ -69,7 +69,7 @@ func interact(player: Player) -> void:
 				OnprogressChanged.emit(normalized_progress)  # Emit signal with progress
 
 	else:
-		if player.picked_object:
+		if player.picked_object != null:
 			if player.picked_object is PlateKitchenObject:  # If the player is holding a Plate
 				var plate_kitchen_object: PlateKitchenObject = player.picked_object as PlateKitchenObject
 				if plate_kitchen_object.try_add_ingredient(kitchen_object.kitchen_object_res):

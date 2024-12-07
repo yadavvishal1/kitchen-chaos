@@ -13,7 +13,6 @@ func update_visual() -> void:
 		if child == icon_template: continue
 		child.queue_free()
 	var kitchen_object_res_array = plate_kicthen_object.get_kitchen_object_res_array()
-	print("Array size: ", kitchen_object_res_array.size())
 	for kitchen_object_res in kitchen_object_res_array:
 		var icon_template_node = icon_template.instantiate()
 		icon_template_node.set_kitchen_object_res(kitchen_object_res)

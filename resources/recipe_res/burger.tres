@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RecipeRes" load_steps=5 format=3 uid="uid://dewhdb7d71h4l"]
+
+[ext_resource type="Script" path="res://scripts/resources/kitchen_objects_res.gd" id="1_ujitt"]
+[ext_resource type="Script" path="res://scripts/resources/recipe_res.gd" id="1_vyu48"]
+[ext_resource type="Resource" uid="uid://30pu7m186ddb" path="res://resources/kitchen_objects_resources/meat_patty_cooked.tres" id="2_5gh23"]
+[ext_resource type="Resource" uid="uid://jkx23srcilaj" path="res://resources/kitchen_objects_resources/bread.tres" id="3_c1kfg"]
+
+[resource]
+script = ExtResource("1_vyu48")
+kitchen_object_res_list = Array[ExtResource("1_ujitt")]([ExtResource("2_5gh23"), ExtResource("3_c1kfg")])
+recipe_name = "Burger"

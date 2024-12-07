@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RecipeRes" load_steps=6 format=3 uid="uid://bmvefsy682xuv"]
+
+[ext_resource type="Script" path="res://scripts/resources/kitchen_objects_res.gd" id="1_qqybe"]
+[ext_resource type="Resource" uid="uid://30pu7m186ddb" path="res://resources/kitchen_objects_resources/meat_patty_cooked.tres" id="2_nsl3y"]
+[ext_resource type="Resource" uid="uid://jkx23srcilaj" path="res://resources/kitchen_objects_resources/bread.tres" id="3_bd2yo"]
+[ext_resource type="Resource" uid="uid://bmeana6ucnokf" path="res://resources/kitchen_objects_resources/cheese_slices_res.tres" id="4_c8vpw"]
+[ext_resource type="Script" path="res://scripts/resources/recipe_res.gd" id="4_nnnlh"]
+
+[resource]
+script = ExtResource("4_nnnlh")
+kitchen_object_res_list = Array[ExtResource("1_qqybe")]([ExtResource("2_nsl3y"), ExtResource("3_bd2yo"), ExtResource("4_c8vpw")])
+recipe_name = "Cheese Burger"
