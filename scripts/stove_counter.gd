@@ -70,7 +70,7 @@ func interact(player: Player) -> void:
 
 	else:
 		if player.picked_object:
-			if player.picked_objeact is PlateKitchenObject:  # If the player is holding a Plate
+			if player.picked_object is PlateKitchenObject:  # If the player is holding a Plate
 				var plate_kitchen_object: PlateKitchenObject = player.picked_object as PlateKitchenObject
 				if plate_kitchen_object.try_add_ingredient(kitchen_object.kitchen_object_res):
 					kitchen_object.queue_free()

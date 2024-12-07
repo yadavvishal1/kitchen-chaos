@@ -8,8 +8,8 @@ signal OnCut
 var _cutting_progress:int = 0
 
 func interact(player: Player) -> void:
-	if !kitchen_object:
-		if player.picked_object:
+	if kitchen_object ==  null:
+		if player.picked_object != null:
 			if _has_recipe_with_input(player.picked_object.kitchen_object_res):
 				drop_kitchen_object(player)
 				_cutting_progress = 0  # Reset progress for the new object
@@ -26,8 +26,12 @@ func interact(player: Player) -> void:
 				if plate_kitchen_object.try_add_ingredient(kitchen_object.kitchen_object_res):
 					kitchen_object.queue_free()
 					kitchen_object = null
+					var normalized_progress = 0.0
+					OnprogressChanged.emit(normalized_progress)  # Emit signal with progress
 		else:
 			pick_up_kitchen_object(player)
+			var normalized_progress = 0.0
+			OnprogressChanged.emit(normalized_progress)  # Emit signal with progress
 
 
 func interact_alternate(_player: Player) -> void:
