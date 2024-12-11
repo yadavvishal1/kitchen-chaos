@@ -69,6 +69,3 @@ func handle_movement(delta: float) -> void:
 
 	# Call move_and_slide without any arguments
 	move_and_slide()
-
-func player_has_object() -> bool:
-	return picked_object != null

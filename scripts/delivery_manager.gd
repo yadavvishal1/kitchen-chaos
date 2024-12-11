@@ -2,6 +2,8 @@ class_name DeliveryManager extends Node
 
 signal OnRecipeSpawned
 signal OnRecipeCompleted
+signal OnRecipeSuccess
+signal OnRecipeFailed
 
 @export var _recipe_list_res: RecipeListRes
 var waiting_recipe_res_list: Array[RecipeRes] = []
@@ -37,7 +39,10 @@ func deliver_recipe(plate_kitchen_object: PlateKitchenObject) -> void:
 			if plate_contents_matches_recipe: #player delivered correct recipe
 				waiting_recipe_res_list.remove_at(i)
 				OnRecipeCompleted.emit()
+				OnRecipeSuccess.emit()
 				return
+
+		OnRecipeFailed.emit()
 
 func get_waiting_recipe_res_list() -> Array[RecipeRes]:
 	return waiting_recipe_res_list

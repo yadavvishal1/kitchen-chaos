@@ -8,5 +8,5 @@
 
 [resource]
 script = ExtResource("4_nnnlh")
-kitchen_object_res_list = Array[ExtResource("1_qqybe")]([ExtResource("2_nsl3y"), ExtResource("3_bd2yo"), ExtResource("4_c8vpw")])
+kitchen_object_res_list = Array[ExtResource("1_qqybe")]([ExtResource("3_bd2yo"), ExtResource("2_nsl3y"), ExtResource("4_c8vpw")])
 recipe_name = "Cheese Burger"

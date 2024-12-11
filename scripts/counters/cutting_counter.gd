@@ -1,7 +1,8 @@
 class_name CuttingCounter extends BaseCounter
 
 signal OnprogressChanged(progress_normalized: float)
-signal OnCut
+signal OnCut()
+signal OnAnyCut(pos: Vector3)
 
 @export var cutting_recipe_res_array: Array[CuttingRecipeResource] = []
 
@@ -38,6 +39,7 @@ func interact_alternate(_player: Player) -> void:
 	if kitchen_object && _has_recipe_with_input(kitchen_object.kitchen_object_res):
 		_cutting_progress += 1
 		OnCut.emit()
+		OnAnyCut.emit(global_position)
 		var cutting_recipe_res: CuttingRecipeResource = _get_cutting_recipe_res_with_input(kitchen_object.kitchen_object_res)
 		var normalized_progress = float(_cutting_progress) / float(cutting_recipe_res.cutting_progress_max)
 		OnprogressChanged.emit(normalized_progress)  # Emit signal with progress

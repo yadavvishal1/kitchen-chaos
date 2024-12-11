@@ -35,7 +35,7 @@ cutting_progress_max = 5.0
 [sub_resource type="ViewportTexture" id="ViewportTexture_fjylk"]
 viewport_path = NodePath("ProgressBarUI/SubViewport")
 
-[node name="CuttingCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_sukx0")]
+[node name="CuttingCounter" node_paths=PackedStringArray("selected_counter_visual") groups=["cutting_counters"] instance=ExtResource("1_sukx0")]
 script = ExtResource("2_5bbfw")
 cutting_recipe_res_array = Array[ExtResource("3_1lhoj")]([SubResource("Resource_lxfe4"), SubResource("Resource_5sd0l"), SubResource("Resource_1qyvq")])
 selected_counter_visual = NodePath("ClearCounterVisualsSelected")

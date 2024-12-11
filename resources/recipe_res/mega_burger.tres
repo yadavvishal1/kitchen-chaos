@@ -10,5 +10,5 @@
 
 [resource]
 script = ExtResource("5_hi5ay")
-kitchen_object_res_list = Array[ExtResource("1_13enj")]([ExtResource("2_x0h7r"), ExtResource("3_vwc4l"), ExtResource("4_dtpoh"), ExtResource("5_pdrpj"), ExtResource("6_0h88f")])
+kitchen_object_res_list = Array[ExtResource("1_13enj")]([ExtResource("3_vwc4l"), ExtResource("2_x0h7r"), ExtResource("4_dtpoh"), ExtResource("5_pdrpj"), ExtResource("6_0h88f")])
 recipe_name = "MEGA Burger"

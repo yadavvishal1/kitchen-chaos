@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c150bykfbx8q8"]
+[gd_scene load_steps=29 format=3 uid="uid://c150bykfbx8q8"]
 
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_7mef0"]
 [ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://scenes/Player/player.tscn" id="2_ihev2"]
@@ -20,6 +20,8 @@
 [ext_resource type="Script" path="res://scripts/ui/delivery_manager_ui.gd" id="18_xrkas"]
 [ext_resource type="PackedScene" uid="uid://cjlxjllpnms2d" path="res://scenes/UI/recipe_template.tscn" id="19_quy4t"]
 [ext_resource type="AudioStream" uid="uid://c0c8sc0b4oc3p" path="res://Assets/Sounds/Music/Music.wav" id="20_gkjny"]
+[ext_resource type="Script" path="res://scripts/sound_manager.gd" id="21_egtjx"]
+[ext_resource type="Resource" uid="uid://cnpj1ytpo7ohk" path="res://resources/audio_clip_ref_res/audio_clip_ref_res.tres" id="22_hlhd8"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
 
@@ -174,6 +176,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -3.5)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5, 0, -0.5)
 
 [node name="DeliveryCounter" parent="Counters" node_paths=PackedStringArray("delivery_manager") instance=ExtResource("15_dmuvg")]
+unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5, 0, -2)
 delivery_manager = NodePath("../../DeliveryManager")
 
@@ -254,5 +257,11 @@ horizontal_alignment = 1
 stream = ExtResource("20_gkjny")
 autoplay = true
 
+[node name="SoundManager" type="Node" parent="."]
+script = ExtResource("21_egtjx")
+audio_clip_ref_res = ExtResource("22_hlhd8")
+
 [connection signal="OnRecipeCompleted" from="DeliveryManager" to="CanvasLayer/DeliveryManagerUI" method="_on_delivery_manager_on_recipe_completed"]
+[connection signal="OnRecipeFailed" from="DeliveryManager" to="SoundManager" method="_on_delivery_manager_on_recipe_failed"]
 [connection signal="OnRecipeSpawned" from="DeliveryManager" to="CanvasLayer/DeliveryManagerUI" method="_on_delivery_manager_on_recipe_spawned"]
+[connection signal="OnRecipeSuccess" from="DeliveryManager" to="SoundManager" method="_on_delivery_manager_on_recipe_success"]
