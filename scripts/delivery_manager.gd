@@ -1,5 +1,8 @@
 class_name DeliveryManager extends Node
 
+signal OnRecipeSpawned
+signal OnRecipeCompleted
+
 @export var _recipe_list_res: RecipeListRes
 var waiting_recipe_res_list: Array[RecipeRes] = []
 var spawn_recipe_timer: float
@@ -15,8 +18,8 @@ func _process(delta):
 		spawn_recipe_timer = spawn_recipe_timer_max
 		if waiting_recipe_res_list.size() < waiting_recipes_max:
 			var waititng_recipe_res: RecipeRes = _recipe_list_res.recipe_res_list.pick_random()
-			print(waititng_recipe_res.recipe_name)
 			waiting_recipe_res_list.append(waititng_recipe_res)
+			OnRecipeSpawned.emit()
 
 func deliver_recipe(plate_kitchen_object: PlateKitchenObject) -> void:
 	for i in range(waiting_recipe_res_list.size()):
@@ -32,9 +35,9 @@ func deliver_recipe(plate_kitchen_object: PlateKitchenObject) -> void:
 				if !ingrdient_found: # this recipe was not found on the plate
 					plate_contents_matches_recipe = false
 			if plate_contents_matches_recipe: #player delivered correct recipe
-				print("player delivered correct recipe")
 				waiting_recipe_res_list.remove_at(i)
+				OnRecipeCompleted.emit()
 				return
 
-	#no matches found
-	print("player did not deliver a correct recipe")
+func get_waiting_recipe_res_list() -> Array[RecipeRes]:
+	return waiting_recipe_res_list

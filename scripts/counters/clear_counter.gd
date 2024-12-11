@@ -1,8 +1,6 @@
 extends BaseCounter
 
 func interact(player: Player) -> void:
-	print("Interact Pressed")
-	
 	if kitchen_object:  # Check if there is a kitchen object on the counter
 		if player.picked_object != null:  # Player is carrying something
 			if player.picked_object is PlateKitchenObject:  # If the player is holding a Plate
@@ -17,7 +15,6 @@ func interact(player: Player) -> void:
 						player.picked_object.queue_free()
 		else:
 			pick_up_kitchen_object(player)
-			print("Player is not carrying anything")
 			# Handle logic for when the player is not carrying anything (not defined in your C# snippet)
 	else:
 		if player.picked_object != null:  # Player is carrying something and the counter has no kitchen object

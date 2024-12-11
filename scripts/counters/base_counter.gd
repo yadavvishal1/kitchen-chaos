@@ -9,11 +9,10 @@ var kitchen_object: KitchenObject
 
 # Interact with the counter to either spawn, pick, or drop the object
 func interact(_player: Player) -> void:
-	print("Interact Pressed")
+	pass
 
 func interact_alternate(_player: Player) -> void:
-	print("interact alternate pressed")
-
+	pass
 # Pick up the kitchen object from the counter
 func pick_up_kitchen_object(player: Player) -> void:
 	if kitchen_object:
@@ -21,7 +20,6 @@ func pick_up_kitchen_object(player: Player) -> void:
 			kitchen_object.reparent(player.kitchen_object_parent)  # Reparent object to the player's slot
 			kitchen_object.position = Vector3.ZERO  # Reset position relative to the player
 			player.picked_object = kitchen_object  # Store the picked object reference
-			print(kitchen_object.get_parent().get_parent().name, ": has kitchen object!", )
 			kitchen_object = null
 		else:
 			print("player is already holding an object")

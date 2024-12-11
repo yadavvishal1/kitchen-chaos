@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjlxjllpnms2d"]
+
+[ext_resource type="Script" path="res://scripts/ui/delivery_manager_single_ui.gd" id="1_2458x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ive6f"]
+font_size = 20
+
+[node name="MarginContainer" type="MarginContainer" node_paths=PackedStringArray("label", "icon_container", "icon_template")]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_top = 20
+script = ExtResource("1_2458x")
+label = NodePath("Recipe Template/Label")
+icon_container = NodePath("Recipe Template/IconContainer")
+icon_template = NodePath("Recipe Template/IconTemplate")
+
+[node name="Recipe Template" type="Control" parent="."]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+
+[node name="BG" type="ColorRect" parent="Recipe Template"]
+layout_mode = 2
+offset_right = 219.0
+offset_bottom = 80.0
+color = Color(0, 0, 0, 0.392157)
+
+[node name="Label" type="Label" parent="Recipe Template"]
+layout_mode = 2
+offset_right = 64.0
+offset_bottom = 28.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Recipe"
+label_settings = SubResource("LabelSettings_ive6f")
+horizontal_alignment = 1
+
+[node name="IconContainer" type="HBoxContainer" parent="Recipe Template"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 37.0
+offset_right = 42.0
+offset_bottom = 77.0
+
+[node name="IconTemplate" type="TextureRect" parent="Recipe Template"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 60.0
+expand_mode = 1
+stretch_mode = 4

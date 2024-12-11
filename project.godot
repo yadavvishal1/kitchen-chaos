@@ -23,6 +23,7 @@ GameInput="*res://scripts/game_input.gd"
 [display]
 
 window/size/always_on_top=true
+window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
 [editor_plugins]
