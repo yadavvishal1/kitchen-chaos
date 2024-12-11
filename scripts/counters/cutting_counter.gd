@@ -34,7 +34,6 @@ func interact(player: Player) -> void:
 			var normalized_progress = 0.0
 			OnprogressChanged.emit(normalized_progress)  # Emit signal with progress
 
-
 func interact_alternate(_player: Player) -> void:
 	if kitchen_object && _has_recipe_with_input(kitchen_object.kitchen_object_res):
 		_cutting_progress += 1

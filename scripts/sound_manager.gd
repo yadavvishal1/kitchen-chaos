@@ -11,6 +11,11 @@ func _ready() -> void:
 	for counter in cutting_counters:
 		if counter is CuttingCounter:
 			counter.OnAnyCut.connect(_on_any_cut)
+	var counters = get_tree().get_nodes_in_group("counters")
+	for counter:BaseCounter in counters:
+		if counter.has_signal("OnAnyObjectPlacedHere"):
+			counter.OnAnyObjectPlacedHere.connect(_on_any_object_placed_here)
+	
 	audio_player = AudioStreamPlayer3D.new()
 	add_child(audio_player)
 
@@ -32,3 +37,13 @@ func _on_delivery_manager_on_recipe_failed():
 
 func _on_any_cut(pos: Vector3):
 	play_sound(audio_clip_ref_res.chop, pos)
+
+func _on_player_on_picked_something(pos):
+	play_sound(audio_clip_ref_res.object_pickup, pos)
+
+func _on_any_object_placed_here(pos):
+	play_sound(audio_clip_ref_res.object_drop, pos)
+
+
+func _on_trash_counter_on_any_object_trashed(pos):
+		play_sound(audio_clip_ref_res.trash, pos)

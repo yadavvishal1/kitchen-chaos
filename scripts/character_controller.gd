@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody3D
 
+signal OnPickedSomething(pos: Vector3)
+
 @export var move_speed: float = 6.0
 @export var rot_speed: float = 10.0
 
@@ -69,3 +71,11 @@ func handle_movement(delta: float) -> void:
 
 	# Call move_and_slide without any arguments
 	move_and_slide()
+
+func get_kitchen_object() -> KitchenObject:
+	return picked_object
+
+func set_kitchen_object(new_picked_object: KitchenObject) -> void:
+	picked_object =  new_picked_object
+	if new_picked_object != null:
+		OnPickedSomething.emit(global_position)

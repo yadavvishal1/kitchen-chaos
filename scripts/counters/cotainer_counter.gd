@@ -9,3 +9,4 @@ func interact(player: Player) -> void:
 			var new_kitchen_object = KitchenObject.spawn(kitchen_object_res, player.kitchen_object_parent)
 			player_grabbed_object.emit()
 			player.picked_object = new_kitchen_object
+			player.set_kitchen_object(new_kitchen_object)

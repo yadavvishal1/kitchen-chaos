@@ -77,6 +77,7 @@ fov = 20.0
 environment = SubResource("Environment_c747p")
 
 [node name="Player" parent="." instance=ExtResource("2_ihev2")]
+unique_name_in_owner = true
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
@@ -261,7 +262,6 @@ script = ExtResource("21_egtjx")
 audio_clip_ref_res = ExtResource("22_hlhd8")
 
 [connection signal="OnPickedSomething" from="Player" to="SoundManager" method="_on_player_on_picked_something"]
-[connection signal="OnAnyObjectTrashed" from="Counters/TrashCounter" to="SoundManager" method="_on_trash_counter_on_any_object_trashed"]
 [connection signal="OnRecipeCompleted" from="DeliveryManager" to="CanvasLayer/DeliveryManagerUI" method="_on_delivery_manager_on_recipe_completed"]
 [connection signal="OnRecipeFailed" from="DeliveryManager" to="SoundManager" method="_on_delivery_manager_on_recipe_failed"]
 [connection signal="OnRecipeSpawned" from="DeliveryManager" to="CanvasLayer/DeliveryManagerUI" method="_on_delivery_manager_on_recipe_spawned"]

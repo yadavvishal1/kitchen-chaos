@@ -25,4 +25,5 @@ func interact(player: Player) -> void:
 			plates_spawned_amount -= 1
 			var new_kicthen_object = KitchenObject.spawn(plate_kitchen_object_res, player.kitchen_object_parent)
 			player.picked_object = new_kicthen_object
+			player.set_kitchen_object(new_kicthen_object)
 			OnplateRemoved.emit()

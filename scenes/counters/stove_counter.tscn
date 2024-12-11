@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvvytnomdilnu"]
+[gd_scene load_steps=13 format=3 uid="uid://bvvytnomdilnu"]
 
 [ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_etwqx"]
 [ext_resource type="Script" path="res://scripts/stove_counter.gd" id="2_jk443"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://scripts/resources/burning_recipe_res.gd" id="5_1jqyr"]
 [ext_resource type="Resource" uid="uid://cu4alynjsffbv" path="res://resources/burning_recipe_res/meat_patty_cooked_to_meat_patty_burned.tres" id="6_q7dgf"]
 [ext_resource type="PackedScene" uid="uid://dfpsxj0447bxg" path="res://scenes/UI/progress_bar_ui.tscn" id="9_cp0wp"]
+[ext_resource type="AudioStream" uid="uid://ymumsboeqssb" path="res://Assets/Sounds/SFX/SFX_pan_sizzle_loop.wav" id="10_lrht2"]
+[ext_resource type="Script" path="res://scripts/stove_counter_sound.gd" id="11_ngqow"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hbwqw"]
 viewport_path = NodePath("ProgressBarUI/SubViewport")
@@ -43,7 +45,13 @@ transparent_bg = true
 
 [node name="ProgressBarUI" parent="ProgressBarUI/SubViewport" index="0" instance=ExtResource("9_cp0wp")]
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5" node_paths=PackedStringArray("stove_counter")]
+stream = ExtResource("10_lrht2")
+script = ExtResource("11_ngqow")
+stove_counter = NodePath("..")
+
 [connection signal="OnStateChanged" from="." to="StoveCounterVisual" method="_on_stove_counter_on_state_changed"]
+[connection signal="OnStateChanged" from="." to="AudioStreamPlayer3D" method="_on_stove_counter_on_state_changed"]
 [connection signal="OnprogressChanged" from="." to="ProgressBarUI/SubViewport/ProgressBarUI" method="_on_stove_counter_onprogress_changed"]
 
 [editable path="Selected"]
