@@ -47,3 +47,6 @@ func _on_any_object_placed_here(pos):
 
 func _on_trash_counter_on_any_object_trashed(pos):
 		play_sound(audio_clip_ref_res.trash, pos)
+
+func play_foot_step_sound(pos: Vector3, volume: float):
+	play_sound(audio_clip_ref_res.footstep, pos, volume)

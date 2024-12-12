@@ -52,6 +52,6 @@ func spawn(kicthen_object_res: KitchenObjectsResource) -> KitchenObject:
 
 func select():
 	selected_counter_visual.visible = true
-	
+
 func deselect():
 	selected_counter_visual.visible = false

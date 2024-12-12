@@ -63,14 +63,15 @@ func handle_movement(delta: float) -> void:
 
 		# Rotate the character to face the movement direction if moving
 		rotation.y = lerp_angle(rotation.y, atan2(move_dir.x, move_dir.z), delta * rot_speed)
-		is_walking = true
+
 	else:
 		# No input, stop movement
 		velocity = Vector3.ZERO
-		is_walking = false
-
 	# Call move_and_slide without any arguments
 	move_and_slide()
+	is_walking = velocity.length() > 0.1  # Update is_walking based on actual movement
+	if is_on_floor() and velocity == Vector3.ZERO:
+		is_walking = false
 
 func get_kitchen_object() -> KitchenObject:
 	return picked_object

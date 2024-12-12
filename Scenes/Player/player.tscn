@@ -1,10 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://cm10p530ybs53"]
+[gd_scene load_steps=22 format=3 uid="uid://cm10p530ybs53"]
 
 [ext_resource type="Script" path="res://scripts/character_controller.gd" id="1_y3xct"]
 [ext_resource type="Script" path="res://scripts/player_animator.gd" id="2_3lbkm"]
 [ext_resource type="Material" uid="uid://c640igme7uqdf" path="res://Assets/Materials/PlayerBody_Yellow.material" id="3_34cok"]
 [ext_resource type="Material" uid="uid://c1m01hh7dk2gl" path="res://Assets/Materials/Black.material" id="4_skpiv"]
 [ext_resource type="Script" path="res://scripts/kitchen_object_parent.gd" id="5_u782n"]
+[ext_resource type="Script" path="res://scripts/player_sound.gd" id="6_pt7sq"]
+[ext_resource type="Resource" uid="uid://cnpj1ytpo7ohk" path="res://resources/audio_clip_ref_res/audio_clip_ref_res.tres" id="7_xcpi4"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_4dbug"]
 material = ExtResource("3_34cok")
@@ -272,3 +274,8 @@ target_position = Vector3(0, 0, 1)
 [node name="KitchenObjectParent" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 1)
 script = ExtResource("5_u782n")
+
+[node name="PlayerSound" type="AudioStreamPlayer3D" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("6_pt7sq")
+player = NodePath("..")
+audio_clip_ref_res = ExtResource("7_xcpi4")
