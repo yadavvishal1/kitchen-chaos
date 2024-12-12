@@ -12,7 +12,6 @@ var picked_object: KitchenObject = null  # The object the player is currently ho
 
 # Add KitchenObjectParent as a property in Player (Composition)
 @onready var kitchen_object_parent:Node3D = $KitchenObjectParent
-
 @onready var raycast: RayCast3D = $RayCast3D
 @onready var object_slot: Node3D = $KitchenObjectParent  # Slot node where the object will be attached when picked up
 
@@ -22,10 +21,12 @@ func _ready() -> void:
 	GameInput.connect("interact_alternate_pressed", Callable(self, "_on_interact_alternate_pressed"))
 
 func _on_interact_pressed() -> void:
+	if !KitchenManager.IsgamePlaying():return
 	if selected_counter != null:
 		selected_counter.interact(self) #interact if there is a Selected Counter
 
 func _on_interact_alternate_pressed() -> void:
+	if !KitchenManager.IsgamePlaying():return
 	if selected_counter != null:
 		selected_counter.interact_alternate(self) #interact if there is a Selected Counter
 

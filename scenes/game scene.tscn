@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c150bykfbx8q8"]
+[gd_scene load_steps=38 format=3 uid="uid://c150bykfbx8q8"]
 
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_7mef0"]
 [ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://scenes/Player/player.tscn" id="2_ihev2"]
@@ -20,8 +20,14 @@
 [ext_resource type="Script" path="res://scripts/ui/delivery_manager_ui.gd" id="18_xrkas"]
 [ext_resource type="PackedScene" uid="uid://cjlxjllpnms2d" path="res://scenes/UI/recipe_template.tscn" id="19_quy4t"]
 [ext_resource type="AudioStream" uid="uid://c0c8sc0b4oc3p" path="res://Assets/Sounds/Music/Music.wav" id="20_gkjny"]
+[ext_resource type="Script" path="res://scripts/ui/game_start_countdown_ui.gd" id="20_vs7jm"]
+[ext_resource type="Texture2D" uid="uid://ctyhyak8syykx" path="res://Assets/Textures/Additional/BG.png" id="21_cu2e5"]
+[ext_resource type="Script" path="res://scripts/ui/game_playing_clock_ui.gd" id="21_dcoq3"]
 [ext_resource type="Script" path="res://scripts/sound_manager.gd" id="21_egtjx"]
+[ext_resource type="Script" path="res://scripts/ui/game_over_ui.gd" id="21_yp3pg"]
+[ext_resource type="Texture2D" uid="uid://ctr2obhdj6b83" path="res://Assets/Textures/Additional/Inner.png" id="22_ha3cc"]
 [ext_resource type="Resource" uid="uid://cnpj1ytpo7ohk" path="res://resources/audio_clip_ref_res/audio_clip_ref_res.tres" id="22_hlhd8"]
+[ext_resource type="Script" path="res://scripts/kitchen_manager.gd" id="23_hlji2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
 
@@ -54,8 +60,20 @@ adjustment_color_correction = SubResource("GradientTexture1D_ikfqo")
 [sub_resource type="LabelSettings" id="LabelSettings_v28k0"]
 font_size = 20
 
-[sub_resource type="LabelSettings" id="LabelSettings_ive6f"]
-font_size = 20
+[sub_resource type="LabelSettings" id="LabelSettings_h8eis"]
+font_size = 200
+outline_size = 35
+outline_color = Color(0.0117647, 0.501961, 0.996078, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6m3bp"]
+font_size = 100
+font_color = Color(0.980392, 0.8, 0.027451, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_t5g0h"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_21qul"]
+font_size = 150
 
 [node name="Game Scene" type="Node3D"]
 
@@ -215,42 +233,155 @@ offset_right = 150.0
 offset_bottom = 261.0
 
 [node name="Recipe Template" parent="CanvasLayer/DeliveryManagerUI/VBoxContainer" instance=ExtResource("19_quy4t")]
+layout_mode = 2
+
+[node name="GameStartCountdownUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("countdown_text")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("20_vs7jm")
+countdown_text = NodePath("Label")
+
+[node name="Label" type="Label" parent="CanvasLayer/GameStartCountdownUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -30.5
+offset_right = 20.0
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = SubResource("LabelSettings_h8eis")
+
+[node name="GamePlayingClockUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("timer")]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -116.0
+offset_top = 18.0
+offset_right = -116.0
+offset_bottom = 18.0
+grow_horizontal = 0
+scale = Vector2(0.655, 0.655)
+script = ExtResource("21_dcoq3")
+timer = NodePath("TextureProgressBar")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/GamePlayingClockUI"]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 111.0
+value = 11.0
+fill_mode = 4
+texture_under = ExtResource("21_cu2e5")
+texture_progress = ExtResource("22_ha3cc")
+texture_progress_offset = Vector2(3.69, 3.955)
+
+[node name="GameOverUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("recipes_deivered_text")]
 visible = false
-layout_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("21_yp3pg")
+recipes_deivered_text = NodePath("Control2/RecipesDeliveredText2")
 
-[node name="Recipe Template2" type="PanelContainer" parent="CanvasLayer/DeliveryManagerUI/VBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(150, 60)
-layout_mode = 2
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GameOverUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.611765)
 
-[node name="BG" type="ColorRect" parent="CanvasLayer/DeliveryManagerUI/VBoxContainer/Recipe Template2"]
-layout_mode = 2
-color = Color(0, 0, 0, 0.533333)
+[node name="Control" type="Control" parent="CanvasLayer/GameOverUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -249.0
+offset_right = 20.0
+offset_bottom = -209.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/DeliveryManagerUI/VBoxContainer/Recipe Template2"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Recipe"
-label_settings = SubResource("LabelSettings_ive6f")
-horizontal_alignment = 1
+[node name="GameOverText" type="Label" parent="CanvasLayer/GameOverUI/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -286.5
+offset_top = -68.5
+offset_right = 286.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_6m3bp")
 
-[node name="Recipe Template3" type="PanelContainer" parent="CanvasLayer/DeliveryManagerUI/VBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(150, 60)
-layout_mode = 2
+[node name="Control2" type="Control" parent="CanvasLayer/GameOverUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -134.0
+offset_right = 22.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="BG" type="ColorRect" parent="CanvasLayer/DeliveryManagerUI/VBoxContainer/Recipe Template3"]
-layout_mode = 2
-color = Color(0, 0, 0, 0.533333)
+[node name="RecipesDeliveredText" type="Label" parent="CanvasLayer/GameOverUI/Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -213.5
+offset_top = -34.5
+offset_right = 213.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Recipes Delivered"
+label_settings = SubResource("LabelSettings_t5g0h")
 
-[node name="Label" type="Label" parent="CanvasLayer/DeliveryManagerUI/VBoxContainer/Recipe Template3"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-text = "Recipe"
-label_settings = SubResource("LabelSettings_ive6f")
-horizontal_alignment = 1
+[node name="RecipesDeliveredText2" type="Label" parent="CanvasLayer/GameOverUI/Control2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -43.0
+offset_top = 37.0
+offset_right = 43.0
+offset_bottom = 242.0
+grow_horizontal = 2
+text = "5
+"
+label_settings = SubResource("LabelSettings_21qul")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_gkjny")
@@ -259,6 +390,9 @@ autoplay = true
 [node name="SoundManager" type="Node" parent="." groups=["sound_manager"]]
 script = ExtResource("21_egtjx")
 audio_clip_ref_res = ExtResource("22_hlhd8")
+
+[node name="KitchenManager" type="Node" parent="."]
+script = ExtResource("23_hlji2")
 
 [connection signal="OnPickedSomething" from="Player" to="SoundManager" method="_on_player_on_picked_something"]
 [connection signal="OnAnyObjectTrashed" from="Counters/TrashCounter" to="SoundManager" method="_on_trash_counter_on_any_object_trashed"]

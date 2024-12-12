@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameInput="*res://scripts/game_input.gd"
+KitchenManager="*res://scripts/kitchen_manager.gd"
 
 [display]
 

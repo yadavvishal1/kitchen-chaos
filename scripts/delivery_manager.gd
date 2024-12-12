@@ -10,6 +10,7 @@ var waiting_recipe_res_list: Array[RecipeRes] = []
 var spawn_recipe_timer: float
 var spawn_recipe_timer_max: float = 4.0
 var waiting_recipes_max:int = 4
+var successful_recipes_amount:int
 
 func _ready():
 	waiting_recipe_res_list.clear()
@@ -37,6 +38,7 @@ func deliver_recipe(plate_kitchen_object: PlateKitchenObject) -> void:
 				if !ingrdient_found: # this recipe was not found on the plate
 					plate_contents_matches_recipe = false
 			if plate_contents_matches_recipe: #player delivered correct recipe
+				successful_recipes_amount += 1
 				waiting_recipe_res_list.remove_at(i)
 				OnRecipeCompleted.emit()
 				OnRecipeSuccess.emit()
@@ -46,3 +48,6 @@ func deliver_recipe(plate_kitchen_object: PlateKitchenObject) -> void:
 
 func get_waiting_recipe_res_list() -> Array[RecipeRes]:
 	return waiting_recipe_res_list
+
+func get_successful_recipes_amount() -> int:
+	return successful_recipes_amount
