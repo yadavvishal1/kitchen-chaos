@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://c150bykfbx8q8"]
+[gd_scene load_steps=37 format=3 uid="uid://c150bykfbx8q8"]
 
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_7mef0"]
 [ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://scenes/Player/player.tscn" id="2_ihev2"]
@@ -27,14 +27,13 @@
 [ext_resource type="Script" path="res://scripts/ui/game_over_ui.gd" id="21_yp3pg"]
 [ext_resource type="Texture2D" uid="uid://ctr2obhdj6b83" path="res://Assets/Textures/Additional/Inner.png" id="22_ha3cc"]
 [ext_resource type="Resource" uid="uid://cnpj1ytpo7ohk" path="res://resources/audio_clip_ref_res/audio_clip_ref_res.tres" id="22_hlhd8"]
-[ext_resource type="Script" path="res://scripts/kitchen_manager.gd" id="23_hlji2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
 
 [sub_resource type="Gradient" id="Gradient_e0olu"]
 offsets = PackedFloat32Array(0.259804, 0.987745)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_ikfqo"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1nula"]
 gradient = SubResource("Gradient_e0olu")
 
 [sub_resource type="Environment" id="Environment_c747p"]
@@ -55,7 +54,7 @@ volumetric_fog_density = 0.0
 adjustment_enabled = true
 adjustment_contrast = 1.15
 adjustment_saturation = 1.25
-adjustment_color_correction = SubResource("GradientTexture1D_ikfqo")
+adjustment_color_correction = SubResource("GradientTexture1D_1nula")
 
 [sub_resource type="LabelSettings" id="LabelSettings_v28k0"]
 font_size = 20
@@ -95,6 +94,8 @@ fov = 20.0
 environment = SubResource("Environment_c747p")
 
 [node name="Player" parent="." instance=ExtResource("2_ihev2")]
+move_speed = null
+rot_speed = null
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
@@ -202,10 +203,10 @@ unique_name_in_owner = true
 script = ExtResource("16_8tua4")
 _recipe_list_res = ExtResource("17_65vr8")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="DeliveryManagerUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("container")]
+[node name="DeliveryManagerUI" type="Control" parent="UI" node_paths=PackedStringArray("container")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -218,7 +219,7 @@ script = ExtResource("18_xrkas")
 container = NodePath("VBoxContainer")
 recipe_template = ExtResource("19_quy4t")
 
-[node name="Title Text" type="Label" parent="CanvasLayer/DeliveryManagerUI"]
+[node name="Title Text" type="Label" parent="UI/DeliveryManagerUI"]
 layout_mode = 0
 offset_top = 32.0
 offset_right = 151.0
@@ -226,16 +227,16 @@ offset_bottom = 72.0
 text = "RECIPES WAITING..."
 label_settings = SubResource("LabelSettings_v28k0")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DeliveryManagerUI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/DeliveryManagerUI"]
 layout_mode = 0
 offset_top = 73.0
 offset_right = 150.0
 offset_bottom = 261.0
 
-[node name="Recipe Template" parent="CanvasLayer/DeliveryManagerUI/VBoxContainer" instance=ExtResource("19_quy4t")]
+[node name="Recipe Template" parent="UI/DeliveryManagerUI/VBoxContainer" instance=ExtResource("19_quy4t")]
 layout_mode = 2
 
-[node name="GameStartCountdownUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("countdown_text")]
+[node name="Control" type="Control" parent="UI" node_paths=PackedStringArray("countdown_text")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -249,7 +250,7 @@ size_flags_vertical = 4
 script = ExtResource("20_vs7jm")
 countdown_text = NodePath("Label")
 
-[node name="Label" type="Label" parent="CanvasLayer/GameStartCountdownUI"]
+[node name="Label" type="Label" parent="UI/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -265,7 +266,7 @@ grow_vertical = 2
 text = "3"
 label_settings = SubResource("LabelSettings_h8eis")
 
-[node name="GamePlayingClockUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("timer")]
+[node name="GamePlayingClockUI" type="Control" parent="UI" node_paths=PackedStringArray("timer")]
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
@@ -279,7 +280,7 @@ scale = Vector2(0.655, 0.655)
 script = ExtResource("21_dcoq3")
 timer = NodePath("TextureProgressBar")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/GamePlayingClockUI"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI/GamePlayingClockUI"]
 layout_mode = 0
 offset_right = 112.0
 offset_bottom = 111.0
@@ -289,7 +290,7 @@ texture_under = ExtResource("21_cu2e5")
 texture_progress = ExtResource("22_ha3cc")
 texture_progress_offset = Vector2(3.69, 3.955)
 
-[node name="GameOverUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("recipes_deivered_text")]
+[node name="GameOverUI" type="Control" parent="UI" node_paths=PackedStringArray("recipes_deivered_text")]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -300,7 +301,7 @@ grow_vertical = 2
 script = ExtResource("21_yp3pg")
 recipes_deivered_text = NodePath("Control2/RecipesDeliveredText2")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GameOverUI"]
+[node name="ColorRect" type="ColorRect" parent="UI/GameOverUI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -309,7 +310,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.611765)
 
-[node name="Control" type="Control" parent="CanvasLayer/GameOverUI"]
+[node name="Control" type="Control" parent="UI/GameOverUI"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -323,7 +324,7 @@ offset_bottom = -209.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GameOverText" type="Label" parent="CanvasLayer/GameOverUI/Control"]
+[node name="GameOverText" type="Label" parent="UI/GameOverUI/Control"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -339,7 +340,7 @@ grow_vertical = 2
 text = "GAME OVER"
 label_settings = SubResource("LabelSettings_6m3bp")
 
-[node name="Control2" type="Control" parent="CanvasLayer/GameOverUI"]
+[node name="Control2" type="Control" parent="UI/GameOverUI"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -353,7 +354,7 @@ offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RecipesDeliveredText" type="Label" parent="CanvasLayer/GameOverUI/Control2"]
+[node name="RecipesDeliveredText" type="Label" parent="UI/GameOverUI/Control2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -369,7 +370,7 @@ grow_vertical = 2
 text = "Recipes Delivered"
 label_settings = SubResource("LabelSettings_t5g0h")
 
-[node name="RecipesDeliveredText2" type="Label" parent="CanvasLayer/GameOverUI/Control2"]
+[node name="RecipesDeliveredText2" type="Label" parent="UI/GameOverUI/Control2"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -391,13 +392,9 @@ autoplay = true
 script = ExtResource("21_egtjx")
 audio_clip_ref_res = ExtResource("22_hlhd8")
 
-[node name="KitchenManager" type="Node" parent="."]
-unique_name_in_owner = true
-script = ExtResource("23_hlji2")
-
 [connection signal="OnPickedSomething" from="Player" to="SoundManager" method="_on_player_on_picked_something"]
 [connection signal="OnAnyObjectTrashed" from="Counters/TrashCounter" to="SoundManager" method="_on_trash_counter_on_any_object_trashed"]
-[connection signal="OnRecipeCompleted" from="DeliveryManager" to="CanvasLayer/DeliveryManagerUI" method="_on_delivery_manager_on_recipe_completed"]
+[connection signal="OnRecipeCompleted" from="DeliveryManager" to="UI/DeliveryManagerUI" method="_on_delivery_manager_on_recipe_completed"]
 [connection signal="OnRecipeFailed" from="DeliveryManager" to="SoundManager" method="_on_delivery_manager_on_recipe_failed"]
-[connection signal="OnRecipeSpawned" from="DeliveryManager" to="CanvasLayer/DeliveryManagerUI" method="_on_delivery_manager_on_recipe_spawned"]
+[connection signal="OnRecipeSpawned" from="DeliveryManager" to="UI/DeliveryManagerUI" method="_on_delivery_manager_on_recipe_spawned"]
 [connection signal="OnRecipeSuccess" from="DeliveryManager" to="SoundManager" method="_on_delivery_manager_on_recipe_success"]

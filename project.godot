@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Kitchen Chaos"
-run/main_scene="res://scenes/game scene.tscn"
+run/main_scene="res://scenes/UI/main_menu_ui.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 run/max_fps=60
 config/icon="res://icon.svg"
@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameInput="*res://scripts/game_input.gd"
-KitchenManager="*res://scripts/kitchen_manager.gd"
+Loader="*res://scripts/loader.gd"
 
 [display]
 

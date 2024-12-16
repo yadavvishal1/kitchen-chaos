@@ -1,0 +1,215 @@
+[gd_scene load_steps=16 format=3 uid="uid://copd6s8ssajnn"]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu_ui.gd" id="1_4t4da"]
+[ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="2_yrrvn"]
+[ext_resource type="PackedScene" uid="uid://bnj5dgsg8bvhn" path="res://scenes/Player/player_visuals.tscn" id="3_holwn"]
+[ext_resource type="Material" uid="uid://cjujhsnpth384" path="res://Assets/Materials/PlayerBody_Red.material" id="4_4b6b3"]
+[ext_resource type="Material" uid="uid://dg3byxcowpoqy" path="res://Assets/Materials/PlayerBody_Blue.material" id="4_ebkcx"]
+[ext_resource type="Material" uid="uid://dxmbf3d47u6xq" path="res://Assets/Materials/PlayerBody_Green.material" id="5_bwdys"]
+[ext_resource type="Texture2D" uid="uid://cy86ffhbn3p4a" path="res://Assets/Textures/KitchenChaosLogo.png" id="7_5t0ut"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_t2py2"]
+viewport_path = NodePath("TextureRect/SubViewport")
+
+[sub_resource type="GDScript" id="GDScript_q7efy"]
+script/source = "extends Camera3D
+
+
+@onready var noise: FastNoiseLite = FastNoiseLite.new()
+
+@export var amplitude: float = 15.0  # The intensity of the shake
+@export var shake_speed: float = 3.0  # How fast the shake moves
+
+var _noise_y = 0
+
+var original_position: Vector3  # To store the initial position of the camera
+
+func _ready():
+	original_position = position
+	randomize()
+	noise.seed = randi()
+	noise.noise_type = FastNoiseLite.TYPE_PERLIN
+
+
+func _physics_process(delta):
+	_noise_y += shake_speed * delta  # Move the noise value over time for smooth shake
+	_shake()
+
+func _shake():
+	var shake_offset_x = amplitude * noise.get_noise_2d(noise.seed, _noise_y)
+	var shake_offset_y = amplitude * noise.get_noise_2d(noise.seed * 2, _noise_y)
+	#var shake_offset_z = amplitude * amount * noise.get_noise_2d(noise.seed * 3, _noise_y)  # Another offset for Z
+	position = original_position + Vector3(shake_offset_x, shake_offset_y, 0.0 )
+"
+
+[sub_resource type="Gradient" id="Gradient_ybmmo"]
+offsets = PackedFloat32Array(0.259804, 0.987745)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_anxwg"]
+gradient = SubResource("Gradient_ybmmo")
+
+[sub_resource type="Environment" id="Environment_1wqif"]
+background_mode = 1
+background_color = Color(0.6, 0.5064, 0.444, 1)
+tonemap_mode = 2
+tonemap_exposure = 0.6
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 4.0
+glow_strength = 0.52
+glow_bloom = 0.5
+glow_blend_mode = 1
+fog_enabled = true
+fog_light_energy = 1.17
+fog_density = 0.005
+volumetric_fog_density = 0.0
+adjustment_enabled = true
+adjustment_contrast = 1.15
+adjustment_saturation = 1.25
+adjustment_color_correction = SubResource("GradientTexture1D_anxwg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6nh6s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcnsl"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
+bg_color = Color(0.219608, 0.219608, 0.215686, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 1
+shadow_offset = Vector2(2.065, 5.68)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inp1l"]
+content_margin_left = 25.0
+content_margin_top = 0.0
+content_margin_right = 25.0
+content_margin_bottom = 0.0
+bg_color = Color(0.219608, 0.219608, 0.215686, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 1
+shadow_offset = Vector2(2.065, 5.68)
+
+[node name="MainMenuUI" type="Control" node_paths=PackedStringArray("play_button", "quit_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4t4da")
+play_button = NodePath("PlayButton")
+quit_button = NodePath("QuitButton")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 512.0
+texture = SubResource("ViewportTexture_t2py2")
+
+[node name="SubViewport" type="SubViewport" parent="TextureRect"]
+size = Vector2i(1148, 658)
+
+[node name="AdvancedCamera" type="Camera3D" parent="TextureRect/SubViewport"]
+transform = Transform3D(0.939728, 0, 0.341922, 0.0328844, 0.995364, -0.0903787, -0.340337, 0.0961754, 0.935372, 4.74367, 0.603209, 48.4617)
+fov = 20.0
+script = SubResource("GDScript_q7efy")
+amplitude = 0.5
+shake_speed = 5.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="TextureRect/SubViewport/AdvancedCamera"]
+environment = SubResource("Environment_1wqif")
+
+[node name="Floor" type="CSGMesh3D" parent="TextureRect/SubViewport"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("PlaneMesh_6nh6s")
+material = ExtResource("2_yrrvn")
+metadata/_edit_lock_ = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="TextureRect/SubViewport"]
+transform = Transform3D(0.866025, 0.383022, -0.321394, 0, 0.642788, 0.766044, 0.5, -0.663414, 0.556671, -43.2286, 11, 23.2991)
+shadow_enabled = true
+
+[node name="PlayerVisuals" parent="TextureRect/SubViewport" instance=ExtResource("3_holwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75933, 0, 39.6274)
+
+[node name="PlayerVisuals2" parent="TextureRect/SubViewport" instance=ExtResource("3_holwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26226, 0, 38.7705)
+
+[node name="Head" parent="TextureRect/SubViewport/PlayerVisuals2" index="0"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 1.513, 0)
+material_override = ExtResource("4_ebkcx")
+
+[node name="Body" parent="TextureRect/SubViewport/PlayerVisuals2" index="1"]
+material_override = ExtResource("4_ebkcx")
+
+[node name="PlayerVisuals3" parent="TextureRect/SubViewport" instance=ExtResource("3_holwn")]
+transform = Transform3D(0.993599, 0, -0.11296, 0, 1, 0, 0.11296, 0, 0.993599, 0.480434, 0, 38.4931)
+
+[node name="Head" parent="TextureRect/SubViewport/PlayerVisuals3" index="0"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 1.513, 0)
+material_override = ExtResource("5_bwdys")
+
+[node name="Body" parent="TextureRect/SubViewport/PlayerVisuals3" index="1"]
+material_override = ExtResource("5_bwdys")
+
+[node name="PlayerVisuals4" parent="TextureRect/SubViewport" instance=ExtResource("3_holwn")]
+transform = Transform3D(0.997364, 0, -0.0725593, 0, 1, 0, 0.0725593, 0, 0.997364, 1.97107, 0, 37.3851)
+
+[node name="Head" parent="TextureRect/SubViewport/PlayerVisuals4" index="0"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 1.513, 0)
+material_override = ExtResource("4_4b6b3")
+
+[node name="Body" parent="TextureRect/SubViewport/PlayerVisuals4" index="1"]
+material_override = ExtResource("4_4b6b3")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 531.0
+offset_bottom = 365.0
+texture = ExtResource("7_5t0ut")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 53.0
+offset_top = -302.0
+offset_right = 254.0
+offset_bottom = -213.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_mcnsl")
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_top = -173.0
+offset_right = 224.0
+offset_bottom = -114.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 43
+theme_override_styles/normal = SubResource("StyleBoxFlat_inp1l")
+text = "Quit"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+
+[editable path="TextureRect/SubViewport/PlayerVisuals2"]
+[editable path="TextureRect/SubViewport/PlayerVisuals3"]
+[editable path="TextureRect/SubViewport/PlayerVisuals4"]

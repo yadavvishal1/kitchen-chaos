@@ -5,11 +5,11 @@ extends Control
 @export var recipes_deivered_text: Label
 
 func _ready():
-	KitchenManager.OnStateChanged.connect(_on_state_changed)
+	%KitchenManager.OnStateChanged.connect(_on_state_changed)
 	visible = false
 
 func _on_state_changed():
-	if KitchenManager.IsGameOver():
+	if %KitchenManager.IsGameOver():
 		show()
 		recipes_deivered_text.text = str(delivery_manager.get_successful_recipes_amount())
 
