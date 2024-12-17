@@ -13,7 +13,8 @@ height = 2.00664
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_y3xct")
 
-[node name="PlayerVisuals" parent="." instance=ExtResource("2_c08sx")]
+[node name="PlayerVisuals" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_c08sx")]
+player = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965, 0)

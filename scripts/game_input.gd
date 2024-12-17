@@ -3,6 +3,7 @@ extends Node
 # Declare the signal
 signal interact_pressed()
 signal interact_alternate_pressed()
+signal on_pause_action()
 
 func get_movement_vector_normalized() -> Vector3:
 	var input_vector: Vector3 = Vector3.ZERO
@@ -27,3 +28,6 @@ func _input(_event):
 
 	if Input.is_action_just_pressed("InteractAlternate"):
 		interact_alternate_pressed.emit()
+
+	if Input.is_action_just_pressed("Pause"):
+		on_pause_action.emit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://c150bykfbx8q8"]
+[gd_scene load_steps=47 format=3 uid="uid://c150bykfbx8q8"]
 
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_7mef0"]
 [ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://scenes/Player/player.tscn" id="2_ihev2"]
@@ -28,6 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://ctr2obhdj6b83" path="res://Assets/Textures/Additional/Inner.png" id="22_ha3cc"]
 [ext_resource type="Resource" uid="uid://cnpj1ytpo7ohk" path="res://resources/audio_clip_ref_res/audio_clip_ref_res.tres" id="22_hlhd8"]
 [ext_resource type="Script" path="res://scripts/kitchen_manager.gd" id="23_hlji2"]
+[ext_resource type="Script" path="res://scripts/ui/game_pause_ui.gd" id="25_aq46e"]
+[ext_resource type="Script" path="res://scripts/ui/options_ui.gd" id="26_6djjj"]
+[ext_resource type="Script" path="res://scripts/music_manager.gd" id="28_h7av5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
 
@@ -74,6 +77,53 @@ font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_21qul"]
 font_size = 150
+
+[sub_resource type="LabelSettings" id="LabelSettings_4epdr"]
+font_size = 100
+font_color = Color(0.871094, 0.66826, 0.129303, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xxt"]
+bg_color = Color(0.402344, 0.402344, 0.3992, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 30.0
+expand_margin_right = 30.0
+shadow_size = 1
+shadow_offset = Vector2(2.065, 5.68)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yc7k"]
+bg_color = Color(0.219608, 0.219608, 0.215686, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 30.0
+expand_margin_right = 30.0
+shadow_size = 1
+shadow_offset = Vector2(2.065, 5.68)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0kp57"]
+font_size = 70
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyywk"]
+bg_color = Color(0.363281, 0.363281, 0.361862, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 1
+shadow_offset = Vector2(2.065, 5.68)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g28bm"]
+bg_color = Color(0.219608, 0.219608, 0.215686, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 1
+shadow_offset = Vector2(2.065, 5.68)
 
 [node name="Game Scene" type="Node3D"]
 
@@ -207,29 +257,25 @@ follow_viewport_enabled = true
 
 [node name="DeliveryManagerUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("container")]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 12.0
-offset_right = 12.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("18_xrkas")
 container = NodePath("VBoxContainer")
 recipe_template = ExtResource("19_quy4t")
 
 [node name="Title Text" type="Label" parent="CanvasLayer/DeliveryManagerUI"]
 layout_mode = 0
+offset_left = 13.0
 offset_top = 32.0
-offset_right = 151.0
+offset_right = 198.0
 offset_bottom = 72.0
 text = "RECIPES WAITING..."
 label_settings = SubResource("LabelSettings_v28k0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DeliveryManagerUI"]
 layout_mode = 0
+offset_left = 18.0
 offset_top = 73.0
-offset_right = 150.0
+offset_right = 168.0
 offset_bottom = 261.0
 
 [node name="Recipe Template" parent="CanvasLayer/DeliveryManagerUI/VBoxContainer" instance=ExtResource("19_quy4t")]
@@ -383,9 +429,193 @@ text = "5
 "
 label_settings = SubResource("LabelSettings_21qul")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="GamePauseUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("main_menu_button", "resume_button", "options_ui")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("25_aq46e")
+main_menu_button = NodePath("VBoxContainer/MainMenuButton")
+resume_button = NodePath("VBoxContainer/ResumeButton")
+options_ui = NodePath("../OptionsUI")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GamePauseUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.784314)
+
+[node name="PauseText" type="Label" parent="CanvasLayer/GamePauseUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -186.0
+offset_right = 193.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_4epdr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GamePauseUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -26.0
+offset_right = 104.0
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="ResumeButton" type="Button" parent="CanvasLayer/GamePauseUI/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_21xxt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1yc7k")
+text = "RESUME"
+
+[node name="OptionsButton" type="Button" parent="CanvasLayer/GamePauseUI/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_21xxt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1yc7k")
+text = "OPTIONS"
+
+[node name="MainMenuButton" type="Button" parent="CanvasLayer/GamePauseUI/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = SubResource("StyleBoxFlat_21xxt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1yc7k")
+text = "MAIN MENU"
+
+[node name="OptionsUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("sound_effect_button", "music_button", "close_button", "sound_manager", "music_manager")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("26_6djjj")
+sound_effect_button = NodePath("SoundEffectsButton")
+music_button = NodePath("MusicButton")
+close_button = NodePath("CloseButton")
+sound_manager = NodePath("../../SoundManager")
+music_manager = NodePath("../../MusicManager")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/OptionsUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.952941)
+
+[node name="OptionsText" type="Label" parent="CanvasLayer/OptionsUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -270.0
+offset_right = 154.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "OPTIONS"
+label_settings = SubResource("LabelSettings_0kp57")
+
+[node name="SoundEffectsButton" type="Button" parent="CanvasLayer/OptionsUI"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -95.0
+offset_right = 175.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g28bm")
+text = "Sound Effect: 5"
+
+[node name="MusicButton" type="Button" parent="CanvasLayer/OptionsUI"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -30.0
+offset_right = 176.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g28bm")
+text = "Music: 5"
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/OptionsUI"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 219.0
+offset_right = 175.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g28bm")
+text = "CLOSE"
+
+[node name="MusicManager" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_gkjny")
 autoplay = true
+script = ExtResource("28_h7av5")
 
 [node name="SoundManager" type="Node" parent="." groups=["sound_manager"]]
 script = ExtResource("21_egtjx")
@@ -401,3 +631,9 @@ script = ExtResource("23_hlji2")
 [connection signal="OnRecipeFailed" from="DeliveryManager" to="SoundManager" method="_on_delivery_manager_on_recipe_failed"]
 [connection signal="OnRecipeSpawned" from="DeliveryManager" to="CanvasLayer/DeliveryManagerUI" method="_on_delivery_manager_on_recipe_spawned"]
 [connection signal="OnRecipeSuccess" from="DeliveryManager" to="SoundManager" method="_on_delivery_manager_on_recipe_success"]
+[connection signal="pressed" from="CanvasLayer/GamePauseUI/VBoxContainer/ResumeButton" to="CanvasLayer/GamePauseUI" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/GamePauseUI/VBoxContainer/OptionsButton" to="CanvasLayer/GamePauseUI" method="_on_options_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/GamePauseUI/VBoxContainer/MainMenuButton" to="CanvasLayer/GamePauseUI" method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/OptionsUI/SoundEffectsButton" to="CanvasLayer/OptionsUI" method="_on_sound_effects_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/OptionsUI/MusicButton" to="CanvasLayer/OptionsUI" method="_on_music_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/OptionsUI/CloseButton" to="CanvasLayer/OptionsUI" method="_on_close_button_pressed"]

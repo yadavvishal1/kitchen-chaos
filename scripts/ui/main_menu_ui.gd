@@ -5,6 +5,9 @@ extends Control
 @export var quit_button: Button
 @onready var timer: Timer = Timer.new()
 
+func _ready():
+	Engine.time_scale = 1.0
+
 func _on_quit_button_pressed():
 	get_tree().quit() 
 
