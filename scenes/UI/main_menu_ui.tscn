@@ -75,12 +75,8 @@ adjustment_color_correction = SubResource("GradientTexture1D_anxwg")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6nh6s"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcnsl"]
-content_margin_left = 50.0
-content_margin_top = 10.0
-content_margin_right = 50.0
-content_margin_bottom = 10.0
-bg_color = Color(0.219608, 0.219608, 0.215686, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8d6bf"]
+bg_color = Color(0.312, 0.65, 0.2275, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -88,11 +84,11 @@ corner_radius_bottom_left = 8
 shadow_size = 1
 shadow_offset = Vector2(2.065, 5.68)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inp1l"]
-content_margin_left = 25.0
-content_margin_top = 0.0
-content_margin_right = 25.0
-content_margin_bottom = 0.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcnsl"]
+content_margin_left = 50.0
+content_margin_top = 10.0
+content_margin_right = 50.0
+content_margin_bottom = 10.0
 bg_color = Color(0.219608, 0.219608, 0.215686, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -198,6 +194,7 @@ offset_bottom = -213.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_8d6bf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mcnsl")
 text = "Play"
 
@@ -206,14 +203,15 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 84.0
-offset_top = -173.0
-offset_right = 224.0
-offset_bottom = -114.0
+offset_left = 53.0
+offset_top = -179.0
+offset_right = 254.0
+offset_bottom = -90.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 43
-theme_override_styles/normal = SubResource("StyleBoxFlat_inp1l")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_8d6bf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mcnsl")
 text = "Quit"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

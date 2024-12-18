@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://c150bykfbx8q8"]
+[gd_scene load_steps=49 format=3 uid="uid://c150bykfbx8q8"]
 
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_7mef0"]
 [ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://scenes/Player/player.tscn" id="2_ihev2"]
@@ -30,6 +30,7 @@
 [ext_resource type="Script" path="res://scripts/kitchen_manager.gd" id="23_hlji2"]
 [ext_resource type="Script" path="res://scripts/ui/game_pause_ui.gd" id="25_aq46e"]
 [ext_resource type="Script" path="res://scripts/ui/options_ui.gd" id="26_6djjj"]
+[ext_resource type="Script" path="res://scripts/action_remap.gd" id="27_tfstd"]
 [ext_resource type="Script" path="res://scripts/music_manager.gd" id="28_h7av5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
@@ -83,7 +84,7 @@ font_size = 100
 font_color = Color(0.871094, 0.66826, 0.129303, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xxt"]
-bg_color = Color(0.402344, 0.402344, 0.3992, 1)
+bg_color = Color(0.312, 0.65, 0.2275, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -108,7 +109,7 @@ shadow_offset = Vector2(2.065, 5.68)
 font_size = 70
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyywk"]
-bg_color = Color(0.363281, 0.363281, 0.361862, 1)
+bg_color = Color(0.312, 0.65, 0.2275, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -124,6 +125,9 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 shadow_size = 1
 shadow_offset = Vector2(2.065, 5.68)
+
+[sub_resource type="LabelSettings" id="LabelSettings_63pby"]
+font_size = 28
 
 [node name="Game Scene" type="Node3D"]
 
@@ -544,9 +548,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -154.0
-offset_top = -270.0
+offset_top = -323.0
 offset_right = 154.0
-offset_bottom = -174.0
+offset_bottom = -227.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "OPTIONS"
@@ -561,9 +565,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -175.0
-offset_top = -95.0
+offset_top = -226.0
 offset_right = 175.0
-offset_bottom = -53.0
+offset_bottom = -184.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -581,9 +585,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -174.0
-offset_top = -30.0
+offset_top = -166.0
 offset_right = 176.0
-offset_bottom = 12.0
+offset_bottom = -124.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -601,9 +605,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -175.0
-offset_top = 219.0
+offset_top = 244.0
 offset_right = 175.0
-offset_bottom = 261.0
+offset_bottom = 286.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -611,6 +615,173 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g28bm")
 text = "CLOSE"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/OptionsUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -117.0
+offset_right = 145.0
+offset_bottom = 236.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="MoveUpText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Move Up"
+label_settings = SubResource("LabelSettings_63pby")
+
+[node name="MoveUpButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
+toggle_mode = true
+text = "W"
+script = ExtResource("27_tfstd")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="MoveDownText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Move Down"
+label_settings = SubResource("LabelSettings_63pby")
+
+[node name="MoveDownButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
+toggle_mode = true
+text = "W"
+script = ExtResource("27_tfstd")
+action = "Down"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="MoveLeftText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Move Left"
+label_settings = SubResource("LabelSettings_63pby")
+
+[node name="MoveLeftButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
+toggle_mode = true
+text = "W"
+script = ExtResource("27_tfstd")
+action = "Left"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="MoveRightText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Move Right"
+label_settings = SubResource("LabelSettings_63pby")
+
+[node name="MoveRightButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
+toggle_mode = true
+text = "W"
+script = ExtResource("27_tfstd")
+action = "Right"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="InteractText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Interact"
+label_settings = SubResource("LabelSettings_63pby")
+
+[node name="InteractButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
+toggle_mode = true
+text = "W"
+script = ExtResource("27_tfstd")
+action = "Interact"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="InteractAlternateText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Interact Alt"
+label_settings = SubResource("LabelSettings_63pby")
+
+[node name="InteractAlternateButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
+toggle_mode = true
+text = "W"
+script = ExtResource("27_tfstd")
+action = "InteractAlternate"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="PauseText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Pause"
+label_settings = SubResource("LabelSettings_63pby")
+
+[node name="PauseButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer7"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
+toggle_mode = true
+text = "W"
+script = ExtResource("27_tfstd")
+action = "Pause"
 
 [node name="MusicManager" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_gkjny")
