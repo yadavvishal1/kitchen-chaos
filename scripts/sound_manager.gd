@@ -20,9 +20,6 @@ func _ready() -> void:
 	for counter:BaseCounter in counters:
 		if counter.has_signal("OnAnyObjectPlacedHere"):
 			counter.OnAnyObjectPlacedHere.connect(_on_any_object_placed_here)
-	
-	audio_player = AudioStreamPlayer3D.new()
-	add_child(audio_player)
 
 func _play_sound(audio_clip: AudioStream, position: Vector3, volume_multiplier: float = 1.0) -> void:
 	# Set the position and play the sound at that position
@@ -55,6 +52,12 @@ func _on_trash_counter_on_any_object_trashed(pos):
 
 func play_foot_step_sound(pos: Vector3, volume: float):
 	play_sound(audio_clip_ref_res.footstep, pos, volume)
+
+func play_countdown_sound():
+	play_sound(audio_clip_ref_res.warning, Vector3.ZERO)
+
+func play_warning_sound(pos: Vector3):
+	play_sound(audio_clip_ref_res.warning, pos)
 
 func change_volume() -> void:
 	_volume += 0.1

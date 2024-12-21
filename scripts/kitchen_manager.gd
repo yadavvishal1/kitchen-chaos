@@ -22,15 +22,10 @@ var is_game_paused: bool = false
 
 func _ready():
 	GameInput.on_pause_action.connect(_game_input_on_pause_action)
+	GameInput.interact_pressed.connect(_game_input_interact_pressed)
 
 func _process(delta):
 	match  state:
-		State.WaitingToStart:
-			waiting_to_start_timer -= delta
-			if waiting_to_start_timer <= 0.0:
-				state = State.CountdownToStart
-				OnStateChanged.emit()
-
 		State.CountdownToStart:
 			countdown_to_start_timer -= delta
 			if countdown_to_start_timer <= 0.0:
@@ -73,3 +68,8 @@ func toggle_pause_game() -> void:
 
 func _game_input_on_pause_action() -> void:
 	toggle_pause_game()
+
+func _game_input_interact_pressed() -> void:
+	if state == State.WaitingToStart:
+		state = State.CountdownToStart
+		OnStateChanged.emit()

@@ -15,7 +15,7 @@ func _process(delta):
 	if spawn_plate_timer > spawn_plate_timer_max:
 		spawn_plate_timer = 0.0
 
-		if plates_spawned_amount < plates_spawned_amount_max:
+		if %KitchenManager.IsgamePlaying() and plates_spawned_amount < plates_spawned_amount_max:
 			plates_spawned_amount += 1
 			OnPlateSpawned.emit()
 

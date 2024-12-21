@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bvvytnomdilnu"]
+[gd_scene load_steps=23 format=3 uid="uid://bvvytnomdilnu"]
 
 [ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_etwqx"]
 [ext_resource type="Script" path="res://scripts/stove_counter.gd" id="2_jk443"]
@@ -9,11 +9,93 @@
 [ext_resource type="Script" path="res://scripts/resources/burning_recipe_res.gd" id="5_1jqyr"]
 [ext_resource type="Resource" uid="uid://cu4alynjsffbv" path="res://resources/burning_recipe_res/meat_patty_cooked_to_meat_patty_burned.tres" id="6_q7dgf"]
 [ext_resource type="PackedScene" uid="uid://dfpsxj0447bxg" path="res://scenes/UI/progress_bar_ui.tscn" id="9_cp0wp"]
+[ext_resource type="Script" path="res://scripts/ui/stove_burn_flashing_bar_ui.gd" id="9_hgrqv"]
+[ext_resource type="Texture2D" uid="uid://cym5jv3cns1b0" path="res://Assets/Textures/Warning.png" id="10_8wo71"]
 [ext_resource type="AudioStream" uid="uid://ymumsboeqssb" path="res://Assets/Sounds/SFX/SFX_pan_sizzle_loop.wav" id="10_lrht2"]
+[ext_resource type="Script" path="res://scripts/ui/stove_burn_warning_ui.gd" id="10_snsm0"]
 [ext_resource type="Script" path="res://scripts/stove_counter_sound.gd" id="11_ngqow"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hbwqw"]
 viewport_path = NodePath("ProgressBarUI/SubViewport")
+
+[sub_resource type="Animation" id="Animation_lqtap"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/ProgressBarUI:tint_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.94902, 0.694118, 0.141176, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7uwux"]
+resource_name = "stove_burn_flashing_bar_Flash"
+length = 0.333335
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/ProgressBarUI:tint_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.94902, 0.694118, 0.141176, 1), Color(0.95, 0.1425, 0.1425, 1), Color(0.94902, 0.694118, 0.141176, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vqirq"]
+_data = {
+"RESET": SubResource("Animation_lqtap"),
+"stove_burn_flashing_bar_Flash": SubResource("Animation_7uwux")
+}
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rb1xw"]
+viewport_path = NodePath("StoveBurnWarningUI/SubViewport")
+
+[sub_resource type="Animation" id="Animation_jcb2g"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_h0tak"]
+resource_name = "flash"
+length = 0.333335
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.166667, 0.333333)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2pwiu"]
+_data = {
+"RESET": SubResource("Animation_jcb2g"),
+"flash": SubResource("Animation_h0tak")
+}
 
 [node name="StoveCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_etwqx")]
 script = ExtResource("2_jk443")
@@ -35,24 +117,69 @@ surface_material_override/0 = ExtResource("4_sci5m")
 [node name="KitchenObjectParent" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0542427, 1.456, -0.00235839)
 
-[node name="ProgressBarUI" type="Sprite3D" parent="." index="4"]
+[node name="ProgressBarUI" type="Sprite3D" parent="." index="4" node_paths=PackedStringArray("stove_counter", "animator")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2.5, 0)
 billboard = 2
 texture = SubResource("ViewportTexture_hbwqw")
+script = ExtResource("9_hgrqv")
+stove_counter = NodePath("..")
+animator = NodePath("AnimationPlayer")
 
 [node name="SubViewport" type="SubViewport" parent="ProgressBarUI" index="0"]
 transparent_bg = true
 
 [node name="ProgressBarUI" parent="ProgressBarUI/SubViewport" index="0" instance=ExtResource("9_cp0wp")]
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="5" node_paths=PackedStringArray("stove_counter")]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ProgressBarUI" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_vqirq")
+}
+
+[node name="StoveBurnWarningUI" type="Sprite3D" parent="." index="5" node_paths=PackedStringArray("stove_counter")]
+transform = Transform3D(0.13, 0, 0, 0, 0.13, 0, 0, 0, 0.093, 0, 3.06673, 0)
+modulate = Color(1, 1, 1, 0)
+billboard = 2
+texture = SubResource("ViewportTexture_rb1xw")
+script = ExtResource("10_snsm0")
+stove_counter = NodePath("..")
+
+[node name="SubViewport" type="SubViewport" parent="StoveBurnWarningUI" index="0"]
+transparent_bg = true
+
+[node name="Control" type="Control" parent="StoveBurnWarningUI/SubViewport" index="0"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="StoveBurnWarningUI/SubViewport/Control" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_8wo71")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StoveBurnWarningUI" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_2pwiu")
+}
+autoplay = "flash"
+
+[node name="SizzleSound" type="AudioStreamPlayer3D" parent="." index="6" node_paths=PackedStringArray("stove_counter")]
 stream = ExtResource("10_lrht2")
 script = ExtResource("11_ngqow")
 stove_counter = NodePath("..")
 
 [connection signal="OnStateChanged" from="." to="StoveCounterVisual" method="_on_stove_counter_on_state_changed"]
-[connection signal="OnStateChanged" from="." to="AudioStreamPlayer3D" method="_on_stove_counter_on_state_changed"]
+[connection signal="OnStateChanged" from="." to="SizzleSound" method="_on_stove_counter_on_state_changed"]
+[connection signal="OnprogressChanged" from="." to="ProgressBarUI" method="_on_stove_counter_onprogress_changed"]
 [connection signal="OnprogressChanged" from="." to="ProgressBarUI/SubViewport/ProgressBarUI" method="_on_stove_counter_onprogress_changed"]
+[connection signal="OnprogressChanged" from="." to="StoveBurnWarningUI" method="_on_stove_counter_onprogress_changed"]
+[connection signal="OnprogressChanged" from="." to="SizzleSound" method="_on_stove_counter_onprogress_changed"]
 
 [editable path="Selected"]
 [editable path="Selected/Kitchen Counter_Wood"]

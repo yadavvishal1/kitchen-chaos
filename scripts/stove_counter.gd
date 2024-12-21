@@ -7,6 +7,7 @@ enum State {Idle, Frying, Fried, Burned}
 
 @export var frying_recipe_res_array: Array[FryingRecipeResource] = []
 @export var burning_recipe_res_array: Array[BurningRecipeResource] = []
+@export var sound_manager:SoundManager
 
 var state:State
 var _frying_recipe_res: FryingRecipeResource
@@ -19,6 +20,7 @@ func _ready() -> void:
 	state = State.Idle
 
 func _process(delta) -> void:
+	
 	if kitchen_object != null:
 		match state:
 			State.Idle:
@@ -112,3 +114,6 @@ func _get_burning_recipe_res_with_input(input_kitchen_object_res: KitchenObjects
 			return burning_recipe_res
 
 	return null
+
+func is_fried() -> bool:
+	return state == State.Fried

@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://buq5wmtibrfgv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6osc"]
+emission = Color(0.542969, 0.542969, 0.542969, 1)
+
+[sub_resource type="Curve" id="Curve_8wuwl"]
+_data = [Vector2(0, 1), 0.0, -2.99258, 0, 0, Vector2(0.99435, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wypob"]
+curve = SubResource("Curve_8wuwl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ptkmq"]
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, -19, 0)
+scale_curve = SubResource("CurveTexture_wypob")
+
+[sub_resource type="SphereMesh" id="SphereMesh_qebo4"]
+radial_segments = 8
+rings = 4
+
+[sub_resource type="GDScript" id="GDScript_kh54y"]
+script/source = "@tool
+extends GPUParticles3D
+
+@export var toggle_emission: bool = true
+@export var movement_threshold: float = 0.1  # Minimum movement threshold to toggle emission
+@export var particles_per_meter: float = 50  # Number of particles emitted per meter moved
+var particle_velocity: Vector3 = Vector3.ZERO  # To track the velocity direction of particles
+var previous_position: Vector3 = Vector3.ZERO  # To track object movement
+
+func _process(_delta):
+	var current_position = global_transform.origin
+	var movement_distance = previous_position.distance_to(current_position)
+
+	# Check if the object has moved enough
+	if movement_distance > movement_threshold:
+		toggle_emission = true
+		# Calculate the number of particles to emit based on the distance moved
+		var particles_to_emit = movement_distance * particles_per_meter
+		particles_to_emit = max(particles_to_emit, 1)
+		set_particles_amount(particles_to_emit)  # Set the amount of particles based on the movement
+	else:
+		toggle_emission = false
+		set_particles_amount(1)  # Stop emitting if the object hasn't moved enough
+	set_emitting(toggle_emission)
+	# Store the current position for the next frame
+	previous_position = current_position
+
+# Function to set the amount of particles in the GPUParticles3D node
+func set_particles_amount(_amount: int) -> void:
+	amount = _amount  # Update the amount of particles
+
+## Function to set the velocity of the particles in the GPUParticles3D node
+#func set_particles_velocity(velocity: Vector3) -> void:
+	#if process_material and process_material is ParticlesMaterial:
+		#var material = process_material as ParticlesMaterial
+		#material.velocity = velocity  # Set the particle velocity
+		#process_material = material  # Reassign to update
+"
+
+[node name="PlayerMovingParticles" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_a6osc")
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_ptkmq")
+draw_pass_1 = SubResource("SphereMesh_qebo4")
+script = SubResource("GDScript_kh54y")
+toggle_emission = false
+movement_threshold = 0.01
+particles_per_meter = 200.0

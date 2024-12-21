@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://5c4quy5os7pp"]
+[gd_scene load_steps=18 format=3 uid="uid://5c4quy5os7pp"]
 
 [ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_pdavd"]
 [ext_resource type="Script" path="res://scripts/counters/delivery_counter.gd" id="2_74h00"]
@@ -6,6 +6,10 @@
 [ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="3_okx0v"]
 [ext_resource type="Shader" uid="uid://4jvadxpuqux8" path="res://shaders/moving_visual_shader.tres" id="5_jpxxh"]
 [ext_resource type="Texture2D" uid="uid://dnue3dpkypt41" path="res://Assets/Textures/Arrow.png" id="6_tw6mu"]
+[ext_resource type="Script" path="res://scripts/ui/delivery_result_ui.gd" id="7_40irn"]
+[ext_resource type="Texture2D" uid="uid://mwhenmxqsirc" path="res://Assets/Textures/DeliverySuccessBG.png" id="7_uxrb8"]
+[ext_resource type="Texture2D" uid="uid://co1rtpbfqu1s6" path="res://Assets/Textures/Tick_Border.png" id="8_crw01"]
+[ext_resource type="Texture2D" uid="uid://dagqt1kbeftts" path="res://Assets/Textures/Cross.png" id="9_4m8ab"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s5tn0"]
 render_priority = 0
@@ -16,6 +20,115 @@ shader_parameter/Texture2DParameter = ExtResource("6_tw6mu")
 [sub_resource type="PlaneMesh" id="PlaneMesh_8oi7l"]
 material = SubResource("ShaderMaterial_s5tn0")
 size = Vector2(1, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7fuh3"]
+viewport_path = NodePath("DeliveryResultTexture/SubViewport")
+
+[sub_resource type="LabelSettings" id="LabelSettings_mjcpm"]
+font_size = 80
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_rfwmo"]
+resource_name = "pop_up"
+step = 0.0166667
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/DeliveryResultUI:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(1, 1, 1, 1),
+"points": PackedFloat32Array(0.6, 0, 0, 0, 0, 1.3, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.05, 0.166667, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewport/DeliveryResultUI:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(1, 1, 1, 1),
+"points": PackedFloat32Array(0.6, 0, 0, 0, 0, 1.3, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.05, 0.166667, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewport/DeliveryResultUI:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(1, 1, 1, 1),
+"points": PackedFloat32Array(-0.261799, 0, 0, 0, 0, 0.261799, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.05, 0.166667, 1)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewport/DeliveryResultUI:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(1, 1, 1),
+"points": PackedFloat32Array(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.833333, 1)
+}
+
+[sub_resource type="Animation" id="Animation_183vq"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/DeliveryResultUI:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewport/DeliveryResultUI:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewport/DeliveryResultUI:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewport/DeliveryResultUI:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_174qc"]
+_data = {
+"RESET": SubResource("Animation_183vq"),
+"pop_up": SubResource("Animation_rfwmo")
+}
 
 [node name="DeliveryCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_pdavd")]
 script = ExtResource("2_74h00")
@@ -33,6 +146,106 @@ surface_material_override/0 = ExtResource("3_okx0v")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.26188, 0)
 mesh = SubResource("PlaneMesh_8oi7l")
 skeleton = NodePath("../KitchenObjectParent")
+
+[node name="DeliveryResultTexture" type="Sprite3D" parent="." index="5"]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 1.54121, 3, -0.913054)
+billboard = 1
+texture = SubResource("ViewportTexture_7fuh3")
+
+[node name="SubViewport" type="SubViewport" parent="DeliveryResultTexture" index="0"]
+transparent_bg = true
+size = Vector2i(1024, 1024)
+
+[node name="DeliveryResultUI" type="Control" parent="DeliveryResultTexture/SubViewport" index="0" node_paths=PackedStringArray("delivery_counter", "background_image", "icon_image", "message_text", "animation_player")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_40irn")
+delivery_counter = NodePath("../../..")
+background_image = NodePath("BG")
+icon_image = NodePath("Control/IconImage")
+message_text = NodePath("Text")
+success_color = Color(0.333333, 0.94902, 0.333333, 1)
+failed_color = Color(0.94902, 0.333333, 0.333333, 1)
+success_sprite = ExtResource("8_crw01")
+failed_sprite = ExtResource("9_4m8ab")
+animation_player = NodePath("../../AnimationPlayer")
+
+[node name="BG" type="TextureRect" parent="DeliveryResultTexture/SubViewport/DeliveryResultUI" index="0"]
+modulate = Color(0.3325, 0.95, 0.3325, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_uxrb8")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="DeliveryResultTexture/SubViewport/DeliveryResultUI" index="1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 94.0
+offset_top = -64.0
+offset_right = 222.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="IconImage" type="TextureRect" parent="DeliveryResultTexture/SubViewport/DeliveryResultUI/Control" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_crw01")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Text" type="Label" parent="DeliveryResultTexture/SubViewport/DeliveryResultUI" index="2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -111.5
+offset_right = 60.0
+offset_bottom = 111.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Delivery
+Success"
+label_settings = SubResource("LabelSettings_mjcpm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DeliveryResultTexture" index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_174qc")
+}
 
 [editable path="Selected"]
 [editable path="Selected/Kitchen Counter"]

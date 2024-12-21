@@ -50,15 +50,9 @@ func load_keymap() -> void:
 	var file = FileAccess.open(keymaps_path, FileAccess.READ)
 	var temp_keymap = file.get_var(true) as Dictionary
 	file.close()
-	# We don't just replace the keymaps dictionary, because if you
-	# updated your game and removed/added keymaps, the data of this
-	# save file may have invalid actions. So we check one by one to
-	# make sure that the keymap dictionary really has all current actions.
 	for action in keymaps.keys():
 		if temp_keymap.has(action):
 			keymaps[action] = temp_keymap[action]
-			# Whilst setting the keymap dictionary, we also set the
-			# correct InputMap event
 			InputMap.action_erase_events(action)
 			InputMap.action_add_event(action, keymaps[action])
 
