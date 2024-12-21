@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://c150bykfbx8q8"]
+[gd_scene load_steps=60 format=3 uid="uid://c150bykfbx8q8"]
 
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_7mef0"]
 [ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://scenes/Player/player.tscn" id="2_ihev2"]
@@ -39,11 +39,11 @@
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
 
-[sub_resource type="Gradient" id="Gradient_e0olu"]
-offsets = PackedFloat32Array(0.259804, 0.987745)
+[sub_resource type="Gradient" id="Gradient_vb8tt"]
+offsets = PackedFloat32Array(0.325, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_ikfqo"]
-gradient = SubResource("Gradient_e0olu")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mdkeo"]
+gradient = SubResource("Gradient_vb8tt")
 
 [sub_resource type="Environment" id="Environment_c747p"]
 background_mode = 1
@@ -52,18 +52,19 @@ tonemap_mode = 2
 tonemap_exposure = 0.6
 glow_enabled = true
 glow_normalized = true
-glow_intensity = 4.0
-glow_strength = 0.52
+glow_intensity = 5.0
+glow_strength = 0.55
 glow_bloom = 0.5
 glow_blend_mode = 1
 fog_enabled = true
+fog_mode = 1
 fog_light_energy = 1.17
-fog_density = 0.005
+fog_density = 1.0
 volumetric_fog_density = 0.0
 adjustment_enabled = true
 adjustment_contrast = 1.15
 adjustment_saturation = 1.25
-adjustment_color_correction = SubResource("GradientTexture1D_ikfqo")
+adjustment_color_correction = SubResource("GradientTexture1D_mdkeo")
 
 [sub_resource type="LabelSettings" id="LabelSettings_v28k0"]
 font_size = 20
@@ -248,6 +249,15 @@ shadow_offset = Vector2(2.065, 5.68)
 
 [sub_resource type="LabelSettings" id="LabelSettings_63pby"]
 font_size = 28
+
+[sub_resource type="Gradient" id="Gradient_haffb"]
+offsets = PackedFloat32Array(0.29, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.342)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6ukrn"]
+gradient = SubResource("Gradient_haffb")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4hhga"]
 
@@ -799,7 +809,6 @@ grow_vertical = 2
 text = "Esc"
 
 [node name="GamePauseUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("main_menu_button", "resume_button", "options_ui")]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -882,7 +891,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1yc7k")
 text = "MAIN MENU"
 
 [node name="OptionsUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("sound_effect_button", "music_button", "close_button", "sound_manager", "music_manager")]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1149,6 +1157,28 @@ toggle_mode = true
 text = "W"
 script = ExtResource("27_tfstd")
 action = "Pause"
+
+[node name="Vignette" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_previous = NodePath("../DeliveryManagerUI")
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Vignette"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_6ukrn")
 
 [node name="MusicManager" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_gkjny")

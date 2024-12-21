@@ -16,7 +16,7 @@ enum State{
 var waiting_to_start_timer: float = 1.0
 var countdown_to_start_timer: float = 3
 var game_playing_timer: float
-var game_playing_timer_max: float = 30.0
+var game_playing_timer_max: float = 300.0
 var can_start_game: bool = false  # Flag to control when to start the game
 var is_game_paused: bool = false
 

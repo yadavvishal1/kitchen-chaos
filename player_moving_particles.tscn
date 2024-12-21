@@ -4,7 +4,7 @@
 emission = Color(0.542969, 0.542969, 0.542969, 1)
 
 [sub_resource type="Curve" id="Curve_8wuwl"]
-_data = [Vector2(0, 1), 0.0, -2.99258, 0, 0, Vector2(0.99435, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.731959), 0.0, -2.25155, 0, 0, Vector2(0.99435, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_wypob"]
@@ -14,6 +14,7 @@ curve = SubResource("Curve_8wuwl")
 emission_shape = 1
 emission_sphere_radius = 0.5
 direction = Vector3(0, 0, 0)
+spread = 90.0
 gravity = Vector3(0, -19, 0)
 scale_curve = SubResource("CurveTexture_wypob")
 
@@ -72,4 +73,4 @@ draw_pass_1 = SubResource("SphereMesh_qebo4")
 script = SubResource("GDScript_kh54y")
 toggle_emission = false
 movement_threshold = 0.01
-particles_per_meter = 200.0
+particles_per_meter = 400.0

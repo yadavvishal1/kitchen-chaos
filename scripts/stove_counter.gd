@@ -61,7 +61,7 @@ func _process(delta) -> void:
 func interact(player: Player) -> void:
 	if !kitchen_object:
 		if player.picked_object:
-			if _has_recipe_with_input(player.picked_object.kitchen_object_res):
+			if _has_recipe_with_input(player.picked_object.kitchen_object_res) != null:
 				drop_kitchen_object(player)
 				_frying_recipe_res = _get_frying_recipe_res_with_input(kitchen_object.kitchen_object_res)
 				state = State.Frying
