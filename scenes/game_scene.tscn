@@ -1,41 +1,41 @@
-[gd_scene load_steps=60 format=3 uid="uid://c150bykfbx8q8"]
+[gd_scene load_steps=60 format=3 uid="uid://gq84qi3upbui"]
 
-[ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_7mef0"]
-[ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://scenes/Player/player.tscn" id="2_ihev2"]
-[ext_resource type="Script" path="res://scripts/fps_info.gd" id="3_vlh2t"]
-[ext_resource type="PackedScene" uid="uid://d2i33e88d6plv" path="res://scenes/counters/container_counter_cheese_main.tscn" id="5_1lsmk"]
-[ext_resource type="PackedScene" uid="uid://klhgi22w35ah" path="res://scenes/counters/container_counter_tomato.tscn" id="7_h4dog"]
-[ext_resource type="PackedScene" uid="uid://ckpfdqncquc3m" path="res://scenes/counters/clear_counter.tscn" id="7_pb6pn"]
-[ext_resource type="Resource" uid="uid://ds6i74361l4tm" path="res://resources/kitchen_objects_resources/tomato_res.tres" id="7_qlq6b"]
-[ext_resource type="PackedScene" uid="uid://cxutyijeyca77" path="res://scenes/counters/container_counter_cabbage.tscn" id="9_fr8sx"]
-[ext_resource type="PackedScene" uid="uid://d2bye1vffusog" path="res://scenes/counters/container_counter_meat_patty_uncooked.tscn" id="10_6iktt"]
-[ext_resource type="PackedScene" uid="uid://b6tivgvw62ki8" path="res://scenes/counters/container_counter_bread.tscn" id="10_dcwaa"]
-[ext_resource type="PackedScene" uid="uid://dvyvnojaijgwo" path="res://scenes/counters/cutting_counter.tscn" id="11_k160w"]
-[ext_resource type="PackedScene" uid="uid://du4l1kec7n360" path="res://scenes/counters/trash_counter.tscn" id="12_evmnr"]
-[ext_resource type="PackedScene" uid="uid://bvvytnomdilnu" path="res://scenes/counters/stove_counter.tscn" id="13_dp527"]
-[ext_resource type="PackedScene" uid="uid://dcwtp8o7eiw1" path="res://scenes/counters/plates_counter.tscn" id="14_m4vwd"]
-[ext_resource type="PackedScene" uid="uid://5c4quy5os7pp" path="res://scenes/counters/delivery_counter.tscn" id="15_dmuvg"]
-[ext_resource type="Script" path="res://scripts/delivery_manager.gd" id="16_8tua4"]
-[ext_resource type="Resource" uid="uid://dhyy7ci8oymbr" path="res://resources/recipe_res/_recipe_list_res.tres" id="17_65vr8"]
-[ext_resource type="Script" path="res://scripts/ui/delivery_manager_ui.gd" id="18_xrkas"]
-[ext_resource type="PackedScene" uid="uid://cjlxjllpnms2d" path="res://scenes/UI/recipe_template.tscn" id="19_quy4t"]
-[ext_resource type="AudioStream" uid="uid://c0c8sc0b4oc3p" path="res://Assets/Sounds/Music/Music.wav" id="20_gkjny"]
-[ext_resource type="Script" path="res://scripts/ui/game_start_countdown_ui.gd" id="20_vs7jm"]
-[ext_resource type="Texture2D" uid="uid://ctyhyak8syykx" path="res://Assets/Textures/Additional/BG.png" id="21_cu2e5"]
-[ext_resource type="Script" path="res://scripts/ui/game_playing_clock_ui.gd" id="21_dcoq3"]
-[ext_resource type="Script" path="res://scripts/sound_manager.gd" id="21_egtjx"]
-[ext_resource type="Script" path="res://scripts/ui/game_over_ui.gd" id="21_yp3pg"]
-[ext_resource type="Texture2D" uid="uid://ctr2obhdj6b83" path="res://Assets/Textures/Additional/Inner.png" id="22_ha3cc"]
-[ext_resource type="Resource" uid="uid://cnpj1ytpo7ohk" path="res://resources/audio_clip_ref_res/audio_clip_ref_res.tres" id="22_hlhd8"]
-[ext_resource type="Script" path="res://scripts/kitchen_manager.gd" id="23_hlji2"]
-[ext_resource type="Script" path="res://scripts/ui/game_pause_ui.gd" id="25_aq46e"]
-[ext_resource type="Script" path="res://scripts/ui/tutorial_ui.gd" id="25_jts76"]
-[ext_resource type="Script" path="res://scripts/ui/options_ui.gd" id="26_6djjj"]
-[ext_resource type="Texture2D" uid="uid://cjmrcv8yj8ggs" path="res://Assets/Textures/Tutorial.png" id="26_xcbd2"]
-[ext_resource type="Script" path="res://scripts/action_remap.gd" id="27_tfstd"]
-[ext_resource type="Script" path="res://scripts/music_manager.gd" id="28_h7av5"]
-[ext_resource type="Material" uid="uid://dck4wgree8ynh" path="res://Assets/Materials/wall.tres" id="33_smwku"]
-[ext_resource type="Material" uid="uid://c1m01hh7dk2gl" path="res://Assets/Materials/Black.material" id="34_0kain"]
+[ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_widkb"]
+[ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://scenes/Player/player.tscn" id="2_gu57o"]
+[ext_resource type="Script" path="res://scripts/fps_info.gd" id="3_7kgsp"]
+[ext_resource type="PackedScene" uid="uid://d2bye1vffusog" path="res://scenes/counters/container_counter_meat_patty_uncooked.tscn" id="4_6ir3b"]
+[ext_resource type="PackedScene" uid="uid://ckpfdqncquc3m" path="res://scenes/counters/clear_counter.tscn" id="5_b4pvh"]
+[ext_resource type="PackedScene" uid="uid://d2i33e88d6plv" path="res://scenes/counters/container_counter_cheese_main.tscn" id="6_prm0u"]
+[ext_resource type="PackedScene" uid="uid://klhgi22w35ah" path="res://scenes/counters/container_counter_tomato.tscn" id="7_n85hn"]
+[ext_resource type="Resource" uid="uid://ds6i74361l4tm" path="res://resources/kitchen_objects_resources/tomato_res.tres" id="8_hrhep"]
+[ext_resource type="PackedScene" uid="uid://cxutyijeyca77" path="res://scenes/counters/container_counter_cabbage.tscn" id="9_sihxq"]
+[ext_resource type="PackedScene" uid="uid://b6tivgvw62ki8" path="res://scenes/counters/container_counter_bread.tscn" id="10_c3bcv"]
+[ext_resource type="PackedScene" uid="uid://dvyvnojaijgwo" path="res://scenes/counters/cutting_counter.tscn" id="11_20l4j"]
+[ext_resource type="PackedScene" uid="uid://du4l1kec7n360" path="res://scenes/counters/trash_counter.tscn" id="12_bwwd4"]
+[ext_resource type="PackedScene" uid="uid://bvvytnomdilnu" path="res://scenes/counters/stove_counter.tscn" id="13_4amid"]
+[ext_resource type="PackedScene" uid="uid://dcwtp8o7eiw1" path="res://scenes/counters/plates_counter.tscn" id="14_4gvbw"]
+[ext_resource type="PackedScene" uid="uid://5c4quy5os7pp" path="res://scenes/counters/delivery_counter.tscn" id="15_6ha57"]
+[ext_resource type="Script" path="res://scripts/delivery_manager.gd" id="16_rjfau"]
+[ext_resource type="Resource" uid="uid://dhyy7ci8oymbr" path="res://resources/recipe_res/_recipe_list_res.tres" id="17_gtayi"]
+[ext_resource type="Script" path="res://scripts/ui/delivery_manager_ui.gd" id="18_6txc3"]
+[ext_resource type="PackedScene" uid="uid://cjlxjllpnms2d" path="res://scenes/ui/recipe_template.tscn" id="19_i232o"]
+[ext_resource type="Script" path="res://scripts/ui/game_start_countdown_ui.gd" id="20_xaq2q"]
+[ext_resource type="Script" path="res://scripts/ui/game_playing_clock_ui.gd" id="21_3uvh8"]
+[ext_resource type="Texture2D" uid="uid://ctyhyak8syykx" path="res://Assets/Textures/Additional/BG.png" id="22_2mkem"]
+[ext_resource type="Texture2D" uid="uid://ctr2obhdj6b83" path="res://Assets/Textures/Additional/Inner.png" id="23_nk032"]
+[ext_resource type="Script" path="res://scripts/ui/game_over_ui.gd" id="24_gu67c"]
+[ext_resource type="Script" path="res://scripts/ui/tutorial_ui.gd" id="25_ntqf3"]
+[ext_resource type="Texture2D" uid="uid://cjmrcv8yj8ggs" path="res://Assets/Textures/Tutorial.png" id="26_xifyq"]
+[ext_resource type="Script" path="res://scripts/ui/game_pause_ui.gd" id="27_wukck"]
+[ext_resource type="Script" path="res://scripts/ui/options_ui.gd" id="28_efvrf"]
+[ext_resource type="Script" path="res://scripts/action_remap.gd" id="29_17v7e"]
+[ext_resource type="AudioStream" uid="uid://c0c8sc0b4oc3p" path="res://Assets/Sounds/Music/Music.wav" id="30_7ans1"]
+[ext_resource type="Script" path="res://scripts/music_manager.gd" id="31_6qqxb"]
+[ext_resource type="Script" path="res://scripts/sound_manager.gd" id="32_if087"]
+[ext_resource type="Resource" uid="uid://cnpj1ytpo7ohk" path="res://resources/audio_clip_ref_res/audio_clip_ref_res.tres" id="33_meca8"]
+[ext_resource type="Script" path="res://scripts/kitchen_manager.gd" id="34_2iqgk"]
+[ext_resource type="Material" uid="uid://dck4wgree8ynh" path="res://Assets/Materials/wall.tres" id="35_pc6wo"]
+[ext_resource type="Material" uid="uid://c1m01hh7dk2gl" path="res://Assets/Materials/Black.material" id="36_qsolj"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
 
@@ -266,7 +266,7 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Floor" type="CSGMesh3D" parent="."]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 mesh = SubResource("PlaneMesh_mabav")
-material = ExtResource("1_7mef0")
+material = ExtResource("1_widkb")
 metadata/_edit_lock_ = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -280,115 +280,115 @@ fov = 20.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D"]
 environment = SubResource("Environment_c747p")
 
-[node name="Player" parent="." instance=ExtResource("2_ihev2")]
+[node name="Player" parent="." instance=ExtResource("2_gu57o")]
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-script = ExtResource("3_vlh2t")
+script = ExtResource("3_7kgsp")
 
 [node name="Counters" type="Node3D" parent="."]
 
-[node name="ContainerCounterMeatPattyUncooked" parent="Counters" instance=ExtResource("10_6iktt")]
+[node name="ContainerCounterMeatPattyUncooked" parent="Counters" instance=ExtResource("4_6ir3b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -3.5)
 
-[node name="ClearCounter" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -3.5)
 
-[node name="ClearCounter3" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter3" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -3.5)
 
-[node name="ClearCounter13" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter13" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -3.5)
 
-[node name="ClearCounter5" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter5" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.5, 0, 5.5)
 
-[node name="ClearCounter7" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter7" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3, 0, 5.5)
 
-[node name="ClearCounter8" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter8" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 0, 5.5)
 
-[node name="ClearCounter9" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter9" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.5, 0, 5.5)
 
-[node name="ClearCounter11" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter11" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.5, 0, 4)
 
-[node name="ClearCounter6" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter6" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3, 0, 5.5)
 
-[node name="ClearCounter14" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter14" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5, 0, 5.5)
 
-[node name="ClearCounter16" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter16" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6, 0, 5.5)
 
-[node name="ClearCounter15" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter15" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 4)
 
-[node name="ClearCounter17" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter17" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 2.5)
 
-[node name="ClearCounter18" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter18" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 1)
 
-[node name="ClearCounter19" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter19" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, -0.5)
 
-[node name="ClearCounter20" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter20" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, -2)
 
-[node name="ClearCounter4" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter4" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -3.5)
 
-[node name="ClearCounter2" parent="Counters" instance=ExtResource("7_pb6pn")]
+[node name="ClearCounter2" parent="Counters" instance=ExtResource("5_b4pvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3.5)
 
-[node name="ContainerCounter2" parent="Counters" instance=ExtResource("5_1lsmk")]
+[node name="ContainerCounter2" parent="Counters" instance=ExtResource("6_prm0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.5)
 
-[node name="ContainerCounterTomato" parent="Counters" instance=ExtResource("7_h4dog")]
+[node name="ContainerCounterTomato" parent="Counters" instance=ExtResource("7_n85hn")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0, 5.5)
-kitchen_object_res = ExtResource("7_qlq6b")
+kitchen_object_res = ExtResource("8_hrhep")
 
-[node name="ContainerCounterCabbage" parent="Counters" instance=ExtResource("9_fr8sx")]
+[node name="ContainerCounterCabbage" parent="Counters" instance=ExtResource("9_sihxq")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 5.5)
 
-[node name="ContainerCounterBread" parent="Counters" instance=ExtResource("10_dcwaa")]
+[node name="ContainerCounterBread" parent="Counters" instance=ExtResource("10_c3bcv")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -4.5, 0, -3.5)
 
-[node name="CuttingCounter" parent="Counters" instance=ExtResource("11_k160w")]
+[node name="CuttingCounter" parent="Counters" instance=ExtResource("11_20l4j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3.5)
 
-[node name="CuttingCounter2" parent="Counters" instance=ExtResource("11_k160w")]
+[node name="CuttingCounter2" parent="Counters" instance=ExtResource("11_20l4j")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.5, 0, 5.5)
 
-[node name="TrashCounter" parent="Counters" instance=ExtResource("12_evmnr")]
+[node name="TrashCounter" parent="Counters" instance=ExtResource("12_bwwd4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 2.5)
 
-[node name="StoveCounter" parent="Counters" node_paths=PackedStringArray("sound_manager") instance=ExtResource("13_dp527")]
+[node name="StoveCounter" parent="Counters" node_paths=PackedStringArray("sound_manager") instance=ExtResource("13_4amid")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -3.5)
 sound_manager = NodePath("../../SoundManager")
 
-[node name="StoveCounter2" parent="Counters" node_paths=PackedStringArray("sound_manager") instance=ExtResource("13_dp527")]
+[node name="StoveCounter2" parent="Counters" node_paths=PackedStringArray("sound_manager") instance=ExtResource("13_4amid")]
 transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 7.5, 0, 1)
 sound_manager = NodePath("../../SoundManager")
 
-[node name="PlatesCounter" parent="Counters" instance=ExtResource("14_m4vwd")]
+[node name="PlatesCounter" parent="Counters" instance=ExtResource("14_4gvbw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5, 0, -0.5)
 
-[node name="DeliveryCounter" parent="Counters" node_paths=PackedStringArray("delivery_manager") instance=ExtResource("15_dmuvg")]
+[node name="DeliveryCounter" parent="Counters" node_paths=PackedStringArray("delivery_manager") instance=ExtResource("15_6ha57")]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5, 0, -2)
 delivery_manager = NodePath("../../DeliveryManager")
 
 [node name="DeliveryManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("16_8tua4")
-_recipe_list_res = ExtResource("17_65vr8")
+script = ExtResource("16_rjfau")
+_recipe_list_res = ExtResource("17_gtayi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -396,9 +396,9 @@ follow_viewport_enabled = true
 [node name="DeliveryManagerUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("container")]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("18_xrkas")
+script = ExtResource("18_6txc3")
 container = NodePath("VBoxContainer")
-recipe_template = ExtResource("19_quy4t")
+recipe_template = ExtResource("19_i232o")
 
 [node name="Title Text" type="Label" parent="CanvasLayer/DeliveryManagerUI"]
 layout_mode = 0
@@ -416,7 +416,7 @@ offset_top = 73.0
 offset_right = 168.0
 offset_bottom = 261.0
 
-[node name="Recipe Template" parent="CanvasLayer/DeliveryManagerUI/VBoxContainer" instance=ExtResource("19_quy4t")]
+[node name="Recipe Template" parent="CanvasLayer/DeliveryManagerUI/VBoxContainer" instance=ExtResource("19_i232o")]
 layout_mode = 2
 
 [node name="GameStartCountdownUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("countdown_text", "sound_manager")]
@@ -431,7 +431,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("20_vs7jm")
+script = ExtResource("20_xaq2q")
 countdown_text = NodePath("Label")
 sound_manager = NodePath("../../SoundManager")
 
@@ -468,7 +468,7 @@ offset_right = -116.0
 offset_bottom = 18.0
 grow_horizontal = 0
 scale = Vector2(0.655, 0.655)
-script = ExtResource("21_dcoq3")
+script = ExtResource("21_3uvh8")
 timer = NodePath("TextureProgressBar")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/GamePlayingClockUI"]
@@ -477,8 +477,8 @@ offset_right = 112.0
 offset_bottom = 111.0
 value = 11.0
 fill_mode = 4
-texture_under = ExtResource("21_cu2e5")
-texture_progress = ExtResource("22_ha3cc")
+texture_under = ExtResource("22_2mkem")
+texture_progress = ExtResource("23_nk032")
 texture_progress_offset = Vector2(3.69, 3.955)
 
 [node name="GameOverUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("recipes_deivered_text")]
@@ -489,7 +489,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("21_yp3pg")
+script = ExtResource("24_gu67c")
 recipes_deivered_text = NodePath("Control2/RecipesDeliveredText2")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/GameOverUI"]
@@ -583,7 +583,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("25_jts76")
+script = ExtResource("25_ntqf3")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/TutorialUI"]
 layout_mode = 1
@@ -608,7 +608,7 @@ offset_right = 512.0
 offset_bottom = 272.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("26_xcbd2")
+texture = ExtResource("26_xifyq")
 expand_mode = 1
 stretch_mode = 5
 
@@ -821,7 +821,7 @@ offset_right = 576.0
 offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("25_aq46e")
+script = ExtResource("27_wukck")
 main_menu_button = NodePath("VBoxContainer/MainMenuButton")
 resume_button = NodePath("VBoxContainer/ResumeButton")
 options_ui = NodePath("../OptionsUI")
@@ -899,7 +899,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("26_6djjj")
+script = ExtResource("28_efvrf")
 sound_effect_button = NodePath("SoundEffectsButton")
 music_button = NodePath("MusicButton")
 close_button = NodePath("CloseButton")
@@ -1024,7 +1024,7 @@ theme_override_font_sizes/font_size = 28
 theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 toggle_mode = true
 text = "W"
-script = ExtResource("27_tfstd")
+script = ExtResource("29_17v7e")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
 layout_mode = 2
@@ -1045,7 +1045,7 @@ theme_override_font_sizes/font_size = 28
 theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 toggle_mode = true
 text = "W"
-script = ExtResource("27_tfstd")
+script = ExtResource("29_17v7e")
 action = "Down"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
@@ -1067,7 +1067,7 @@ theme_override_font_sizes/font_size = 28
 theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 toggle_mode = true
 text = "W"
-script = ExtResource("27_tfstd")
+script = ExtResource("29_17v7e")
 action = "Left"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
@@ -1089,7 +1089,7 @@ theme_override_font_sizes/font_size = 28
 theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 toggle_mode = true
 text = "W"
-script = ExtResource("27_tfstd")
+script = ExtResource("29_17v7e")
 action = "Right"
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
@@ -1111,7 +1111,7 @@ theme_override_font_sizes/font_size = 28
 theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 toggle_mode = true
 text = "W"
-script = ExtResource("27_tfstd")
+script = ExtResource("29_17v7e")
 action = "Interact"
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
@@ -1133,7 +1133,7 @@ theme_override_font_sizes/font_size = 28
 theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 toggle_mode = true
 text = "W"
-script = ExtResource("27_tfstd")
+script = ExtResource("29_17v7e")
 action = "InteractAlternate"
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
@@ -1155,7 +1155,7 @@ theme_override_font_sizes/font_size = 28
 theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 toggle_mode = true
 text = "W"
-script = ExtResource("27_tfstd")
+script = ExtResource("29_17v7e")
 action = "Pause"
 
 [node name="Vignette" type="Control" parent="CanvasLayer"]
@@ -1181,49 +1181,49 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_6ukrn")
 
 [node name="MusicManager" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("20_gkjny")
+stream = ExtResource("30_7ans1")
 autoplay = true
-script = ExtResource("28_h7av5")
+script = ExtResource("31_6qqxb")
 
 [node name="SoundManager" type="Node" parent="." groups=["sound_manager"]]
-script = ExtResource("21_egtjx")
-audio_clip_ref_res = ExtResource("22_hlhd8")
+script = ExtResource("32_if087")
+audio_clip_ref_res = ExtResource("33_meca8")
 
 [node name="KitchenManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("23_hlji2")
+script = ExtResource("34_2iqgk")
 
 [node name="Walls" type="Node3D" parent="."]
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Walls"]
 transform = Transform3D(0.334473, 0, 0, 0, 2, 0, 0, 0, 15.5098, 8.41561, 1.01292, 3.05955)
 mesh = SubResource("BoxMesh_4hhga")
-material = ExtResource("33_smwku")
+material = ExtResource("35_pc6wo")
 
 [node name="CSGMesh3D4" type="CSGMesh3D" parent="Walls"]
 transform = Transform3D(8.83814, 0, 0, 0, 0.117102, 0, 0, 0, 20.4935, 12.6975, -0.0194182, 1.25701)
 mesh = SubResource("BoxMesh_4hhga")
-material = ExtResource("34_0kain")
+material = ExtResource("36_qsolj")
 
 [node name="CSGMesh3D6" type="CSGMesh3D" parent="Walls"]
 transform = Transform3D(-3.86328e-07, 0, 20.4935, 0, 0.117102, 0, -8.83814, 0, -8.95801e-07, -1.00028, -0.0194182, -8.25227)
 mesh = SubResource("BoxMesh_4hhga")
-material = ExtResource("34_0kain")
+material = ExtResource("36_qsolj")
 
 [node name="CSGMesh3D5" type="CSGMesh3D" parent="Walls"]
 transform = Transform3D(8.83814, 0, 0, 0, 0.117102, 0, 0, 0, 20.4935, -11.563, -0.0194182, 0.856575)
 mesh = SubResource("BoxMesh_4hhga")
-material = ExtResource("34_0kain")
+material = ExtResource("36_qsolj")
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="Walls"]
 transform = Transform3D(0.357583, 0, 0, 0, 2, 0, 0, 0, 15.5098, -6.94871, 1.01292, 3.1056)
 mesh = SubResource("BoxMesh_4hhga")
-material = ExtResource("33_smwku")
+material = ExtResource("35_pc6wo")
 
 [node name="CSGMesh3D3" type="CSGMesh3D" parent="Walls"]
 transform = Transform3D(-1.64634e-08, 0, -15.4629, 0, 2, 0, 0.376638, 0, -6.75905e-07, 0.648021, 1.01292, -4.51296)
 mesh = SubResource("BoxMesh_4hhga")
-material = ExtResource("33_smwku")
+material = ExtResource("35_pc6wo")
 
 [connection signal="OnPickedSomething" from="Player" to="SoundManager" method="_on_player_on_picked_something"]
 [connection signal="OnAnyObjectTrashed" from="Counters/TrashCounter" to="SoundManager" method="_on_trash_counter_on_any_object_trashed"]

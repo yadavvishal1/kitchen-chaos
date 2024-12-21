@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://c13xxv6prvdiq" path="res://resources/frying_recipe_res/meat_patty_uncooked_to_meat_patty_cooked.tres" id="4_syx7q"]
 [ext_resource type="Script" path="res://scripts/resources/burning_recipe_res.gd" id="5_1jqyr"]
 [ext_resource type="Resource" uid="uid://cu4alynjsffbv" path="res://resources/burning_recipe_res/meat_patty_cooked_to_meat_patty_burned.tres" id="6_q7dgf"]
-[ext_resource type="PackedScene" uid="uid://dfpsxj0447bxg" path="res://scenes/UI/progress_bar_ui.tscn" id="9_cp0wp"]
+[ext_resource type="PackedScene" uid="uid://dfpsxj0447bxg" path="res://scenes/ui/progress_bar_ui.tscn" id="9_cp0wp"]
 [ext_resource type="Script" path="res://scripts/ui/stove_burn_flashing_bar_ui.gd" id="9_hgrqv"]
 [ext_resource type="Texture2D" uid="uid://cym5jv3cns1b0" path="res://Assets/Textures/Warning.png" id="10_8wo71"]
 [ext_resource type="AudioStream" uid="uid://ymumsboeqssb" path="res://Assets/Sounds/SFX/SFX_pan_sizzle_loop.wav" id="10_lrht2"]

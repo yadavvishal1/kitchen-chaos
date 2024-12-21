@@ -12,7 +12,7 @@
 [ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="8_e04xw"]
 [ext_resource type="Resource" uid="uid://8e4ju4ofkbpe" path="res://resources/kitchen_objects_resources/cabbage.tres" id="8_s073y"]
 [ext_resource type="Resource" uid="uid://ddncor0hfiaen" path="res://resources/kitchen_objects_resources/cabbage_slices.tres" id="9_7bgu1"]
-[ext_resource type="PackedScene" uid="uid://dfpsxj0447bxg" path="res://scenes/UI/progress_bar_ui.tscn" id="9_nio7h"]
+[ext_resource type="PackedScene" uid="uid://dfpsxj0447bxg" path="res://scenes/ui/progress_bar_ui.tscn" id="9_nio7h"]
 
 [sub_resource type="Resource" id="Resource_lxfe4"]
 script = ExtResource("3_1lhoj")

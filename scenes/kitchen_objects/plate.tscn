@@ -19,7 +19,7 @@
 [ext_resource type="Resource" uid="uid://ik32yhfyyqkr" path="res://resources/kitchen_object_res_kitchen_object/meat_patty_cooked_res_to_meat_patty_cooked.tres" id="17_u2o0d"]
 [ext_resource type="Resource" uid="uid://b0pghbj6toylf" path="res://resources/kitchen_object_res_kitchen_object/meat_patty_burned_res_to_meat_patty_burned.tres" id="18_hxwr8"]
 [ext_resource type="Script" path="res://scripts/ui/plate_icon_ui.gd" id="19_c8528"]
-[ext_resource type="PackedScene" uid="uid://bl1v2if06h0dw" path="res://scenes/UI/plate/icon_template.tscn" id="20_uy6gv"]
+[ext_resource type="PackedScene" uid="uid://bl1v2if06h0dw" path="res://scenes/ui/plate/icon_template.tscn" id="20_uy6gv"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_5fvvg"]
 viewport_path = NodePath("Sprite3D/SubViewport")

@@ -19,7 +19,7 @@ func kitchen_manager_on_game_unpaused():
 
 
 func _on_main_menu_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/UI/main_menu_ui.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/main_menu_ui.tscn")
 
 func _on_resume_button_pressed():
 	kitchen_manager.toggle_pause_game()
