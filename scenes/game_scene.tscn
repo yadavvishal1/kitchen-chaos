@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_widkb"]
 [ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://scenes/Player/player.tscn" id="2_gu57o"]
-[ext_resource type="Script" path="res://scripts/fps_info.gd" id="3_7kgsp"]
+[ext_resource type="Script" uid="uid://dgwfnjk7qkn5q" path="res://scripts/fps_info.gd" id="3_7kgsp"]
 [ext_resource type="PackedScene" uid="uid://d2bye1vffusog" path="res://scenes/counters/container_counter_meat_patty_uncooked.tscn" id="4_6ir3b"]
 [ext_resource type="PackedScene" uid="uid://ckpfdqncquc3m" path="res://scenes/counters/clear_counter.tscn" id="5_b4pvh"]
 [ext_resource type="PackedScene" uid="uid://d2i33e88d6plv" path="res://scenes/counters/container_counter_cheese_main.tscn" id="6_prm0u"]
@@ -15,29 +15,29 @@
 [ext_resource type="PackedScene" uid="uid://bvvytnomdilnu" path="res://scenes/counters/stove_counter.tscn" id="13_4amid"]
 [ext_resource type="PackedScene" uid="uid://dcwtp8o7eiw1" path="res://scenes/counters/plates_counter.tscn" id="14_4gvbw"]
 [ext_resource type="PackedScene" uid="uid://5c4quy5os7pp" path="res://scenes/counters/delivery_counter.tscn" id="15_6ha57"]
-[ext_resource type="Script" path="res://scripts/delivery_manager.gd" id="16_rjfau"]
+[ext_resource type="Script" uid="uid://bsjs6j7sbc2fh" path="res://scripts/delivery_manager.gd" id="16_rjfau"]
 [ext_resource type="Resource" uid="uid://dhyy7ci8oymbr" path="res://resources/recipe_res/_recipe_list_res.tres" id="17_gtayi"]
-[ext_resource type="Script" path="res://scripts/ui/delivery_manager_ui.gd" id="18_6txc3"]
+[ext_resource type="Script" uid="uid://dunprqjefrixh" path="res://scripts/ui/delivery_manager_ui.gd" id="18_6txc3"]
 [ext_resource type="PackedScene" uid="uid://cjlxjllpnms2d" path="res://scenes/ui/recipe_template.tscn" id="19_i232o"]
-[ext_resource type="Script" path="res://scripts/ui/game_start_countdown_ui.gd" id="20_xaq2q"]
-[ext_resource type="Script" path="res://scripts/ui/game_playing_clock_ui.gd" id="21_3uvh8"]
+[ext_resource type="Script" uid="uid://cnlubsx3plow8" path="res://scripts/ui/game_start_countdown_ui.gd" id="20_xaq2q"]
+[ext_resource type="Script" uid="uid://bup6fsofp3rbe" path="res://scripts/ui/game_playing_clock_ui.gd" id="21_3uvh8"]
 [ext_resource type="Texture2D" uid="uid://ctyhyak8syykx" path="res://Assets/Textures/Additional/BG.png" id="22_2mkem"]
 [ext_resource type="Texture2D" uid="uid://ctr2obhdj6b83" path="res://Assets/Textures/Additional/Inner.png" id="23_nk032"]
-[ext_resource type="Script" path="res://scripts/ui/game_over_ui.gd" id="24_gu67c"]
-[ext_resource type="Script" path="res://scripts/ui/tutorial_ui.gd" id="25_ntqf3"]
+[ext_resource type="Script" uid="uid://baq737ctjxjyc" path="res://scripts/ui/game_over_ui.gd" id="24_gu67c"]
+[ext_resource type="Script" uid="uid://kv5sh7i4w5ol" path="res://scripts/ui/tutorial_ui.gd" id="25_ntqf3"]
 [ext_resource type="Texture2D" uid="uid://cjmrcv8yj8ggs" path="res://Assets/Textures/Tutorial.png" id="26_xifyq"]
-[ext_resource type="Script" path="res://scripts/ui/game_pause_ui.gd" id="27_wukck"]
-[ext_resource type="Script" path="res://scripts/ui/options_ui.gd" id="28_efvrf"]
-[ext_resource type="Script" path="res://scripts/action_remap.gd" id="29_17v7e"]
+[ext_resource type="Script" uid="uid://cq8yh50hrwoxv" path="res://scripts/ui/game_pause_ui.gd" id="27_wukck"]
+[ext_resource type="Script" uid="uid://dgjg1cdtmwvfn" path="res://scripts/ui/options_ui.gd" id="28_efvrf"]
+[ext_resource type="Script" uid="uid://b8m6kapuvk3vh" path="res://scripts/action_remap.gd" id="29_17v7e"]
 [ext_resource type="AudioStream" uid="uid://c0c8sc0b4oc3p" path="res://Assets/Sounds/Music/Music.wav" id="30_7ans1"]
-[ext_resource type="Script" path="res://scripts/music_manager.gd" id="31_6qqxb"]
-[ext_resource type="Script" path="res://scripts/sound_manager.gd" id="32_if087"]
+[ext_resource type="Script" uid="uid://wngsrm0dgbdi" path="res://scripts/music_manager.gd" id="31_6qqxb"]
+[ext_resource type="Script" uid="uid://bi12b2h8hiict" path="res://scripts/sound_manager.gd" id="32_if087"]
 [ext_resource type="Resource" uid="uid://cnpj1ytpo7ohk" path="res://resources/audio_clip_ref_res/audio_clip_ref_res.tres" id="33_meca8"]
-[ext_resource type="Script" path="res://scripts/kitchen_manager.gd" id="34_2iqgk"]
+[ext_resource type="Script" uid="uid://bo4mk8l1cmkak" path="res://scripts/kitchen_manager.gd" id="34_2iqgk"]
 [ext_resource type="Material" uid="uid://dck4wgree8ynh" path="res://Assets/Materials/wall.tres" id="35_pc6wo"]
 [ext_resource type="Material" uid="uid://c1m01hh7dk2gl" path="res://Assets/Materials/Black.material" id="36_qsolj"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_mabav"]
+[sub_resource type="BoxMesh" id="BoxMesh_hfwyp"]
 
 [sub_resource type="Gradient" id="Gradient_vb8tt"]
 offsets = PackedFloat32Array(0.325, 1)
@@ -172,8 +172,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kupjj"]
 _data = {
-"RESET": SubResource("Animation_1pk5f"),
-"number_popup": SubResource("Animation_ini63")
+&"RESET": SubResource("Animation_1pk5f"),
+&"number_popup": SubResource("Animation_ini63")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_6m3bp"]
@@ -264,10 +264,9 @@ fill_from = Vector2(0.5, 0.5)
 [node name="Game Scene" type="Node3D"]
 
 [node name="Floor" type="CSGMesh3D" parent="."]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
-mesh = SubResource("PlaneMesh_mabav")
+transform = Transform3D(34.0237, 0, 0, 0, 0.1, 0, 0, 0, 50, 0, -0.0474048, 0)
+mesh = SubResource("BoxMesh_hfwyp")
 material = ExtResource("1_widkb")
-metadata/_edit_lock_ = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, 0.383022, -0.321394, 0, 0.642788, 0.766044, 0.5, -0.663414, 0.55667, -43.2286, 11, 23.2991)
@@ -454,7 +453,7 @@ label_settings = SubResource("LabelSettings_h8eis")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/GameStartCountdownUI"]
 root_node = NodePath("../Label")
 libraries = {
-"": SubResource("AnimationLibrary_kupjj")
+&"": SubResource("AnimationLibrary_kupjj")
 }
 
 [node name="GamePlayingClockUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("timer")]

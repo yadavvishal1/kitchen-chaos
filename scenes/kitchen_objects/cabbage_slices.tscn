@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dxu4wlirck7rq"]
 
-[ext_resource type="Script" path="res://scripts/kitchen_object.gd" id="1_dbwdw"]
+[ext_resource type="Script" uid="uid://g25smpy5k0kw" path="res://scripts/kitchen_object.gd" id="1_dbwdw"]
 [ext_resource type="Resource" uid="uid://ddncor0hfiaen" path="res://resources/kitchen_objects_resources/cabbage_slices.tres" id="2_b8sx5"]
 [ext_resource type="PackedScene" uid="uid://bf148xdknak0y" path="res://scenes/SceneVisuals/kitchen_objects_visuals/CabbageSliced_Visual.tscn" id="2_w5gxa"]
 

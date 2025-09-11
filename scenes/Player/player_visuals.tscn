@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bnj5dgsg8bvhn"]
 
-[ext_resource type="Script" path="res://scripts/player_animator.gd" id="1_l87pc"]
+[ext_resource type="Script" uid="uid://83lmbtvsiv66" path="res://scripts/player_animator.gd" id="1_l87pc"]
 [ext_resource type="Material" uid="uid://c640igme7uqdf" path="res://Assets/Materials/PlayerBody_Yellow.material" id="2_ov0e1"]
 [ext_resource type="Material" uid="uid://c1m01hh7dk2gl" path="res://Assets/Materials/Black.material" id="3_bpojc"]
 
@@ -81,7 +81,7 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_elny1"]
 _data = {
-"RESET": SubResource("Animation_a0h0i")
+&"RESET": SubResource("Animation_a0h0i")
 }
 
 [sub_resource type="Animation" id="Animation_5u7t2"]
@@ -181,8 +181,8 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_buh5u"]
 _data = {
-"Idle": SubResource("Animation_5u7t2"),
-"Walk": SubResource("Animation_6dkaq")
+&"Idle": SubResource("Animation_5u7t2"),
+&"Walk": SubResource("Animation_6dkaq")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p7r5s"]

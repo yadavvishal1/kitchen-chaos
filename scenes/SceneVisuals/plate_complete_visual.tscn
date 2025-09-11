@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://botd0krp5h4w"]
 
 [ext_resource type="PackedScene" uid="uid://sdk0i6183yoi" path="res://scenes/kitchen_objects/bread.tscn" id="1_sgw6x"]
-[ext_resource type="Script" path="res://scripts/plate_complete_visual.gd" id="1_yxjop"]
+[ext_resource type="Script" uid="uid://ewskm1yjfftq" path="res://scripts/plate_complete_visual.gd" id="1_yxjop"]
 [ext_resource type="PackedScene" uid="uid://cgdc2ip4toggw" path="res://scenes/kitchen_objects/meat_patty_cooked.tscn" id="2_med8i"]
 [ext_resource type="PackedScene" uid="uid://bdanycxl1x8no" path="res://scenes/kitchen_objects/tomato_slices.tscn" id="3_1vhp7"]
 [ext_resource type="PackedScene" uid="uid://m2g78arq0erv" path="res://scenes/kitchen_objects/cheese_slices.tscn" id="4_3wh0q"]

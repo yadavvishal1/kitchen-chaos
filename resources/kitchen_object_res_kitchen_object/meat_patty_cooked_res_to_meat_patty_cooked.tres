@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="KitchenObjectResKitchenObject" load_steps=3 format=3 uid="uid://ik32yhfyyqkr"]
 
 [ext_resource type="Resource" uid="uid://30pu7m186ddb" path="res://resources/kitchen_objects_resources/meat_patty_cooked.tres" id="1_mcgl7"]
-[ext_resource type="Script" path="res://scripts/resources/kitchen_object_res_kitchen_object.gd" id="1_n7gt6"]
+[ext_resource type="Script" uid="uid://b222x0uico4p4" path="res://scripts/resources/kitchen_object_res_kitchen_object.gd" id="1_n7gt6"]
 
 [resource]
 script = ExtResource("1_n7gt6")

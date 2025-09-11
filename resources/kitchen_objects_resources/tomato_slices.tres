@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="KitchenObjectsResource" load_steps=3 format=3 uid="uid://dk56ilwgdfmkw"]
 
-[ext_resource type="Script" path="res://scripts/resources/kitchen_objects_res.gd" id="1_i3wfw"]
+[ext_resource type="Script" uid="uid://ddtsyp5t7rs05" path="res://scripts/resources/kitchen_objects_res.gd" id="1_i3wfw"]
 [ext_resource type="Texture2D" uid="uid://0svd4jc3tb1p" path="res://Assets/Textures/Icons/TomatoSlice.png" id="1_wsgk6"]
 
 [resource]

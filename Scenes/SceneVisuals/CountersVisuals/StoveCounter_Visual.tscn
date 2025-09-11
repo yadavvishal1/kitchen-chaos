@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://dkah4js6xrjt8"]
 
 [ext_resource type="PackedScene" uid="uid://68e2p652k7e6" path="res://Assets/Meshes/Kitchen Counter_Wood.tscn" id="1_q83bi"]
-[ext_resource type="Script" path="res://scripts/counters/stove_counter_visual.gd" id="1_s8cbn"]
+[ext_resource type="Script" uid="uid://h0ps84nvywjh" path="res://scripts/counters/stove_counter_visual.gd" id="1_s8cbn"]
 [ext_resource type="PackedScene" uid="uid://dur87s752275j" path="res://Assets/Meshes/Stove Counter.fbx" id="2_styd5"]
 [ext_resource type="PackedScene" uid="uid://bp6mc362c00ok" path="res://Assets/Meshes/Frying Pan.fbx" id="3_4jx3g"]
 

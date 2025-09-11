@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="KitchenObjectsResource" load_steps=3 format=3 uid="uid://ddncor0hfiaen"]
 
 [ext_resource type="Texture2D" uid="uid://8xx1bd5akkok" path="res://Assets/Textures/Icons/CabbageSlices.png" id="1_2ctcq"]
-[ext_resource type="Script" path="res://scripts/resources/kitchen_objects_res.gd" id="1_klf0t"]
+[ext_resource type="Script" uid="uid://ddtsyp5t7rs05" path="res://scripts/resources/kitchen_objects_res.gd" id="1_klf0t"]
 
 [resource]
 script = ExtResource("1_klf0t")

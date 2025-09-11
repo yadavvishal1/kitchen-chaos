@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfpsxj0447bxg"]
 
 [ext_resource type="Texture2D" uid="uid://dyyym55yw1dvh" path="res://Assets/Textures/White_1x1.png" id="1_njf1e"]
-[ext_resource type="Script" path="res://scripts/ui/progress_bar_ui.gd" id="2_hauj4"]
+[ext_resource type="Script" uid="uid://ckp23q2dx2qnr" path="res://scripts/ui/progress_bar_ui.gd" id="2_hauj4"]
 
 [node name="ProgressBarUI" type="TextureProgressBar"]
 anchors_preset = 14

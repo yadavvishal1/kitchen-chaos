@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c5a72a38ulq6x"]
 
 [ext_resource type="PackedScene" uid="uid://d1n4fk81o6pyk" path="res://Assets/Meshes/Counter_solid.fbx" id="1_0rd6n"]
-[ext_resource type="Script" path="res://scripts/counters/container_counter_visual.gd" id="1_ks6j2"]
+[ext_resource type="Script" uid="uid://di1aqyfld6jm2" path="res://scripts/counters/container_counter_visual.gd" id="1_ks6j2"]
 [ext_resource type="PackedScene" uid="uid://b2yb25b14b0oo" path="res://Assets/Meshes/Counter_hole.fbx" id="2_q3sa4"]
 [ext_resource type="PackedScene" uid="uid://c25j4lc8a222e" path="res://Assets/Meshes/Single door.tscn" id="3_3g8va"]
 [ext_resource type="Texture2D" uid="uid://dmi7al4rol3fk" path="res://Assets/Textures/Icons/CheeseBlock.png" id="4_2cnno"]
@@ -45,8 +45,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h2ke2"]
 _data = {
-"RESET": SubResource("Animation_kgq20"),
-"container_counter_open_close": ExtResource("5_kxvj4")
+&"RESET": SubResource("Animation_kgq20"),
+&"container_counter_open_close": ExtResource("5_kxvj4")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aq6tx"]

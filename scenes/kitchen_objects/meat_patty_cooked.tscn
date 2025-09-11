@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgdc2ip4toggw"]
 
-[ext_resource type="Script" path="res://scripts/kitchen_object.gd" id="1_6fars"]
+[ext_resource type="Script" uid="uid://g25smpy5k0kw" path="res://scripts/kitchen_object.gd" id="1_6fars"]
 [ext_resource type="Resource" uid="uid://30pu7m186ddb" path="res://resources/kitchen_objects_resources/meat_patty_cooked.tres" id="2_mgfvn"]
 [ext_resource type="PackedScene" uid="uid://q2a65ko30n3n" path="res://scenes/SceneVisuals/kitchen_objects_visuals/MeatPattyCooked_Visual.tscn" id="3_7fjvt"]
 

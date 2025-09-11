@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://dcwtp8o7eiw1"]
 
 [ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_yux1d"]
-[ext_resource type="Script" path="res://scripts/counters/plates_counter.gd" id="2_0dfdw"]
+[ext_resource type="Script" uid="uid://crv5tb6iaxw7s" path="res://scripts/counters/plates_counter.gd" id="2_0dfdw"]
 [ext_resource type="PackedScene" uid="uid://5fo05txw27uj" path="res://scenes/SceneVisuals/CountersVisuals/PlatesCounter_Visual.tscn" id="2_vm4uw"]
 [ext_resource type="Resource" uid="uid://dgt01xdop1ycw" path="res://resources/kitchen_objects_resources/plate.tres" id="3_iq1sa"]
 [ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="3_whm86"]
-[ext_resource type="Script" path="res://scripts/counters/plates_counter_visual.gd" id="5_pumuw"]
+[ext_resource type="Script" uid="uid://gyvhrcc7y8ua" path="res://scripts/counters/plates_counter_visual.gd" id="5_pumuw"]
 [ext_resource type="PackedScene" uid="uid://cqq14k78x8aoi" path="res://scenes/SceneVisuals/kitchen_objects_visuals/Plate_Visual.tscn" id="6_8fa5p"]
 
 [node name="PlatesCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_yux1d")]

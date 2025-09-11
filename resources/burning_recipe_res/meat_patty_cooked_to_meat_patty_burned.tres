@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BurningRecipeResource" load_steps=4 format=3 uid="uid://cu4alynjsffbv"]
 
-[ext_resource type="Script" path="res://scripts/resources/burning_recipe_res.gd" id="1_g8mw0"]
+[ext_resource type="Script" uid="uid://mvls5qyuce3a" path="res://scripts/resources/burning_recipe_res.gd" id="1_g8mw0"]
 [ext_resource type="Resource" uid="uid://30pu7m186ddb" path="res://resources/kitchen_objects_resources/meat_patty_cooked.tres" id="1_x3sce"]
 [ext_resource type="Resource" uid="uid://dqqk6djtbws4x" path="res://resources/kitchen_objects_resources/meat_patty_burned.tres" id="2_01w37"]
 

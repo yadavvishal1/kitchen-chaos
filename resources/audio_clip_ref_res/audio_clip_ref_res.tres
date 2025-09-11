@@ -17,7 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://pou5qxovhmwe" path="res://Assets/Sounds/SFX/SFX_object_pickup01.wav" id="15_vvqoe"]
 [ext_resource type="AudioStream" uid="uid://ddlowg1vbnsf1" path="res://Assets/Sounds/SFX/SFX_object_pickup02.wav" id="16_fyyn8"]
 [ext_resource type="AudioStream" uid="uid://du7fxiyirwxmu" path="res://Assets/Sounds/SFX/SFX_object_pickup03.wav" id="17_jltam"]
-[ext_resource type="Script" path="res://scripts/resources/audio_clip_ref_res.gd" id="18_ugwop"]
+[ext_resource type="Script" uid="uid://dgv7cbe07qwjd" path="res://scripts/resources/audio_clip_ref_res.gd" id="18_ugwop"]
 [ext_resource type="AudioStream" uid="uid://ymumsboeqssb" path="res://Assets/Sounds/SFX/SFX_pan_sizzle_loop.wav" id="19_4xfu2"]
 [ext_resource type="AudioStream" uid="uid://dhicrlk70w5k1" path="res://Assets/Sounds/SFX/SFX_trash01.wav" id="20_gwcu5"]
 [ext_resource type="AudioStream" uid="uid://bvo34a6ypkkd" path="res://Assets/Sounds/SFX/SFX_trash02.wav" id="21_pltif"]

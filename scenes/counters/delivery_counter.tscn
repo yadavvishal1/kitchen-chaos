@@ -1,12 +1,12 @@
 [gd_scene load_steps=18 format=3 uid="uid://5c4quy5os7pp"]
 
 [ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_pdavd"]
-[ext_resource type="Script" path="res://scripts/counters/delivery_counter.gd" id="2_74h00"]
+[ext_resource type="Script" uid="uid://ccoch6ljr0gm3" path="res://scripts/counters/delivery_counter.gd" id="2_74h00"]
 [ext_resource type="PackedScene" uid="uid://b3ahmp5ivj006" path="res://scenes/SceneVisuals/CountersVisuals/DeliveryCounter_Visual.tscn" id="2_gg0qr"]
 [ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="3_okx0v"]
 [ext_resource type="Shader" uid="uid://4jvadxpuqux8" path="res://shaders/moving_visual_shader.tres" id="5_jpxxh"]
 [ext_resource type="Texture2D" uid="uid://dnue3dpkypt41" path="res://Assets/Textures/Arrow.png" id="6_tw6mu"]
-[ext_resource type="Script" path="res://scripts/ui/delivery_result_ui.gd" id="7_40irn"]
+[ext_resource type="Script" uid="uid://00neivunef8q" path="res://scripts/ui/delivery_result_ui.gd" id="7_40irn"]
 [ext_resource type="Texture2D" uid="uid://mwhenmxqsirc" path="res://Assets/Textures/DeliverySuccessBG.png" id="7_uxrb8"]
 [ext_resource type="Texture2D" uid="uid://co1rtpbfqu1s6" path="res://Assets/Textures/Tick_Border.png" id="8_crw01"]
 [ext_resource type="Texture2D" uid="uid://dagqt1kbeftts" path="res://Assets/Textures/Cross.png" id="9_4m8ab"]
@@ -28,6 +28,53 @@ viewport_path = NodePath("DeliveryResultTexture/SubViewport")
 font_size = 80
 outline_size = 12
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_183vq"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/DeliveryResultUI:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewport/DeliveryResultUI:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SubViewport/DeliveryResultUI:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewport/DeliveryResultUI:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_rfwmo"]
 resource_name = "pop_up"
@@ -77,57 +124,10 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.833333, 1)
 }
 
-[sub_resource type="Animation" id="Animation_183vq"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SubViewport/DeliveryResultUI:scale:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SubViewport/DeliveryResultUI:scale:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("SubViewport/DeliveryResultUI:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("SubViewport/DeliveryResultUI:modulate:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_174qc"]
 _data = {
-"RESET": SubResource("Animation_183vq"),
-"pop_up": SubResource("Animation_rfwmo")
+&"RESET": SubResource("Animation_183vq"),
+&"pop_up": SubResource("Animation_rfwmo")
 }
 
 [node name="DeliveryCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_pdavd")]

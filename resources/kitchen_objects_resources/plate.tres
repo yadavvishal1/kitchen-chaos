@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="KitchenObjectsResource" load_steps=3 format=3 uid="uid://dgt01xdop1ycw"]
 
-[ext_resource type="Script" path="res://scripts/resources/kitchen_objects_res.gd" id="1_85cjh"]
+[ext_resource type="Script" uid="uid://ddtsyp5t7rs05" path="res://scripts/resources/kitchen_objects_res.gd" id="1_85cjh"]
 [ext_resource type="Texture2D" uid="uid://cf3kumfyp6lxp" path="res://Assets/Textures/Icons/Plate.png" id="1_pd8e4"]
 
 [resource]

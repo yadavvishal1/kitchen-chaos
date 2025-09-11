@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://ccap4fndf8be1"]
 
-[ext_resource type="Script" path="res://scripts/kitchen_object.gd" id="1_dryrc"]
+[ext_resource type="Script" uid="uid://g25smpy5k0kw" path="res://scripts/kitchen_object.gd" id="1_dryrc"]
 [ext_resource type="Texture2D" uid="uid://4ntb0hotycqh" path="res://Assets/Meshes/Textures/Cheese_AlbedoTransparency.png" id="1_wlqsl"]
 [ext_resource type="Texture2D" uid="uid://ch45v55mij7im" path="res://Assets/Meshes/Textures/Cheese_Normal.png" id="2_c6jf3"]
 [ext_resource type="Resource" uid="uid://b0hpu03x2v6dy" path="res://resources/kitchen_objects_resources/cheese_block_res.tres" id="2_oweur"]

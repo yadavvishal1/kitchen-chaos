@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://du4l1kec7n360"]
 
 [ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_lskbi"]
-[ext_resource type="Script" path="res://scripts/counters/trash_counter.gd" id="2_s06vj"]
+[ext_resource type="Script" uid="uid://bo23dbnslp0u5" path="res://scripts/counters/trash_counter.gd" id="2_s06vj"]
 [ext_resource type="PackedScene" uid="uid://ddvkh4n6kc2sf" path="res://scenes/SceneVisuals/CountersVisuals/TrashCounter_Visual.tscn" id="3_6uhbe"]
 [ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="4_g561f"]
 

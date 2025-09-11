@@ -116,8 +116,8 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r8yjw"]
 _data = {
-"RESET": SubResource("Animation_fa7yw"),
-"cutting_counter_cut": ExtResource("5_vg4ps")
+&"RESET": SubResource("Animation_fa7yw"),
+&"cutting_counter_cut": ExtResource("5_vg4ps")
 }
 
 [node name="CuttingCounterVisual" type="Node3D"]

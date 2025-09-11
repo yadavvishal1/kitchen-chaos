@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cl0ngx8r21xs5"]
 
-[ext_resource type="Script" path="res://scripts/ui/plate_icon_ui.gd" id="1_bbeox"]
+[ext_resource type="Script" uid="uid://bpg7ckqeyxsu6" path="res://scripts/ui/plate_icon_ui.gd" id="1_bbeox"]
 [ext_resource type="PackedScene" uid="uid://bl1v2if06h0dw" path="res://scenes/ui/plate/icon_template.tscn" id="2_wvqvh"]
 
 [node name="Grid" type="Control"]

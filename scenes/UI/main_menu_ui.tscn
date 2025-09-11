@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://copd6s8ssajnn"]
 
-[ext_resource type="Script" path="res://scripts/ui/main_menu_ui.gd" id="1_4t4da"]
+[ext_resource type="Script" uid="uid://b8spdql06ni4h" path="res://scripts/ui/main_menu_ui.gd" id="1_4t4da"]
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="2_yrrvn"]
 [ext_resource type="PackedScene" uid="uid://bnj5dgsg8bvhn" path="res://scenes/Player/player_visuals.tscn" id="3_holwn"]
 [ext_resource type="Material" uid="uid://cjujhsnpth384" path="res://Assets/Materials/PlayerBody_Red.material" id="4_4b6b3"]
@@ -73,7 +73,7 @@ adjustment_contrast = 1.15
 adjustment_saturation = 1.25
 adjustment_color_correction = SubResource("GradientTexture1D_anxwg")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_6nh6s"]
+[sub_resource type="BoxMesh" id="BoxMesh_1xem4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8d6bf"]
 bg_color = Color(0.312, 0.65, 0.2275, 1)
@@ -127,11 +127,10 @@ shake_speed = 5.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="TextureRect/SubViewport/AdvancedCamera"]
 environment = SubResource("Environment_dcrkv")
 
-[node name="Floor" type="CSGMesh3D" parent="TextureRect/SubViewport"]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
-mesh = SubResource("PlaneMesh_6nh6s")
+[node name="Floor2" type="CSGMesh3D" parent="TextureRect/SubViewport"]
+transform = Transform3D(50, 0, 0, 0, 0.1, 0, 0, 0, 50, 0.031353, 0.182007, 23.977)
+mesh = SubResource("BoxMesh_1xem4")
 material = ExtResource("2_yrrvn")
-metadata/_edit_lock_ = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="TextureRect/SubViewport"]
 transform = Transform3D(0.866025, 0.383022, -0.321394, 0, 0.642788, 0.766044, 0.5, -0.663414, 0.556671, -43.2286, 11, 23.2991)

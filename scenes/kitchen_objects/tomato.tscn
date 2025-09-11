@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://dnr5mexo7e3id"]
 
 [ext_resource type="Material" uid="uid://c2c3wb3ci73p8" path="res://Assets/Materials/Tomato.tres" id="1_1kv4s"]
-[ext_resource type="Script" path="res://scripts/kitchen_object.gd" id="1_6d5oe"]
+[ext_resource type="Script" uid="uid://g25smpy5k0kw" path="res://scripts/kitchen_object.gd" id="1_6d5oe"]
 [ext_resource type="Resource" uid="uid://ds6i74361l4tm" path="res://resources/kitchen_objects_resources/tomato_res.tres" id="2_thh4w"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_cqvvi"]

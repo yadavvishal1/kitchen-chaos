@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cm10p530ybs53"]
 
-[ext_resource type="Script" path="res://scripts/character_controller.gd" id="1_y3xct"]
+[ext_resource type="Script" uid="uid://cqlvfaywtv84n" path="res://scripts/character_controller.gd" id="1_y3xct"]
 [ext_resource type="PackedScene" uid="uid://bnj5dgsg8bvhn" path="res://scenes/Player/player_visuals.tscn" id="2_c08sx"]
-[ext_resource type="Script" path="res://scripts/kitchen_object_parent.gd" id="5_u782n"]
-[ext_resource type="Script" path="res://scripts/player_sound.gd" id="6_pt7sq"]
+[ext_resource type="Script" uid="uid://851rpghegk8p" path="res://scripts/kitchen_object_parent.gd" id="5_u782n"]
+[ext_resource type="Script" uid="uid://bui5bbxljpchy" path="res://scripts/player_sound.gd" id="6_pt7sq"]
 [ext_resource type="PackedScene" uid="uid://buq5wmtibrfgv" path="res://vfx/player_moving_particles.tscn" id="6_xy7lt"]
 [ext_resource type="Resource" uid="uid://cnpj1ytpo7ohk" path="res://resources/audio_clip_ref_res/audio_clip_ref_res.tres" id="7_xcpi4"]
 

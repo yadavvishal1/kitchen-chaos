@@ -1,19 +1,19 @@
 [gd_scene load_steps=23 format=3 uid="uid://bvvytnomdilnu"]
 
 [ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_etwqx"]
-[ext_resource type="Script" path="res://scripts/stove_counter.gd" id="2_jk443"]
-[ext_resource type="Script" path="res://scripts/resources/frying_recipe_res.gd" id="3_n01nu"]
+[ext_resource type="Script" uid="uid://co0qfadoffcmf" path="res://scripts/stove_counter.gd" id="2_jk443"]
+[ext_resource type="Script" uid="uid://dm2tjysct18sk" path="res://scripts/resources/frying_recipe_res.gd" id="3_n01nu"]
 [ext_resource type="PackedScene" uid="uid://dkah4js6xrjt8" path="res://scenes/SceneVisuals/CountersVisuals/StoveCounter_Visual.tscn" id="3_wu8vu"]
 [ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="4_sci5m"]
 [ext_resource type="Resource" uid="uid://c13xxv6prvdiq" path="res://resources/frying_recipe_res/meat_patty_uncooked_to_meat_patty_cooked.tres" id="4_syx7q"]
-[ext_resource type="Script" path="res://scripts/resources/burning_recipe_res.gd" id="5_1jqyr"]
+[ext_resource type="Script" uid="uid://mvls5qyuce3a" path="res://scripts/resources/burning_recipe_res.gd" id="5_1jqyr"]
 [ext_resource type="Resource" uid="uid://cu4alynjsffbv" path="res://resources/burning_recipe_res/meat_patty_cooked_to_meat_patty_burned.tres" id="6_q7dgf"]
 [ext_resource type="PackedScene" uid="uid://dfpsxj0447bxg" path="res://scenes/ui/progress_bar_ui.tscn" id="9_cp0wp"]
-[ext_resource type="Script" path="res://scripts/ui/stove_burn_flashing_bar_ui.gd" id="9_hgrqv"]
+[ext_resource type="Script" uid="uid://bef57h7yj8oo" path="res://scripts/ui/stove_burn_flashing_bar_ui.gd" id="9_hgrqv"]
 [ext_resource type="Texture2D" uid="uid://cym5jv3cns1b0" path="res://Assets/Textures/Warning.png" id="10_8wo71"]
 [ext_resource type="AudioStream" uid="uid://ymumsboeqssb" path="res://Assets/Sounds/SFX/SFX_pan_sizzle_loop.wav" id="10_lrht2"]
-[ext_resource type="Script" path="res://scripts/ui/stove_burn_warning_ui.gd" id="10_snsm0"]
-[ext_resource type="Script" path="res://scripts/stove_counter_sound.gd" id="11_ngqow"]
+[ext_resource type="Script" uid="uid://bc5vstd7c0tth" path="res://scripts/ui/stove_burn_warning_ui.gd" id="10_snsm0"]
+[ext_resource type="Script" uid="uid://b62hdbn5pm8e7" path="res://scripts/stove_counter_sound.gd" id="11_ngqow"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hbwqw"]
 viewport_path = NodePath("ProgressBarUI/SubViewport")
@@ -53,8 +53,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vqirq"]
 _data = {
-"RESET": SubResource("Animation_lqtap"),
-"stove_burn_flashing_bar_Flash": SubResource("Animation_7uwux")
+&"RESET": SubResource("Animation_lqtap"),
+&"stove_burn_flashing_bar_Flash": SubResource("Animation_7uwux")
 }
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_rb1xw"]
@@ -93,8 +93,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2pwiu"]
 _data = {
-"RESET": SubResource("Animation_jcb2g"),
-"flash": SubResource("Animation_h0tak")
+&"RESET": SubResource("Animation_jcb2g"),
+&"flash": SubResource("Animation_h0tak")
 }
 
 [node name="StoveCounter" node_paths=PackedStringArray("selected_counter_visual") instance=ExtResource("1_etwqx")]

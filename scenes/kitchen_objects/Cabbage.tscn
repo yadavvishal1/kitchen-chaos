@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://c66ddj8jc7j40"]
 
-[ext_resource type="Script" path="res://scripts/kitchen_object.gd" id="1_c85v8"]
-[ext_resource type="Texture2D" uid="uid://dkmc4x1p30s20" path="res://Assets/Meshes/Textures/Lettuce_AlbedoTransparency.png" id="1_unc7n"]
+[ext_resource type="Script" uid="uid://g25smpy5k0kw" path="res://scripts/kitchen_object.gd" id="1_c85v8"]
+[ext_resource type="Texture2D" uid="uid://ce51lrhl2j2au" path="res://Assets/Meshes/Textures/Lettuce_AlbedoTransparency.png" id="1_unc7n"]
 [ext_resource type="Texture2D" uid="uid://cdwixuaf6xe44" path="res://Assets/Meshes/Textures/Lettuce_Normal.png" id="2_a1qah"]
 [ext_resource type="Resource" uid="uid://8e4ju4ofkbpe" path="res://resources/kitchen_objects_resources/cabbage.tres" id="2_ags6q"]
 
