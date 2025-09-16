@@ -204,8 +204,8 @@ shadow_offset = Vector2(0.75, 0.82)
 font_size = 100
 font_color = Color(0.871094, 0.66826, 0.129303, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xxt"]
-bg_color = Color(0.312, 0.65, 0.2275, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yc7k"]
+bg_color = Color(0.219608, 0.219608, 0.215686, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -215,8 +215,8 @@ expand_margin_right = 30.0
 shadow_size = 1
 shadow_offset = Vector2(2.065, 5.68)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yc7k"]
-bg_color = Color(0.219608, 0.219608, 0.215686, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xxt"]
+bg_color = Color(0.312, 0.65, 0.2275, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -229,8 +229,8 @@ shadow_offset = Vector2(2.065, 5.68)
 [sub_resource type="LabelSettings" id="LabelSettings_0kp57"]
 font_size = 70
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyywk"]
-bg_color = Color(0.312, 0.65, 0.2275, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g28bm"]
+bg_color = Color(0.219608, 0.219608, 0.215686, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -238,8 +238,8 @@ corner_radius_bottom_left = 8
 shadow_size = 1
 shadow_offset = Vector2(2.065, 5.68)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g28bm"]
-bg_color = Color(0.219608, 0.219608, 0.215686, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wyywk"]
+bg_color = Color(0.312, 0.65, 0.2275, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -869,24 +869,24 @@ theme_override_constants/separation = 30
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 35
-theme_override_styles/hover = SubResource("StyleBoxFlat_21xxt")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1yc7k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_21xxt")
 text = "RESUME"
 
 [node name="OptionsButton" type="Button" parent="CanvasLayer/GamePauseUI/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 35
-theme_override_styles/hover = SubResource("StyleBoxFlat_21xxt")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1yc7k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_21xxt")
 text = "OPTIONS"
 
 [node name="MainMenuButton" type="Button" parent="CanvasLayer/GamePauseUI/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 35
-theme_override_styles/hover = SubResource("StyleBoxFlat_21xxt")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1yc7k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_21xxt")
 text = "MAIN MENU"
 
 [node name="OptionsUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("sound_effect_button", "music_button", "close_button", "sound_manager", "music_manager")]
@@ -946,8 +946,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g28bm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 text = "Sound Effect: 5"
 
 [node name="MusicButton" type="Button" parent="CanvasLayer/OptionsUI"]
@@ -966,8 +966,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g28bm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 text = "Music: 5"
 
 [node name="CloseButton" type="Button" parent="CanvasLayer/OptionsUI"]
@@ -986,8 +986,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
-theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g28bm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 text = "CLOSE"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/OptionsUI"]
