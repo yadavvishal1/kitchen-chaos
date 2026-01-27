@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://gq84qi3upbui"]
+[gd_scene format=3 uid="uid://gq84qi3upbui"]
 
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="1_widkb"]
 [ext_resource type="PackedScene" uid="uid://cm10p530ybs53" path="res://scenes/Player/player.tscn" id="2_gu57o"]
@@ -49,13 +49,12 @@ gradient = SubResource("Gradient_vb8tt")
 background_mode = 1
 background_color = Color(0.6, 0.5064, 0.444, 1)
 tonemap_mode = 2
-tonemap_exposure = 0.6
+tonemap_agx_contrast = 2.0
 glow_enabled = true
 glow_normalized = true
 glow_intensity = 5.0
 glow_strength = 0.55
 glow_bloom = 0.5
-glow_blend_mode = 1
 fog_enabled = true
 fog_mode = 1
 fog_light_energy = 1.17
@@ -261,145 +260,145 @@ fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4hhga"]
 
-[node name="Game Scene" type="Node3D"]
+[node name="Game Scene" type="Node3D" unique_id=1814210990]
 
-[node name="Floor" type="CSGMesh3D" parent="."]
+[node name="Floor" type="CSGMesh3D" parent="." unique_id=867283991]
 transform = Transform3D(34.0237, 0, 0, 0, 0.1, 0, 0, 0, 50, 0, -0.0474048, 0)
 mesh = SubResource("BoxMesh_hfwyp")
 material = ExtResource("1_widkb")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1831036881]
 transform = Transform3D(0.866025, 0.383022, -0.321394, 0, 0.642788, 0.766044, 0.5, -0.663414, 0.55667, -43.2286, 11, 23.2991)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1530513440]
 transform = Transform3D(1, 0, 0, 0, 0.694658, 0.71934, 0, -0.71934, 0.694658, 0.75, 21.5, 20.8)
 fov = 20.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera3D" unique_id=1912344992]
 environment = SubResource("Environment_c747p")
 
-[node name="Player" parent="." instance=ExtResource("2_gu57o")]
+[node name="Player" parent="." unique_id=1003553915 instance=ExtResource("2_gu57o")]
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1690543198]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 script = ExtResource("3_7kgsp")
 
-[node name="Counters" type="Node3D" parent="."]
+[node name="Counters" type="Node3D" parent="." unique_id=2030322314]
 
-[node name="ContainerCounterMeatPattyUncooked" parent="Counters" instance=ExtResource("4_6ir3b")]
+[node name="ContainerCounterMeatPattyUncooked" parent="Counters" unique_id=703825883 instance=ExtResource("4_6ir3b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -3.5)
 
-[node name="ClearCounter" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter" parent="Counters" unique_id=1108483960 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -3.5)
 
-[node name="ClearCounter3" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter3" parent="Counters" unique_id=672855487 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -3.5)
 
-[node name="ClearCounter13" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter13" parent="Counters" unique_id=218788009 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -3.5)
 
-[node name="ClearCounter5" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter5" parent="Counters" unique_id=464012618 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.5, 0, 5.5)
 
-[node name="ClearCounter7" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter7" parent="Counters" unique_id=1193400168 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3, 0, 5.5)
 
-[node name="ClearCounter8" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter8" parent="Counters" unique_id=1997060425 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 0, 5.5)
 
-[node name="ClearCounter9" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter9" parent="Counters" unique_id=1786173192 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.5, 0, 5.5)
 
-[node name="ClearCounter11" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter11" parent="Counters" unique_id=1627834668 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 7.5, 0, 4)
 
-[node name="ClearCounter6" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter6" parent="Counters" unique_id=1157042919 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3, 0, 5.5)
 
-[node name="ClearCounter14" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter14" parent="Counters" unique_id=1521651132 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5, 0, 5.5)
 
-[node name="ClearCounter16" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter16" parent="Counters" unique_id=822108760 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6, 0, 5.5)
 
-[node name="ClearCounter15" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter15" parent="Counters" unique_id=991721653 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 4)
 
-[node name="ClearCounter17" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter17" parent="Counters" unique_id=1738807707 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 2.5)
 
-[node name="ClearCounter18" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter18" parent="Counters" unique_id=309205989 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 1)
 
-[node name="ClearCounter19" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter19" parent="Counters" unique_id=616100235 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, -0.5)
 
-[node name="ClearCounter20" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter20" parent="Counters" unique_id=1280420015 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, -2)
 
-[node name="ClearCounter4" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter4" parent="Counters" unique_id=1694728371 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -3.5)
 
-[node name="ClearCounter2" parent="Counters" instance=ExtResource("5_b4pvh")]
+[node name="ClearCounter2" parent="Counters" unique_id=402719348 instance=ExtResource("5_b4pvh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3.5)
 
-[node name="ContainerCounter2" parent="Counters" instance=ExtResource("6_prm0u")]
+[node name="ContainerCounter2" parent="Counters" unique_id=1139625614 instance=ExtResource("6_prm0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.5)
 
-[node name="ContainerCounterTomato" parent="Counters" instance=ExtResource("7_n85hn")]
+[node name="ContainerCounterTomato" parent="Counters" unique_id=506468259 instance=ExtResource("7_n85hn")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.5, 0, 5.5)
 kitchen_object_res = ExtResource("8_hrhep")
 
-[node name="ContainerCounterCabbage" parent="Counters" instance=ExtResource("9_sihxq")]
+[node name="ContainerCounterCabbage" parent="Counters" unique_id=2039723165 instance=ExtResource("9_sihxq")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 5.5)
 
-[node name="ContainerCounterBread" parent="Counters" instance=ExtResource("10_c3bcv")]
+[node name="ContainerCounterBread" parent="Counters" unique_id=287735100 instance=ExtResource("10_c3bcv")]
 transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -4.5, 0, -3.5)
 
-[node name="CuttingCounter" parent="Counters" instance=ExtResource("11_20l4j")]
+[node name="CuttingCounter" parent="Counters" unique_id=73586595 instance=ExtResource("11_20l4j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3.5)
 
-[node name="CuttingCounter2" parent="Counters" instance=ExtResource("11_20l4j")]
+[node name="CuttingCounter2" parent="Counters" unique_id=1742840660 instance=ExtResource("11_20l4j")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.5, 0, 5.5)
 
-[node name="TrashCounter" parent="Counters" instance=ExtResource("12_bwwd4")]
+[node name="TrashCounter" parent="Counters" unique_id=687430663 instance=ExtResource("12_bwwd4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 2.5)
 
-[node name="StoveCounter" parent="Counters" node_paths=PackedStringArray("sound_manager") instance=ExtResource("13_4amid")]
+[node name="StoveCounter" parent="Counters" unique_id=1083413821 node_paths=PackedStringArray("sound_manager") instance=ExtResource("13_4amid")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -3.5)
 sound_manager = NodePath("../../SoundManager")
 
-[node name="StoveCounter2" parent="Counters" node_paths=PackedStringArray("sound_manager") instance=ExtResource("13_4amid")]
+[node name="StoveCounter2" parent="Counters" unique_id=1426423992 node_paths=PackedStringArray("sound_manager") instance=ExtResource("13_4amid")]
 transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 7.5, 0, 1)
 sound_manager = NodePath("../../SoundManager")
 
-[node name="PlatesCounter" parent="Counters" instance=ExtResource("14_4gvbw")]
+[node name="PlatesCounter" parent="Counters" unique_id=121080133 instance=ExtResource("14_4gvbw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5, 0, -0.5)
 
-[node name="DeliveryCounter" parent="Counters" node_paths=PackedStringArray("delivery_manager") instance=ExtResource("15_6ha57")]
+[node name="DeliveryCounter" parent="Counters" unique_id=50619092 node_paths=PackedStringArray("delivery_manager") instance=ExtResource("15_6ha57")]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5, 0, -2)
 delivery_manager = NodePath("../../DeliveryManager")
 
-[node name="DeliveryManager" type="Node" parent="."]
+[node name="DeliveryManager" type="Node" parent="." unique_id=1652841185]
 unique_name_in_owner = true
 script = ExtResource("16_rjfau")
 _recipe_list_res = ExtResource("17_gtayi")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2073283172]
 follow_viewport_enabled = true
 
-[node name="DeliveryManagerUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("container")]
+[node name="DeliveryManagerUI" type="Control" parent="CanvasLayer" unique_id=1960409128 node_paths=PackedStringArray("container")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("18_6txc3")
 container = NodePath("VBoxContainer")
 recipe_template = ExtResource("19_i232o")
 
-[node name="Title Text" type="Label" parent="CanvasLayer/DeliveryManagerUI"]
+[node name="Title Text" type="Label" parent="CanvasLayer/DeliveryManagerUI" unique_id=757547457]
 layout_mode = 0
 offset_left = 13.0
 offset_top = 32.0
@@ -408,17 +407,17 @@ offset_bottom = 72.0
 text = "RECIPES WAITING..."
 label_settings = SubResource("LabelSettings_v28k0")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DeliveryManagerUI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DeliveryManagerUI" unique_id=115832246]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 73.0
 offset_right = 168.0
 offset_bottom = 261.0
 
-[node name="Recipe Template" parent="CanvasLayer/DeliveryManagerUI/VBoxContainer" instance=ExtResource("19_i232o")]
+[node name="Recipe Template" parent="CanvasLayer/DeliveryManagerUI/VBoxContainer" unique_id=790723899 instance=ExtResource("19_i232o")]
 layout_mode = 2
 
-[node name="GameStartCountdownUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("countdown_text", "sound_manager")]
+[node name="GameStartCountdownUI" type="Control" parent="CanvasLayer" unique_id=267654245 node_paths=PackedStringArray("countdown_text", "sound_manager")]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 8
@@ -434,7 +433,7 @@ script = ExtResource("20_xaq2q")
 countdown_text = NodePath("Label")
 sound_manager = NodePath("../../SoundManager")
 
-[node name="Label" type="Label" parent="CanvasLayer/GameStartCountdownUI"]
+[node name="Label" type="Label" parent="CanvasLayer/GameStartCountdownUI" unique_id=1411258985]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -450,13 +449,11 @@ grow_vertical = 2
 text = "3"
 label_settings = SubResource("LabelSettings_h8eis")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/GameStartCountdownUI"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/GameStartCountdownUI" unique_id=777735185]
 root_node = NodePath("../Label")
-libraries = {
-&"": SubResource("AnimationLibrary_kupjj")
-}
+libraries/ = SubResource("AnimationLibrary_kupjj")
 
-[node name="GamePlayingClockUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("timer")]
+[node name="GamePlayingClockUI" type="Control" parent="CanvasLayer" unique_id=947185734 node_paths=PackedStringArray("timer")]
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
@@ -470,7 +467,7 @@ scale = Vector2(0.655, 0.655)
 script = ExtResource("21_3uvh8")
 timer = NodePath("TextureProgressBar")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/GamePlayingClockUI"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/GamePlayingClockUI" unique_id=1179198239]
 layout_mode = 0
 offset_right = 112.0
 offset_bottom = 111.0
@@ -480,7 +477,7 @@ texture_under = ExtResource("22_2mkem")
 texture_progress = ExtResource("23_nk032")
 texture_progress_offset = Vector2(3.69, 3.955)
 
-[node name="GameOverUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("recipes_deivered_text")]
+[node name="GameOverUI" type="Control" parent="CanvasLayer" unique_id=1500900817 node_paths=PackedStringArray("recipes_deivered_text")]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -491,7 +488,7 @@ grow_vertical = 2
 script = ExtResource("24_gu67c")
 recipes_deivered_text = NodePath("Control2/RecipesDeliveredText2")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GameOverUI"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GameOverUI" unique_id=2079702312]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -500,7 +497,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.611765)
 
-[node name="Control" type="Control" parent="CanvasLayer/GameOverUI"]
+[node name="Control" type="Control" parent="CanvasLayer/GameOverUI" unique_id=2047082843]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -514,7 +511,7 @@ offset_bottom = -209.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GameOverText" type="Label" parent="CanvasLayer/GameOverUI/Control"]
+[node name="GameOverText" type="Label" parent="CanvasLayer/GameOverUI/Control" unique_id=1318825782]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -530,7 +527,7 @@ grow_vertical = 2
 text = "GAME OVER"
 label_settings = SubResource("LabelSettings_6m3bp")
 
-[node name="Control2" type="Control" parent="CanvasLayer/GameOverUI"]
+[node name="Control2" type="Control" parent="CanvasLayer/GameOverUI" unique_id=1729690691]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -544,7 +541,7 @@ offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RecipesDeliveredText" type="Label" parent="CanvasLayer/GameOverUI/Control2"]
+[node name="RecipesDeliveredText" type="Label" parent="CanvasLayer/GameOverUI/Control2" unique_id=977431390]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -560,7 +557,7 @@ grow_vertical = 2
 text = "Recipes Delivered"
 label_settings = SubResource("LabelSettings_t5g0h")
 
-[node name="RecipesDeliveredText2" type="Label" parent="CanvasLayer/GameOverUI/Control2"]
+[node name="RecipesDeliveredText2" type="Label" parent="CanvasLayer/GameOverUI/Control2" unique_id=165839795]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -574,7 +571,7 @@ text = "5
 "
 label_settings = SubResource("LabelSettings_21qul")
 
-[node name="TutorialUI" type="Control" parent="CanvasLayer"]
+[node name="TutorialUI" type="Control" parent="CanvasLayer" unique_id=1577044048]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -584,7 +581,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("25_ntqf3")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/TutorialUI"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/TutorialUI" unique_id=1031395159]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -593,7 +590,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.788235)
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TutorialUI"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TutorialUI" unique_id=721139361]
 custom_minimum_size = Vector2(1024, 544)
 layout_mode = 1
 anchors_preset = 8
@@ -611,7 +608,7 @@ texture = ExtResource("26_xifyq")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="KeyMoveUp" type="Panel" parent="CanvasLayer/TutorialUI"]
+[node name="KeyMoveUp" type="Panel" parent="CanvasLayer/TutorialUI" unique_id=925559438]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.747396
@@ -624,7 +621,7 @@ offset_bottom = -0.256012
 theme_override_styles/panel = SubResource("StyleBoxFlat_06h52")
 metadata/_edit_use_anchors_ = true
 
-[node name="KeyMoveUpText" type="Label" parent="CanvasLayer/TutorialUI/KeyMoveUp"]
+[node name="KeyMoveUpText" type="Label" parent="CanvasLayer/TutorialUI/KeyMoveUp" unique_id=1852530471]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -639,7 +636,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "W"
 
-[node name="KeyMoveDown" type="Panel" parent="CanvasLayer/TutorialUI"]
+[node name="KeyMoveDown" type="Panel" parent="CanvasLayer/TutorialUI" unique_id=249463712]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.775174
@@ -652,7 +649,7 @@ offset_bottom = -0.256042
 theme_override_styles/panel = SubResource("StyleBoxFlat_06h52")
 metadata/_edit_use_anchors_ = true
 
-[node name="KeyMoveDownText" type="Label" parent="CanvasLayer/TutorialUI/KeyMoveDown"]
+[node name="KeyMoveDownText" type="Label" parent="CanvasLayer/TutorialUI/KeyMoveDown" unique_id=165187560]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -667,7 +664,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "S"
 
-[node name="KeyMoveLeft" type="Panel" parent="CanvasLayer/TutorialUI"]
+[node name="KeyMoveLeft" type="Panel" parent="CanvasLayer/TutorialUI" unique_id=69570166]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.802083
@@ -680,7 +677,7 @@ offset_bottom = -0.256012
 theme_override_styles/panel = SubResource("StyleBoxFlat_06h52")
 metadata/_edit_use_anchors_ = true
 
-[node name="KeyMoveLeftText" type="Label" parent="CanvasLayer/TutorialUI/KeyMoveLeft"]
+[node name="KeyMoveLeftText" type="Label" parent="CanvasLayer/TutorialUI/KeyMoveLeft" unique_id=1737958163]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -695,7 +692,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "A"
 
-[node name="KeyMoveRight" type="Panel" parent="CanvasLayer/TutorialUI"]
+[node name="KeyMoveRight" type="Panel" parent="CanvasLayer/TutorialUI" unique_id=1611895718]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.828125
@@ -708,7 +705,7 @@ offset_bottom = -0.256073
 theme_override_styles/panel = SubResource("StyleBoxFlat_06h52")
 metadata/_edit_use_anchors_ = true
 
-[node name="KeyMoveRightText" type="Label" parent="CanvasLayer/TutorialUI/KeyMoveRight"]
+[node name="KeyMoveRightText" type="Label" parent="CanvasLayer/TutorialUI/KeyMoveRight" unique_id=1658572794]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -723,7 +720,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "D"
 
-[node name="KeyInteract" type="Panel" parent="CanvasLayer/TutorialUI"]
+[node name="KeyInteract" type="Panel" parent="CanvasLayer/TutorialUI" unique_id=321551494]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.788194
@@ -736,7 +733,7 @@ offset_bottom = -0.256012
 theme_override_styles/panel = SubResource("StyleBoxFlat_06h52")
 metadata/_edit_use_anchors_ = true
 
-[node name="KeyInteractText" type="Label" parent="CanvasLayer/TutorialUI/KeyInteract"]
+[node name="KeyInteractText" type="Label" parent="CanvasLayer/TutorialUI/KeyInteract" unique_id=2004310897]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -751,7 +748,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "E"
 
-[node name="KeyInteractAlternate" type="Panel" parent="CanvasLayer/TutorialUI"]
+[node name="KeyInteractAlternate" type="Panel" parent="CanvasLayer/TutorialUI" unique_id=101801833]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.788194
@@ -764,7 +761,7 @@ offset_bottom = -0.256012
 theme_override_styles/panel = SubResource("StyleBoxFlat_06h52")
 metadata/_edit_use_anchors_ = true
 
-[node name="KeyInteractAlternateText" type="Label" parent="CanvasLayer/TutorialUI/KeyInteractAlternate"]
+[node name="KeyInteractAlternateText" type="Label" parent="CanvasLayer/TutorialUI/KeyInteractAlternate" unique_id=1268916677]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -779,7 +776,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "F"
 
-[node name="KeyPause" type="Panel" parent="CanvasLayer/TutorialUI"]
+[node name="KeyPause" type="Panel" parent="CanvasLayer/TutorialUI" unique_id=627215344]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.788194
@@ -792,7 +789,7 @@ offset_bottom = -0.256012
 theme_override_styles/panel = SubResource("StyleBoxFlat_06h52")
 metadata/_edit_use_anchors_ = true
 
-[node name="KeyPauseText" type="Label" parent="CanvasLayer/TutorialUI/KeyPause"]
+[node name="KeyPauseText" type="Label" parent="CanvasLayer/TutorialUI/KeyPause" unique_id=2018146110]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -807,7 +804,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Esc"
 
-[node name="GamePauseUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("main_menu_button", "resume_button", "options_ui")]
+[node name="GamePauseUI" type="Control" parent="CanvasLayer" unique_id=2129714592 node_paths=PackedStringArray("main_menu_button", "resume_button", "options_ui")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -825,7 +822,7 @@ main_menu_button = NodePath("VBoxContainer/MainMenuButton")
 resume_button = NodePath("VBoxContainer/ResumeButton")
 options_ui = NodePath("../OptionsUI")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GamePauseUI"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/GamePauseUI" unique_id=960619466]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -834,7 +831,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.784314)
 
-[node name="PauseText" type="Label" parent="CanvasLayer/GamePauseUI"]
+[node name="PauseText" type="Label" parent="CanvasLayer/GamePauseUI" unique_id=556057336]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -850,7 +847,7 @@ grow_vertical = 2
 text = "PAUSED"
 label_settings = SubResource("LabelSettings_4epdr")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GamePauseUI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GamePauseUI" unique_id=1598191839]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -865,7 +862,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
 
-[node name="ResumeButton" type="Button" parent="CanvasLayer/GamePauseUI/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="CanvasLayer/GamePauseUI/VBoxContainer" unique_id=1536398030]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 35
@@ -873,7 +870,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1yc7k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_21xxt")
 text = "RESUME"
 
-[node name="OptionsButton" type="Button" parent="CanvasLayer/GamePauseUI/VBoxContainer"]
+[node name="OptionsButton" type="Button" parent="CanvasLayer/GamePauseUI/VBoxContainer" unique_id=995846470]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 35
@@ -881,7 +878,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1yc7k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_21xxt")
 text = "OPTIONS"
 
-[node name="MainMenuButton" type="Button" parent="CanvasLayer/GamePauseUI/VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="CanvasLayer/GamePauseUI/VBoxContainer" unique_id=32082189]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 35
@@ -889,7 +886,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1yc7k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_21xxt")
 text = "MAIN MENU"
 
-[node name="OptionsUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("sound_effect_button", "music_button", "close_button", "sound_manager", "music_manager")]
+[node name="OptionsUI" type="Control" parent="CanvasLayer" unique_id=210346278 node_paths=PackedStringArray("sound_effect_button", "music_button", "close_button", "sound_manager", "music_manager")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -905,7 +902,7 @@ close_button = NodePath("CloseButton")
 sound_manager = NodePath("../../SoundManager")
 music_manager = NodePath("../../MusicManager")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/OptionsUI"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/OptionsUI" unique_id=553641740]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -914,7 +911,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.952941)
 
-[node name="OptionsText" type="Label" parent="CanvasLayer/OptionsUI"]
+[node name="OptionsText" type="Label" parent="CanvasLayer/OptionsUI" unique_id=1117518783]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -930,7 +927,7 @@ grow_vertical = 2
 text = "OPTIONS"
 label_settings = SubResource("LabelSettings_0kp57")
 
-[node name="SoundEffectsButton" type="Button" parent="CanvasLayer/OptionsUI"]
+[node name="SoundEffectsButton" type="Button" parent="CanvasLayer/OptionsUI" unique_id=413421118]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -950,7 +947,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_g28bm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 text = "Sound Effect: 5"
 
-[node name="MusicButton" type="Button" parent="CanvasLayer/OptionsUI"]
+[node name="MusicButton" type="Button" parent="CanvasLayer/OptionsUI" unique_id=2072583144]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -970,7 +967,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_g28bm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 text = "Music: 5"
 
-[node name="CloseButton" type="Button" parent="CanvasLayer/OptionsUI"]
+[node name="CloseButton" type="Button" parent="CanvasLayer/OptionsUI" unique_id=384624525]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -990,7 +987,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_g28bm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wyywk")
 text = "CLOSE"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/OptionsUI"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/OptionsUI" unique_id=985142872]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1004,18 +1001,18 @@ offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer" unique_id=246258783]
 layout_mode = 2
 theme_override_constants/separation = 80
 
-[node name="MoveUpText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer"]
+[node name="MoveUpText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer" unique_id=1088117014]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Move Up"
 label_settings = SubResource("LabelSettings_63pby")
 
-[node name="MoveUpButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer"]
+[node name="MoveUpButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer" unique_id=664752537]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1025,18 +1022,18 @@ toggle_mode = true
 text = "W"
 script = ExtResource("29_17v7e")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer" unique_id=788880659]
 layout_mode = 2
 theme_override_constants/separation = 80
 
-[node name="MoveDownText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer2"]
+[node name="MoveDownText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer2" unique_id=1775290940]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Move Down"
 label_settings = SubResource("LabelSettings_63pby")
 
-[node name="MoveDownButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer2"]
+[node name="MoveDownButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer2" unique_id=507126592]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1047,18 +1044,18 @@ text = "W"
 script = ExtResource("29_17v7e")
 action = "Down"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer" unique_id=315156765]
 layout_mode = 2
 theme_override_constants/separation = 80
 
-[node name="MoveLeftText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer3"]
+[node name="MoveLeftText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer3" unique_id=471689403]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Move Left"
 label_settings = SubResource("LabelSettings_63pby")
 
-[node name="MoveLeftButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer3"]
+[node name="MoveLeftButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer3" unique_id=1286391195]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1069,18 +1066,18 @@ text = "W"
 script = ExtResource("29_17v7e")
 action = "Left"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer" unique_id=1234060516]
 layout_mode = 2
 theme_override_constants/separation = 80
 
-[node name="MoveRightText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer4"]
+[node name="MoveRightText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer4" unique_id=751435123]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Move Right"
 label_settings = SubResource("LabelSettings_63pby")
 
-[node name="MoveRightButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer4"]
+[node name="MoveRightButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer4" unique_id=1106515906]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1091,18 +1088,18 @@ text = "W"
 script = ExtResource("29_17v7e")
 action = "Right"
 
-[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer" unique_id=541280367]
 layout_mode = 2
 theme_override_constants/separation = 80
 
-[node name="InteractText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer5"]
+[node name="InteractText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer5" unique_id=900336716]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Interact"
 label_settings = SubResource("LabelSettings_63pby")
 
-[node name="InteractButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer5"]
+[node name="InteractButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer5" unique_id=1007736193]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1113,18 +1110,18 @@ text = "W"
 script = ExtResource("29_17v7e")
 action = "Interact"
 
-[node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+[node name="HBoxContainer6" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer" unique_id=782847337]
 layout_mode = 2
 theme_override_constants/separation = 80
 
-[node name="InteractAlternateText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer6"]
+[node name="InteractAlternateText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer6" unique_id=1992085049]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Interact Alt"
 label_settings = SubResource("LabelSettings_63pby")
 
-[node name="InteractAlternateButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer6"]
+[node name="InteractAlternateButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer6" unique_id=1828426473]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1135,18 +1132,18 @@ text = "W"
 script = ExtResource("29_17v7e")
 action = "InteractAlternate"
 
-[node name="HBoxContainer7" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer"]
+[node name="HBoxContainer7" type="HBoxContainer" parent="CanvasLayer/OptionsUI/VBoxContainer" unique_id=655244365]
 layout_mode = 2
 theme_override_constants/separation = 80
 
-[node name="PauseText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer7"]
+[node name="PauseText" type="Label" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer7" unique_id=1191525800]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Pause"
 label_settings = SubResource("LabelSettings_63pby")
 
-[node name="PauseButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer7"]
+[node name="PauseButton" type="Button" parent="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer7" unique_id=146874673]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -1157,7 +1154,7 @@ text = "W"
 script = ExtResource("29_17v7e")
 action = "Pause"
 
-[node name="Vignette" type="Control" parent="CanvasLayer"]
+[node name="Vignette" type="Control" parent="CanvasLayer" unique_id=438291943]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1169,7 +1166,7 @@ size_flags_vertical = 4
 focus_previous = NodePath("../DeliveryManagerUI")
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Vignette"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Vignette" unique_id=1130121166]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1179,47 +1176,47 @@ grow_vertical = 2
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_6ukrn")
 
-[node name="MusicManager" type="AudioStreamPlayer2D" parent="."]
+[node name="MusicManager" type="AudioStreamPlayer2D" parent="." unique_id=1981845135]
 stream = ExtResource("30_7ans1")
 autoplay = true
 script = ExtResource("31_6qqxb")
 
-[node name="SoundManager" type="Node" parent="." groups=["sound_manager"]]
+[node name="SoundManager" type="Node" parent="." unique_id=1568172192 groups=["sound_manager"]]
 script = ExtResource("32_if087")
 audio_clip_ref_res = ExtResource("33_meca8")
 
-[node name="KitchenManager" type="Node" parent="."]
+[node name="KitchenManager" type="Node" parent="." unique_id=1008617256]
 unique_name_in_owner = true
 script = ExtResource("34_2iqgk")
 
-[node name="Walls" type="Node3D" parent="."]
+[node name="Walls" type="Node3D" parent="." unique_id=1902897569]
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="Walls"]
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Walls" unique_id=1661968900]
 transform = Transform3D(0.334473, 0, 0, 0, 2, 0, 0, 0, 15.5098, 8.41561, 1.01292, 3.05955)
 mesh = SubResource("BoxMesh_4hhga")
 material = ExtResource("35_pc6wo")
 
-[node name="CSGMesh3D4" type="CSGMesh3D" parent="Walls"]
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="Walls" unique_id=986702141]
 transform = Transform3D(8.83814, 0, 0, 0, 0.117102, 0, 0, 0, 20.4935, 12.6975, -0.0194182, 1.25701)
 mesh = SubResource("BoxMesh_4hhga")
 material = ExtResource("36_qsolj")
 
-[node name="CSGMesh3D6" type="CSGMesh3D" parent="Walls"]
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="Walls" unique_id=1315694523]
 transform = Transform3D(-3.86328e-07, 0, 20.4935, 0, 0.117102, 0, -8.83814, 0, -8.95801e-07, -1.00028, -0.0194182, -8.25227)
 mesh = SubResource("BoxMesh_4hhga")
 material = ExtResource("36_qsolj")
 
-[node name="CSGMesh3D5" type="CSGMesh3D" parent="Walls"]
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="Walls" unique_id=1311594751]
 transform = Transform3D(8.83814, 0, 0, 0, 0.117102, 0, 0, 0, 20.4935, -11.563, -0.0194182, 0.856575)
 mesh = SubResource("BoxMesh_4hhga")
 material = ExtResource("36_qsolj")
 
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="Walls"]
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="Walls" unique_id=1507936356]
 transform = Transform3D(0.357583, 0, 0, 0, 2, 0, 0, 0, 15.5098, -6.94871, 1.01292, 3.1056)
 mesh = SubResource("BoxMesh_4hhga")
 material = ExtResource("35_pc6wo")
 
-[node name="CSGMesh3D3" type="CSGMesh3D" parent="Walls"]
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="Walls" unique_id=1908576431]
 transform = Transform3D(-1.64634e-08, 0, -15.4629, 0, 2, 0, 0.376638, 0, -6.75905e-07, 0.648021, 1.01292, -4.51296)
 mesh = SubResource("BoxMesh_4hhga")
 material = ExtResource("35_pc6wo")

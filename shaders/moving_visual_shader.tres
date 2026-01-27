@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=10 format=3 uid="uid://4jvadxpuqux8"]
+[gd_resource type="VisualShader" format=3 uid="uid://4jvadxpuqux8"]
 
 [ext_resource type="Texture2D" uid="uid://dh4bdcspe4msm" path="res://Assets/Textures/Icons/MeatPattyBurned.png" id="1_ubvon"]
 
@@ -34,48 +34,6 @@ op_type = 0
 [sub_resource type="VisualShaderNodeVec2Constant" id="VisualShaderNodeVec2Constant_frqki"]
 
 [resource]
-code = "shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, depth_test_default, cull_back, diffuse_lambert, specular_schlick_ggx;
-
-uniform vec2 Vector2Parameter;
-uniform sampler2D Texture2DParameter : source_color;
-
-
-
-void fragment() {
-// Input:7
-	vec2 n_out7p0 = UV;
-
-
-// Input:10
-	float n_out10p0 = TIME;
-
-
-// Vector2Parameter:11
-	vec2 n_out11p0 = Vector2Parameter;
-
-
-// VectorOp:12
-	vec2 n_out12p0 = vec2(n_out10p0) * n_out11p0;
-
-
-// VectorOp:8
-	vec2 n_out8p0 = n_out7p0 + n_out12p0;
-
-
-	vec4 n_out5p0;
-// Texture2D:5
-	n_out5p0 = texture(Texture2DParameter, n_out8p0);
-	float n_out5p4 = n_out5p0.a;
-
-
-// Output:0
-	ALBEDO = vec3(n_out5p0.xyz);
-	ALPHA = n_out5p4;
-
-
-}
-"
 nodes/fragment/0/position = Vector2(500, 160)
 nodes/fragment/5/node = SubResource("VisualShaderNodeTexture_dl14n")
 nodes/fragment/5/position = Vector2(60, 240)

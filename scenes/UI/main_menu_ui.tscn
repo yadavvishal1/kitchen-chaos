@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://copd6s8ssajnn"]
+[gd_scene format=3 uid="uid://copd6s8ssajnn"]
 
 [ext_resource type="Script" uid="uid://b8spdql06ni4h" path="res://scripts/ui/main_menu_ui.gd" id="1_4t4da"]
 [ext_resource type="Material" uid="uid://cummbvn4ovj07" path="res://Assets/Materials/Floor.material" id="2_yrrvn"]
@@ -57,13 +57,11 @@ gradient = SubResource("Gradient_ybmmo")
 background_mode = 1
 background_color = Color(0.6, 0.5064, 0.444, 1)
 tonemap_mode = 2
-tonemap_exposure = 0.4
 glow_enabled = true
 glow_normalized = true
 glow_intensity = 4.0
 glow_strength = 0.52
 glow_bloom = 0.5
-glow_blend_mode = 1
 fog_enabled = true
 fog_light_energy = 1.17
 fog_density = 0.005
@@ -97,7 +95,7 @@ corner_radius_bottom_left = 8
 shadow_size = 1
 shadow_offset = Vector2(2.065, 5.68)
 
-[node name="MainMenuUI" type="Control" node_paths=PackedStringArray("play_button", "quit_button")]
+[node name="MainMenuUI" type="Control" unique_id=2102689451 node_paths=PackedStringArray("play_button", "quit_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -108,39 +106,39 @@ script = ExtResource("1_4t4da")
 play_button = NodePath("PlayButton")
 quit_button = NodePath("QuitButton")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1354601593]
 layout_mode = 0
 offset_right = 512.0
 offset_bottom = 512.0
 texture = SubResource("ViewportTexture_t2py2")
 
-[node name="SubViewport" type="SubViewport" parent="TextureRect"]
+[node name="SubViewport" type="SubViewport" parent="TextureRect" unique_id=858552558]
 size = Vector2i(1148, 658)
 
-[node name="AdvancedCamera" type="Camera3D" parent="TextureRect/SubViewport"]
+[node name="AdvancedCamera" type="Camera3D" parent="TextureRect/SubViewport" unique_id=1264206930]
 transform = Transform3D(0.939728, 0, 0.341922, 0.0328844, 0.995364, -0.0903787, -0.340337, 0.0961754, 0.935372, 4.74367, 0.603209, 48.4617)
 fov = 20.0
 script = SubResource("GDScript_q7efy")
 amplitude = 0.5
 shake_speed = 5.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="TextureRect/SubViewport/AdvancedCamera"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="TextureRect/SubViewport/AdvancedCamera" unique_id=1412104375]
 environment = SubResource("Environment_dcrkv")
 
-[node name="Floor2" type="CSGMesh3D" parent="TextureRect/SubViewport"]
+[node name="Floor2" type="CSGMesh3D" parent="TextureRect/SubViewport" unique_id=738810925]
 transform = Transform3D(50, 0, 0, 0, 0.1, 0, 0, 0, 50, 0.031, 0, 23.977)
 mesh = SubResource("BoxMesh_1xem4")
 material = ExtResource("2_yrrvn")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="TextureRect/SubViewport"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="TextureRect/SubViewport" unique_id=1379920886]
 transform = Transform3D(0.866025, 0.383022, -0.321394, 0, 0.642788, 0.766044, 0.5, -0.663414, 0.556671, -43.2286, 11, 23.2991)
 shadow_enabled = true
 
-[node name="PlayerVisuals" parent="TextureRect/SubViewport" instance=ExtResource("3_holwn")]
+[node name="PlayerVisuals" parent="TextureRect/SubViewport" unique_id=1050325762 instance=ExtResource("3_holwn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75933, 0, 39.6274)
 script = null
 
-[node name="PlayerVisuals2" parent="TextureRect/SubViewport" instance=ExtResource("3_holwn")]
+[node name="PlayerVisuals2" parent="TextureRect/SubViewport" unique_id=240234215 instance=ExtResource("3_holwn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26226, 0, 38.7705)
 script = null
 
@@ -151,7 +149,7 @@ material_override = ExtResource("4_ebkcx")
 [node name="Body" parent="TextureRect/SubViewport/PlayerVisuals2" index="1"]
 material_override = ExtResource("4_ebkcx")
 
-[node name="PlayerVisuals3" parent="TextureRect/SubViewport" instance=ExtResource("3_holwn")]
+[node name="PlayerVisuals3" parent="TextureRect/SubViewport" unique_id=833336021 instance=ExtResource("3_holwn")]
 transform = Transform3D(0.993599, 0, -0.11296, 0, 1, 0, 0.11296, 0, 0.993599, 0.480434, 0, 38.4931)
 script = null
 
@@ -162,7 +160,7 @@ material_override = ExtResource("5_bwdys")
 [node name="Body" parent="TextureRect/SubViewport/PlayerVisuals3" index="1"]
 material_override = ExtResource("5_bwdys")
 
-[node name="PlayerVisuals4" parent="TextureRect/SubViewport" instance=ExtResource("3_holwn")]
+[node name="PlayerVisuals4" parent="TextureRect/SubViewport" unique_id=786217495 instance=ExtResource("3_holwn")]
 transform = Transform3D(0.997364, 0, -0.0725593, 0, 1, 0, 0.0725593, 0, 0.997364, 1.97107, 0, 37.3851)
 script = null
 
@@ -173,7 +171,7 @@ material_override = ExtResource("4_4b6b3")
 [node name="Body" parent="TextureRect/SubViewport/PlayerVisuals4" index="1"]
 material_override = ExtResource("4_4b6b3")
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=317524231]
 layout_mode = 0
 offset_right = 531.0
 offset_bottom = 365.0
@@ -181,7 +179,7 @@ texture = ExtResource("7_5t0ut")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="PlayButton" type="Button" parent="."]
+[node name="PlayButton" type="Button" parent="." unique_id=837313481]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -197,7 +195,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_mcnsl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8d6bf")
 text = "Play"
 
-[node name="QuitButton" type="Button" parent="."]
+[node name="QuitButton" type="Button" parent="." unique_id=1919851839]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
