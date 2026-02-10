@@ -11,6 +11,7 @@ var spawn_recipe_timer: float
 var spawn_recipe_timer_max: float = 4.0
 var waiting_recipes_max:int = 4
 var successful_recipes_amount:int
+@onready var kitchen_manager = %KitchenManager
 
 func _ready():
 	waiting_recipe_res_list.clear()
@@ -19,7 +20,7 @@ func _process(delta):
 	spawn_recipe_timer -= delta
 	if spawn_recipe_timer <= 0.0:
 		spawn_recipe_timer = spawn_recipe_timer_max
-		if %KitchenManager.IsGamePlaying() and waiting_recipe_res_list.size() < waiting_recipes_max:
+		if kitchen_manager.IsGamePlaying() and waiting_recipe_res_list.size() < waiting_recipes_max:
 			var waiting_recipe_res: RecipeRes = _recipe_list_res.recipe_res_list.pick_random()
 			waiting_recipe_res_list.append(waiting_recipe_res)
 			OnRecipeSpawned.emit()

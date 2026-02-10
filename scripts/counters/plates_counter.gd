@@ -8,6 +8,7 @@ var spawn_plate_timer:float
 var spawn_plate_timer_max: float = 4.0
 var plates_spawned_amount: int
 var plates_spawned_amount_max: int = 4
+@onready var kitchen_manager = %KitchenManager
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -15,7 +16,7 @@ func _process(delta):
 	if spawn_plate_timer > spawn_plate_timer_max:
 		spawn_plate_timer = 0.0
 
-		if %KitchenManager.IsGamePlaying() and plates_spawned_amount < plates_spawned_amount_max:
+		if kitchen_manager.IsGamePlaying() and plates_spawned_amount < plates_spawned_amount_max:
 			plates_spawned_amount += 1
 			OnPlateSpawned.emit()
 

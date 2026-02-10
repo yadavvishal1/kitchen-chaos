@@ -14,6 +14,7 @@ var picked_object: KitchenObject = null  # The object the player is currently ho
 @onready var kitchen_object_parent:Node3D = $KitchenObjectParent
 @onready var raycast: RayCast3D = $RayCast3D
 @onready var object_slot: Node3D = $KitchenObjectParent  # Slot node where the object will be attached when picked up
+@onready var kitchen_manager = %KitchenManager
 
 func _ready() -> void:
 	# Connect to the interact_pressed signal from the GameInput script
@@ -21,13 +22,13 @@ func _ready() -> void:
 	GameInput.connect("interact_alternate_pressed", Callable(self, "_on_interact_alternate_pressed"))
 
 func _on_interact_pressed() -> void:
-	if !%KitchenManager.IsGamePlaying():return
-	if selected_counter != null:
+	if !kitchen_manager.IsGamePlaying():return
+	if is_instance_valid(selected_counter):
 		selected_counter.interact(self) #interact if there is a Selected Counter
 
 func _on_interact_alternate_pressed() -> void:
-	if !%KitchenManager.IsGamePlaying():return
-	if selected_counter != null:
+	if !kitchen_manager.IsGamePlaying():return
+	if is_instance_valid(selected_counter):
 		selected_counter.interact_alternate(self) #interact if there is a Selected Counter
 
 func _physics_process(delta: float) -> void:
@@ -35,29 +36,23 @@ func _physics_process(delta: float) -> void:
 	handle_interactions()
 
 func handle_interactions() -> void:
+	var new_selected_counter: BaseCounter = null
 	if raycast.is_colliding():
 		var counter = raycast.get_collider()
 		if counter is BaseCounter:
-			counter.select()
-			selected_counter = counter
-		else:
-			selected_counter = null
-	else:
-		selected_counter = null
-	deselect_counter()
-
-# Deselection logic for other counters
-func deselect_counter():
-	for counter in get_tree().get_nodes_in_group("counters"):
-		if counter is BaseCounter:
-			if selected_counter != counter:
-				counter.deselect()
+			new_selected_counter = counter
+	if new_selected_counter != selected_counter:
+		if is_instance_valid(selected_counter):
+			selected_counter.deselect()
+		if new_selected_counter != null:
+			new_selected_counter.select()
+		selected_counter = new_selected_counter
 
 # Handle player movement based on input
 func handle_movement(delta: float) -> void:
 	var input_vector = GameInput.get_movement_vector_normalized()
-	if input_vector.length() > 0:
-		var move_dir: Vector3 = Vector3(input_vector.x, 0, input_vector.z).normalized() * move_speed
+	if not input_vector.is_zero_approx():
+		var move_dir: Vector3 = Vector3(input_vector.x, 0, input_vector.z) * move_speed
 
 		# Set the velocity based on input
 		velocity = move_dir
@@ -70,8 +65,8 @@ func handle_movement(delta: float) -> void:
 		velocity = Vector3.ZERO
 	# Call move_and_slide without any arguments
 	move_and_slide()
-	is_walking = velocity.length() > 0.1  # Update is_walking based on actual movement
-	if is_on_floor() and velocity == Vector3.ZERO:
+	is_walking = velocity.length_squared() > 0.01  # Update is_walking based on actual movement
+	if is_on_floor() and velocity.is_zero_approx():
 		is_walking = false
 
 func get_kitchen_object() -> KitchenObject:
