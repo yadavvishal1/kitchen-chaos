@@ -7,3 +7,4 @@ func interact(player: Player):
 		if player.picked_object is PlateKitchenObject: #only accepts plate
 			delivery_manager.deliver_recipe(player.picked_object)
 			player.picked_object.queue_free()
+			player.clear_kitchen_object()

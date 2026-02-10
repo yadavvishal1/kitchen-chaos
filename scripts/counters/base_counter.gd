@@ -21,7 +21,6 @@ func pick_up_kitchen_object(player: Player) -> void:
 		if player.picked_object == null:
 			kitchen_object.reparent(player.kitchen_object_parent)  # Reparent object to the player's slot
 			kitchen_object.position = Vector3.ZERO  # Reset position relative to the player
-			player.picked_object = kitchen_object  # Store the picked object reference
 			player.set_kitchen_object(kitchen_object)
 			kitchen_object = null
 		else:
@@ -37,7 +36,29 @@ func drop_kitchen_object(player: Player) -> void:
 		dropped_object.position = Vector3.ZERO
 		kitchen_object = dropped_object
 		set_kitchen_object(dropped_object)
-		player.picked_object = null
+		player.clear_kitchen_object()
+
+func try_add_counter_object_to_player_plate(player: Player) -> bool:
+	if kitchen_object == null:
+		return false
+	if player.picked_object is PlateKitchenObject:
+		var plate_kitchen_object: PlateKitchenObject = player.picked_object as PlateKitchenObject
+		if plate_kitchen_object.try_add_ingredient(kitchen_object.kitchen_object_res):
+			kitchen_object.queue_free()
+			kitchen_object = null
+			return true
+	return false
+
+func try_add_player_object_to_counter_plate(player: Player) -> bool:
+	if player.picked_object == null:
+		return false
+	if kitchen_object is PlateKitchenObject:
+		var plate_kitchen_object: PlateKitchenObject = kitchen_object as PlateKitchenObject
+		if plate_kitchen_object.try_add_ingredient(player.picked_object.kitchen_object_res):
+			player.picked_object.queue_free()
+			player.clear_kitchen_object()
+			return true
+	return false
 
 func set_kitchen_object(new_kitchen_object: KitchenObject) -> void:
 	kitchen_object = new_kitchen_object

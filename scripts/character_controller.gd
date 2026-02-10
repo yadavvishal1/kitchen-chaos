@@ -81,3 +81,6 @@ func set_kitchen_object(new_picked_object: KitchenObject) -> void:
 	picked_object =  new_picked_object
 	if new_picked_object != null:
 		OnPickedSomething.emit(global_position)
+
+func clear_kitchen_object() -> void:
+	picked_object = null

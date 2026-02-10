@@ -72,15 +72,11 @@ func interact(player: Player) -> void:
 
 	else:
 		if player.picked_object != null:
-			if player.picked_object is PlateKitchenObject:  # If the player is holding a Plate
-				var plate_kitchen_object: PlateKitchenObject = player.picked_object as PlateKitchenObject
-				if plate_kitchen_object.try_add_ingredient(kitchen_object.kitchen_object_res):
-					kitchen_object.queue_free()
-					kitchen_object = null
-					state = State.Idle
-					OnStateChanged.emit(state)
-					var normalized_progress = 0.0
-					OnprogressChanged.emit(normalized_progress)  # Emit signal with progress
+			if try_add_counter_object_to_player_plate(player):
+				state = State.Idle
+				OnStateChanged.emit(state)
+				var normalized_progress = 0.0
+				OnprogressChanged.emit(normalized_progress)  # Emit signal with progress
 
 		else:
 			pick_up_kitchen_object(player)

@@ -26,25 +26,27 @@ func _process(delta):
 
 func deliver_recipe(plate_kitchen_object: PlateKitchenObject) -> void:
 	for i in range(waiting_recipe_res_list.size()):
-		var waititng_recipe_res = waiting_recipe_res_list[i]
-		if waititng_recipe_res.kitchen_object_res_list.size() == plate_kitchen_object.get_kitchen_object_res_array().size(): #has same number of ingredients
-			var plate_contents_matches_recipe:bool =  true
-			for recipe_kitchen_object_res: KitchenObjectsResource in waititng_recipe_res.kitchen_object_res_list:  # cycling through all ingradient in the recipe
-				var ingrdient_found:bool =  false
-				for plate_kitchen_object_res: KitchenObjectsResource in plate_kitchen_object.get_kitchen_object_res_array():  # cycling through all ingradient in the plate
-					if plate_kitchen_object_res == recipe_kitchen_object_res: # Ingredients Matches
-						ingrdient_found = true
-						break
-				if !ingrdient_found: # this recipe was not found on the plate
-					plate_contents_matches_recipe = false
-			if plate_contents_matches_recipe: #player delivered correct recipe
-				successful_recipes_amount += 1
-				waiting_recipe_res_list.remove_at(i)
-				OnRecipeCompleted.emit()
-				OnRecipeSuccess.emit()
-				return
+		var waiting_recipe_res = waiting_recipe_res_list[i]
+		if _does_plate_match_recipe(plate_kitchen_object, waiting_recipe_res):
+			successful_recipes_amount += 1
+			waiting_recipe_res_list.remove_at(i)
+			OnRecipeCompleted.emit()
+			OnRecipeSuccess.emit()
+			return
+	OnRecipeFailed.emit()
 
-		OnRecipeFailed.emit()
+func _does_plate_match_recipe(plate_kitchen_object: PlateKitchenObject, recipe_res: RecipeRes) -> bool:
+	if recipe_res.kitchen_object_res_list.size() != plate_kitchen_object.get_kitchen_object_res_array().size():
+		return false
+	for recipe_kitchen_object_res: KitchenObjectsResource in recipe_res.kitchen_object_res_list:  # cycling through all ingredients in the recipe
+		var ingredient_found: bool = false
+		for plate_kitchen_object_res: KitchenObjectsResource in plate_kitchen_object.get_kitchen_object_res_array():  # cycling through all ingredients in the plate
+			if plate_kitchen_object_res == recipe_kitchen_object_res: # Ingredients Matches
+				ingredient_found = true
+				break
+		if !ingredient_found: # this recipe was not found on the plate
+			return false
+	return true
 
 func get_waiting_recipe_res_list() -> Array[RecipeRes]:
 	return waiting_recipe_res_list
