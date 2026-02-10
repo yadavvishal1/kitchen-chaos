@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://br2245wit7bwo"]
 
-[ext_resource type="Script" uid="uid://6tj7am7pscsy" path="res://scripts/plate_kicthen_object.gd" id="1_df263"]
+[ext_resource type="Script" uid="uid://6tj7am7pscsy" path="res://scripts/plate_kitchen_object.gd" id="1_df263"]
 [ext_resource type="Resource" uid="uid://dgt01xdop1ycw" path="res://resources/kitchen_objects_resources/plate.tres" id="2_gyx6m"]
 [ext_resource type="Script" uid="uid://ddtsyp5t7rs05" path="res://scripts/resources/kitchen_objects_res.gd" id="2_ubypk"]
 [ext_resource type="PackedScene" uid="uid://cqq14k78x8aoi" path="res://scenes/SceneVisuals/kitchen_objects_visuals/Plate_Visual.tscn" id="3_2gxud"]
@@ -58,7 +58,7 @@ offset_bottom = -500.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Container" type="GridContainer" parent="Sprite3D/SubViewport/Grid" node_paths=PackedStringArray("plate_kicthen_object")]
+[node name="Container" type="GridContainer" parent="Sprite3D/SubViewport/Grid" node_paths=PackedStringArray("plate_kitchen_object")]
 layout_mode = 0
 offset_right = 816.0
 offset_bottom = 492.0
@@ -66,7 +66,7 @@ theme_override_constants/h_separation = 24
 theme_override_constants/v_separation = 24
 columns = 3
 script = ExtResource("19_c8528")
-plate_kicthen_object = NodePath("../../../..")
+plate_kitchen_object = NodePath("../../../..")
 icon_template = ExtResource("20_uy6gv")
 
 [connection signal="OnIngredientAdded" from="." to="PlateCompleteVisual" method="on_ingredient_added"]

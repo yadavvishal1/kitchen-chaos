@@ -73,7 +73,7 @@ transparent_bg = true
 [node name="ProgressBarUI" parent="ProgressBarUI/SubViewport" index="0" instance=ExtResource("9_nio7h")]
 
 [connection signal="OnCut" from="." to="ClearCounterVisuals" method="_on_cutting_counter_on_cut"]
-[connection signal="OnprogressChanged" from="." to="ProgressBarUI/SubViewport/ProgressBarUI" method="_on_cutting_counter_onprogress_changed"]
+[connection signal="OnProgressChanged" from="." to="ProgressBarUI/SubViewport/ProgressBarUI" method="_on_cutting_counter_on_progress_changed"]
 
 [editable path="ClearCounterVisualsSelected"]
 [editable path="ClearCounterVisualsSelected/Chopping Board"]

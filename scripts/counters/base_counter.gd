@@ -65,8 +65,8 @@ func set_kitchen_object(new_kitchen_object: KitchenObject) -> void:
 	if new_kitchen_object != null:
 		OnAnyObjectPlacedHere.emit(new_kitchen_object.global_position)
 
-func spawn(kicthen_object_res: KitchenObjectsResource) -> KitchenObject:
-	var new_kitchen_object = kicthen_object_res.scene.instantiate() # Instantiate the kitchen object
+func spawn(kitchen_object_res: KitchenObjectsResource) -> KitchenObject:
+	var new_kitchen_object = kitchen_object_res.scene.instantiate() # Instantiate the kitchen object
 	kitchen_object_parent.add_child(new_kitchen_object) # First add it to the counter's parent node
 	new_kitchen_object.position = Vector3.ZERO  # Reset position relative to player
 	return new_kitchen_object

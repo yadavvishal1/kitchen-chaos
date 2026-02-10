@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://d2i33e88d6plv"]
 
 [ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_gdfi5"]
-[ext_resource type="Script" path="res://scripts/cotainer_counter.gd" id="2_i1g2a"]
-[ext_resource type="PackedScene" uid="uid://c5a72a38ulq6x" path="res://scenes/SceneVisuals/CountersVisuals/conatiner_counter_visual.tscn" id="2_uolmo"]
+[ext_resource type="Script" path="res://scripts/counters/container_counter.gd" id="2_i1g2a"]
+[ext_resource type="PackedScene" uid="uid://c5a72a38ulq6x" path="res://scenes/SceneVisuals/CountersVisuals/container_counter_visual.tscn" id="2_uolmo"]
 [ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="3_ka05q"]
 [ext_resource type="PackedScene" uid="uid://d1n4fk81o6pyk" path="res://Assets/Meshes/Counter_solid.fbx" id="4_ax1ep"]
 [ext_resource type="PackedScene" uid="uid://b2yb25b14b0oo" path="res://Assets/Meshes/Counter_hole.fbx" id="6_x27bl"]

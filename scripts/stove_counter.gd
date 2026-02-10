@@ -1,6 +1,6 @@
 class_name StoveCounter extends BaseCounter
 
-signal OnprogressChanged(progress_normalized: float)
+signal OnProgressChanged(progress_normalized: float)
 signal OnStateChanged(state: State)
 
 enum State {Idle, Frying, Fried, Burned}
@@ -29,7 +29,7 @@ func _process(delta) -> void:
 			State.Frying:
 				frying_timer += delta
 				var normalized_progress = float(frying_timer) / float(_frying_recipe_res.frying_timer_max)
-				OnprogressChanged.emit(normalized_progress)  # Emit signal with progress
+				OnProgressChanged.emit(normalized_progress)  # Emit signal with progress
 				if frying_timer > _frying_recipe_res.frying_timer_max:
 					kitchen_object.queue_free()
 					var new_kitchen_object:KitchenObject = KitchenObject.spawn(_frying_recipe_res.output, kitchen_object_parent)
@@ -43,7 +43,7 @@ func _process(delta) -> void:
 			State.Fried:
 				burning_timer += delta
 				var normalized_progress = float(burning_timer) / float(_burning_recipe_res.burning_timer_max)
-				OnprogressChanged.emit(normalized_progress)  # Emit signal with progress
+				OnProgressChanged.emit(normalized_progress)  # Emit signal with progress
 				if burning_timer > _burning_recipe_res.burning_timer_max:
 					kitchen_object.queue_free()
 					kitchen_object = null
@@ -53,7 +53,7 @@ func _process(delta) -> void:
 					state = State.Burned
 					OnStateChanged.emit(state)
 					normalized_progress = 0.0
-					OnprogressChanged.emit(normalized_progress)
+					OnProgressChanged.emit(normalized_progress)
 
 			State.Burned:
 				pass
@@ -68,7 +68,7 @@ func interact(player: Player) -> void:
 				frying_timer = 0.0
 				OnStateChanged.emit(state)
 				var normalized_progress = float(frying_timer) / float(_frying_recipe_res.frying_timer_max)
-				OnprogressChanged.emit(normalized_progress)  # Emit signal with progress
+				OnProgressChanged.emit(normalized_progress)  # Emit signal with progress
 
 	else:
 		if player.picked_object != null:
@@ -76,14 +76,14 @@ func interact(player: Player) -> void:
 				state = State.Idle
 				OnStateChanged.emit(state)
 				var normalized_progress = 0.0
-				OnprogressChanged.emit(normalized_progress)  # Emit signal with progress
+				OnProgressChanged.emit(normalized_progress)  # Emit signal with progress
 
 		else:
 			pick_up_kitchen_object(player)
 			state = State.Idle
 			OnStateChanged.emit(state)
 			var normalized_progress = 0.0
-			OnprogressChanged.emit(normalized_progress)  # Emit signal with progress
+			OnProgressChanged.emit(normalized_progress)  # Emit signal with progress
 
 func _get_output_for_input(input_kitchen_object_res: KitchenObjectsResource) -> KitchenObjectsResource:
 	var frying_recipe_res: FryingRecipeResource = _get_frying_recipe_res_with_input(input_kitchen_object_res)

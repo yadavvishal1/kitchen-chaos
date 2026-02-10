@@ -48,7 +48,7 @@ has_progress_game_object = NodePath("../../..")
 [node name="ProgressHandler" parent="." index="5" instance=ExtResource("10_eslo3")]
 
 [connection signal="OnStateChanged" from="." to="StoveCounterVisual" method="_on_stove_counter_on_state_changed"]
-[connection signal="OnprogressChanged" from="ProgressHandler" to="ProgressBarUI/SubViewport/ProgressBarUI" method="_on_progress_handler_onprogress_changed"]
+[connection signal="OnProgressChanged" from="ProgressHandler" to="ProgressBarUI/SubViewport/ProgressBarUI" method="_on_progress_handler_on_progress_changed"]
 
 [editable path="Selected"]
 [editable path="Selected/Kitchen Counter_Wood"]

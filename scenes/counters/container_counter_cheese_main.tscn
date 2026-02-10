@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://d2i33e88d6plv"]
 
 [ext_resource type="PackedScene" uid="uid://dm4v65w4xeqo5" path="res://scenes/counters/base_counter.tscn" id="1_gdfi5"]
-[ext_resource type="Script" uid="uid://csncshqoodkbf" path="res://scripts/counters/cotainer_counter.gd" id="2_i1g2a"]
+[ext_resource type="Script" uid="uid://csncshqoodkbf" path="res://scripts/counters/container_counter.gd" id="2_i1g2a"]
 [ext_resource type="PackedScene" uid="uid://c5a72a38ulq6x" path="res://scenes/SceneVisuals/CountersVisuals/container_counter_visual.tscn" id="2_uolmo"]
 [ext_resource type="Resource" uid="uid://b0hpu03x2v6dy" path="res://resources/kitchen_objects_resources/cheese_block_res.tres" id="3_eoapi"]
 [ext_resource type="Material" uid="uid://cxp0341xtep21" path="res://Assets/Materials/selected.tres" id="3_ka05q"]

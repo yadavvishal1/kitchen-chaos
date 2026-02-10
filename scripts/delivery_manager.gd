@@ -19,9 +19,9 @@ func _process(delta):
 	spawn_recipe_timer -= delta
 	if spawn_recipe_timer <= 0.0:
 		spawn_recipe_timer = spawn_recipe_timer_max
-		if %KitchenManager.IsgamePlaying() and waiting_recipe_res_list.size() < waiting_recipes_max:
-			var waititng_recipe_res: RecipeRes = _recipe_list_res.recipe_res_list.pick_random()
-			waiting_recipe_res_list.append(waititng_recipe_res)
+		if %KitchenManager.IsGamePlaying() and waiting_recipe_res_list.size() < waiting_recipes_max:
+			var waiting_recipe_res: RecipeRes = _recipe_list_res.recipe_res_list.pick_random()
+			waiting_recipe_res_list.append(waiting_recipe_res)
 			OnRecipeSpawned.emit()
 
 func deliver_recipe(plate_kitchen_object: PlateKitchenObject) -> void:

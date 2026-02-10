@@ -42,7 +42,7 @@ func _process(delta):
 		State.GameOver:
 			pass
 
-func IsgamePlaying() -> bool:
+func IsGamePlaying() -> bool:
 	return state == State.GamePlaying
 
 func IsCountdownToStartActive() -> bool:

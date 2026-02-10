@@ -14,7 +14,7 @@ func _on_plate_spawned():
 	plate_visual_game_object_list.append(plate_visual)
 
 
-func _on_plates_counter_onplate_removed():
+func _on_plates_counter_on_plate_removed():
 	var plate_game_object: Node3D = plate_visual_game_object_list[plate_visual_game_object_list.size() - 1]
 	plate_visual_game_object_list.erase(plate_game_object)
 	plate_game_object.queue_free()

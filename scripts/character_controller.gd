@@ -21,12 +21,12 @@ func _ready() -> void:
 	GameInput.connect("interact_alternate_pressed", Callable(self, "_on_interact_alternate_pressed"))
 
 func _on_interact_pressed() -> void:
-	if !%KitchenManager.IsgamePlaying():return
+	if !%KitchenManager.IsGamePlaying():return
 	if selected_counter != null:
 		selected_counter.interact(self) #interact if there is a Selected Counter
 
 func _on_interact_alternate_pressed() -> void:
-	if !%KitchenManager.IsgamePlaying():return
+	if !%KitchenManager.IsGamePlaying():return
 	if selected_counter != null:
 		selected_counter.interact_alternate(self) #interact if there is a Selected Counter
 
