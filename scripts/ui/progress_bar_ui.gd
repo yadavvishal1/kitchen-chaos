@@ -6,13 +6,13 @@ func _ready():
 	self.value = 0
 	hide()
 
-func _on_cutting_counter_on_progress_changed(progress_normalized):
+func _on_cutting_counter_progress_changed(progress_normalized):
 	_apply_progress(progress_normalized)
 
-func _on_stove_counter_on_progress_changed(progress_normalized):
+func _on_stove_counter_progress_changed(progress_normalized):
 	_apply_progress(progress_normalized)
 
-func _on_progress_handler_on_progress_changed(progress_normalized):
+func _on_progress_handler_progress_changed(progress_normalized):
 	_apply_progress(progress_normalized)
 
 func _apply_progress(progress_normalized) -> void:

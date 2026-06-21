@@ -1,7 +1,7 @@
 extends BaseCounter
 
-signal OnPlateSpawned
-signal OnPlateRemoved
+signal plate_spawned
+signal plate_removed
 
 @export var plate_kitchen_object_res: KitchenObjectsResource
 var spawn_plate_timer:float
@@ -16,9 +16,9 @@ func _process(delta):
 	if spawn_plate_timer > spawn_plate_timer_max:
 		spawn_plate_timer = 0.0
 
-		if kitchen_manager.IsGamePlaying() and plates_spawned_amount < plates_spawned_amount_max:
+		if kitchen_manager.is_game_playing() and plates_spawned_amount < plates_spawned_amount_max:
 			plates_spawned_amount += 1
-			OnPlateSpawned.emit()
+			plate_spawned.emit()
 
 func interact(player: Player) -> void:
 	if !player.picked_object:
@@ -26,4 +26,4 @@ func interact(player: Player) -> void:
 			plates_spawned_amount -= 1
 			var new_kitchen_object = KitchenObject.spawn(plate_kitchen_object_res, player.kitchen_object_parent)
 			player.set_kitchen_object(new_kitchen_object)
-			OnPlateRemoved.emit()
+			plate_removed.emit()

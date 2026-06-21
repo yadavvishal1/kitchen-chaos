@@ -1,7 +1,7 @@
 class_name BaseCounter
 extends StaticBody3D
 
-signal OnAnyObjectPlacedHere(pos: Vector3)
+signal any_object_placed(pos: Vector3)
 
 @export var selected_counter_visual: Node3D
 #@export var kitchen_object_res: KitchenObjectsResource
@@ -63,7 +63,7 @@ func try_add_player_object_to_counter_plate(player: Player) -> bool:
 func set_kitchen_object(new_kitchen_object: KitchenObject) -> void:
 	kitchen_object = new_kitchen_object
 	if new_kitchen_object != null:
-		OnAnyObjectPlacedHere.emit(new_kitchen_object.global_position)
+		any_object_placed.emit(new_kitchen_object.global_position)
 
 func spawn(kitchen_object_res: KitchenObjectsResource) -> KitchenObject:
 	var new_kitchen_object = kitchen_object_res.scene.instantiate() # Instantiate the kitchen object

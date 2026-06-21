@@ -18,9 +18,9 @@ func update_visual() -> void:
 		recipe_node.set_recipe_res(recipe_res)
 
 
-func _on_delivery_manager_on_recipe_spawned():
+func _on_delivery_manager_recipe_spawned():
 	update_visual()
 
 
-func _on_delivery_manager_on_recipe_completed():
+func _on_delivery_manager_recipe_completed():
 	update_visual()

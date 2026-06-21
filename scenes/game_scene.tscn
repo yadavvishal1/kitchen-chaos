@@ -1221,16 +1221,16 @@ transform = Transform3D(-1.64634e-08, 0, -15.4629, 0, 2, 0, 0.376638, 0, -6.7590
 mesh = SubResource("BoxMesh_4hhga")
 material = ExtResource("35_pc6wo")
 
-[connection signal="OnPickedSomething" from="Player" to="SoundManager" method="_on_player_on_picked_something"]
-[connection signal="OnAnyObjectTrashed" from="Counters/TrashCounter" to="SoundManager" method="_on_trash_counter_on_any_object_trashed"]
-[connection signal="OnRecipeCompleted" from="DeliveryManager" to="CanvasLayer/DeliveryManagerUI" method="_on_delivery_manager_on_recipe_completed"]
-[connection signal="OnRecipeFailed" from="DeliveryManager" to="SoundManager" method="_on_delivery_manager_on_recipe_failed"]
-[connection signal="OnRecipeSpawned" from="DeliveryManager" to="CanvasLayer/DeliveryManagerUI" method="_on_delivery_manager_on_recipe_spawned"]
-[connection signal="OnRecipeSuccess" from="DeliveryManager" to="SoundManager" method="_on_delivery_manager_on_recipe_success"]
+[connection signal="picked_something" from="Player" to="SoundManager" method="_on_player_picked_something"]
+[connection signal="any_object_trashed" from="Counters/TrashCounter" to="SoundManager" method="_on_trash_counter_any_object_trashed"]
+[connection signal="recipe_completed" from="DeliveryManager" to="CanvasLayer/DeliveryManagerUI" method="_on_delivery_manager_recipe_completed"]
+[connection signal="recipe_failed" from="DeliveryManager" to="SoundManager" method="_on_delivery_manager_recipe_failed"]
+[connection signal="recipe_spawned" from="DeliveryManager" to="CanvasLayer/DeliveryManagerUI" method="_on_delivery_manager_recipe_spawned"]
+[connection signal="recipe_succeeded" from="DeliveryManager" to="SoundManager" method="_on_delivery_manager_recipe_succeeded"]
 [connection signal="pressed" from="CanvasLayer/GamePauseUI/VBoxContainer/ResumeButton" to="CanvasLayer/GamePauseUI" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GamePauseUI/VBoxContainer/OptionsButton" to="CanvasLayer/GamePauseUI" method="_on_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/GamePauseUI/VBoxContainer/MainMenuButton" to="CanvasLayer/GamePauseUI" method="_on_main_menu_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/OptionsUI/SoundEffectsButton" to="CanvasLayer/OptionsUI" method="_on_sound_effects_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/OptionsUI/MusicButton" to="CanvasLayer/OptionsUI" method="_on_music_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/OptionsUI/CloseButton" to="CanvasLayer/OptionsUI" method="_on_close_button_pressed"]
-[connection signal="OnRemap" from="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer/MoveUpButton" to="CanvasLayer/TutorialUI" method="_on_move_up_button_on_remap"]
+[connection signal="remapped" from="CanvasLayer/OptionsUI/VBoxContainer/HBoxContainer/MoveUpButton" to="CanvasLayer/TutorialUI" method="_on_move_up_button_remapped"]

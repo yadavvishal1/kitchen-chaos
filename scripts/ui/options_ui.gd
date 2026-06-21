@@ -7,7 +7,7 @@ extends Control
 @export var music_manager: AudioStreamPlayer2D
 
 func _ready():
-	%KitchenManager.OnGameUnpaused.connect(_kitchen_manager_on_game_unpaused)
+	%KitchenManager.game_unpaused.connect(_kitchen_manager_on_game_unpaused)
 	await get_tree().node_added
 	music_manager.load_volume()
 	sound_manager.load_volume()

@@ -24,8 +24,8 @@ visible = false
 [node name="Counter" parent="Selected/Kitchen Counter_Wood" index="0"]
 surface_material_override/0 = ExtResource("3_whm86")
 
-[connection signal="OnPlateSpawned" from="." to="PlatesCounterVisual" method="_on_plate_spawned"]
-[connection signal="OnPlateRemoved" from="." to="PlatesCounterVisual" method="_on_plates_counter_on_plate_removed"]
+[connection signal="plate_spawned" from="." to="PlatesCounterVisual" method="_on_plate_spawned"]
+[connection signal="plate_removed" from="." to="PlatesCounterVisual" method="_on_plates_counter_plate_removed"]
 
 [editable path="Selected"]
 [editable path="Selected/Kitchen Counter_Wood"]

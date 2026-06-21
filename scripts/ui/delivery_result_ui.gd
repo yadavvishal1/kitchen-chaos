@@ -12,11 +12,11 @@ extends Control
 @export var animation_player: AnimationPlayer
 
 func _ready():
-	delivery_counter.delivery_manager.OnRecipeSuccess.connect(_delivery_manager_on_recipe_success)
-	delivery_counter.delivery_manager.OnRecipeFailed.connect(_delivery_manager_on_recipe_failed)
+	delivery_counter.delivery_manager.recipe_succeeded.connect(_delivery_manager_on_recipe_succeeded)
+	delivery_counter.delivery_manager.recipe_failed.connect(_delivery_manager_on_recipe_failed)
 	hide()
 
-func _delivery_manager_on_recipe_success():
+func _delivery_manager_on_recipe_succeeded():
 	show()
 	animation_player.play("pop_up")
 	background_image.modulate = success_color

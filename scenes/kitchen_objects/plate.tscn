@@ -69,5 +69,5 @@ script = ExtResource("19_c8528")
 plate_kitchen_object = NodePath("../../../..")
 icon_template = ExtResource("20_uy6gv")
 
-[connection signal="OnIngredientAdded" from="." to="PlateCompleteVisual" method="on_ingredient_added"]
-[connection signal="OnIngredientAdded" from="." to="Sprite3D/SubViewport/Grid/Container" method="on_ingredient_added"]
+[connection signal="ingredient_added" from="." to="PlateCompleteVisual" method="on_ingredient_added"]
+[connection signal="ingredient_added" from="." to="Sprite3D/SubViewport/Grid/Container" method="on_ingredient_added"]

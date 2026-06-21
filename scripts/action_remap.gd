@@ -2,7 +2,7 @@ extends Button
 
 @export var action: String = "Up"
 
-signal OnRemap()
+signal remapped(text: String)
 
 func _ready():
 	assert(InputMap.has_action(action))
@@ -34,7 +34,7 @@ func remap_action_to(event):
 	GameInput.keymaps[action] = event
 	GameInput.save_keymap()
 	text = event.as_text()
-	OnRemap.emit(text)
+	remapped.emit(text)
 
 
 func display_current_key():

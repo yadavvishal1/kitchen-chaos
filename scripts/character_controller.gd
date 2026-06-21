@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody3D
 
-signal OnPickedSomething(pos: Vector3)
+signal picked_something(pos: Vector3)
 
 @export var move_speed: float = 6.0
 @export var rot_speed: float = 10.0
@@ -22,12 +22,12 @@ func _ready() -> void:
 	GameInput.connect("interact_alternate_pressed", Callable(self, "_on_interact_alternate_pressed"))
 
 func _on_interact_pressed() -> void:
-	if !kitchen_manager.IsGamePlaying():return
+	if !kitchen_manager.is_game_playing():return
 	if is_instance_valid(selected_counter):
 		selected_counter.interact(self) #interact if there is a Selected Counter
 
 func _on_interact_alternate_pressed() -> void:
-	if !kitchen_manager.IsGamePlaying():return
+	if !kitchen_manager.is_game_playing():return
 	if is_instance_valid(selected_counter):
 		selected_counter.interact_alternate(self) #interact if there is a Selected Counter
 
@@ -75,7 +75,7 @@ func get_kitchen_object() -> KitchenObject:
 func set_kitchen_object(new_picked_object: KitchenObject) -> void:
 	picked_object =  new_picked_object
 	if new_picked_object != null:
-		OnPickedSomething.emit(global_position)
+		picked_something.emit(global_position)
 
 func clear_kitchen_object() -> void:
 	picked_object = null

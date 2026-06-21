@@ -174,12 +174,12 @@ stream = ExtResource("10_lrht2")
 script = ExtResource("11_ngqow")
 stove_counter = NodePath("..")
 
-[connection signal="OnStateChanged" from="." to="StoveCounterVisual" method="_on_stove_counter_on_state_changed"]
-[connection signal="OnStateChanged" from="." to="SizzleSound" method="_on_stove_counter_on_state_changed"]
-[connection signal="OnProgressChanged" from="." to="ProgressBarUI" method="_on_stove_counter_on_progress_changed"]
-[connection signal="OnProgressChanged" from="." to="ProgressBarUI/SubViewport/ProgressBarUI" method="_on_stove_counter_on_progress_changed"]
-[connection signal="OnProgressChanged" from="." to="StoveBurnWarningUI" method="_on_stove_counter_on_progress_changed"]
-[connection signal="OnProgressChanged" from="." to="SizzleSound" method="_on_stove_counter_on_progress_changed"]
+[connection signal="state_changed" from="." to="StoveCounterVisual" method="_on_stove_counter_state_changed"]
+[connection signal="state_changed" from="." to="SizzleSound" method="_on_stove_counter_state_changed"]
+[connection signal="progress_changed" from="." to="ProgressBarUI" method="_on_stove_counter_progress_changed"]
+[connection signal="progress_changed" from="." to="ProgressBarUI/SubViewport/ProgressBarUI" method="_on_stove_counter_progress_changed"]
+[connection signal="progress_changed" from="." to="StoveBurnWarningUI" method="_on_stove_counter_progress_changed"]
+[connection signal="progress_changed" from="." to="SizzleSound" method="_on_stove_counter_progress_changed"]
 
 [editable path="Selected"]
 [editable path="Selected/Kitchen Counter_Wood"]

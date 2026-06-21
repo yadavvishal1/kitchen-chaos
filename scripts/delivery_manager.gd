@@ -1,9 +1,9 @@
 class_name DeliveryManager extends Node
 
-signal OnRecipeSpawned
-signal OnRecipeCompleted
-signal OnRecipeSuccess
-signal OnRecipeFailed
+signal recipe_spawned
+signal recipe_completed
+signal recipe_succeeded
+signal recipe_failed
 
 @export var _recipe_list_res: RecipeListRes
 var waiting_recipe_res_list: Array[RecipeRes] = []
@@ -20,10 +20,10 @@ func _process(delta):
 	spawn_recipe_timer -= delta
 	if spawn_recipe_timer <= 0.0:
 		spawn_recipe_timer = spawn_recipe_timer_max
-		if kitchen_manager.IsGamePlaying() and waiting_recipe_res_list.size() < waiting_recipes_max:
+		if kitchen_manager.is_game_playing() and waiting_recipe_res_list.size() < waiting_recipes_max:
 			var waiting_recipe_res: RecipeRes = _recipe_list_res.recipe_res_list.pick_random()
 			waiting_recipe_res_list.append(waiting_recipe_res)
-			OnRecipeSpawned.emit()
+			recipe_spawned.emit()
 
 func deliver_recipe(plate_kitchen_object: PlateKitchenObject) -> void:
 	for i in range(waiting_recipe_res_list.size()):
@@ -31,10 +31,10 @@ func deliver_recipe(plate_kitchen_object: PlateKitchenObject) -> void:
 		if _does_plate_match_recipe(plate_kitchen_object, waiting_recipe_res):
 			successful_recipes_amount += 1
 			waiting_recipe_res_list.remove_at(i)
-			OnRecipeCompleted.emit()
-			OnRecipeSuccess.emit()
+			recipe_completed.emit()
+			recipe_succeeded.emit()
 			return
-	OnRecipeFailed.emit()
+	recipe_failed.emit()
 
 func _does_plate_match_recipe(plate_kitchen_object: PlateKitchenObject, recipe_res: RecipeRes) -> bool:
 	if recipe_res.kitchen_object_res_list.size() != plate_kitchen_object.get_kitchen_object_res_array().size():

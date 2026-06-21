@@ -1,8 +1,8 @@
 class_name CuttingCounter extends BaseCounter
 
-signal OnProgressChanged(progress_normalized: float)
-signal OnCut()
-signal OnAnyCut(pos: Vector3)
+signal progress_changed(progress_normalized: float)
+signal cut()
+signal any_cut(pos: Vector3)
 
 @export var cutting_recipe_res_array: Array[CuttingRecipeResource] = []
 
@@ -18,26 +18,26 @@ func interact(player: Player) -> void:
 				# Emit progress change with normalized value
 				var cutting_recipe_res: CuttingRecipeResource = _get_cutting_recipe_res_with_input(kitchen_object.kitchen_object_res)
 				var normalized_progress = float(_cutting_progress) / float(cutting_recipe_res.cutting_progress_max)
-				OnProgressChanged.emit(normalized_progress)  # Emit signal with progress
+				progress_changed.emit(normalized_progress)  # Emit signal with progress
 
 	else:
 		if player.picked_object != null:
 			if try_add_counter_object_to_player_plate(player):
 				var normalized_progress = 0.0
-				OnProgressChanged.emit(normalized_progress)  # Emit signal with progress
+				progress_changed.emit(normalized_progress)  # Emit signal with progress
 		else:
 			pick_up_kitchen_object(player)
 			var normalized_progress = 0.0
-			OnProgressChanged.emit(normalized_progress)  # Emit signal with progress
+			progress_changed.emit(normalized_progress)  # Emit signal with progress
 
 func interact_alternate(_player: Player) -> void:
 	if kitchen_object && _has_recipe_with_input(kitchen_object.kitchen_object_res):
 		_cutting_progress += 1
-		OnCut.emit()
-		OnAnyCut.emit(global_position)
+		cut.emit()
+		any_cut.emit(global_position)
 		var cutting_recipe_res: CuttingRecipeResource = _get_cutting_recipe_res_with_input(kitchen_object.kitchen_object_res)
 		var normalized_progress = float(_cutting_progress) / float(cutting_recipe_res.cutting_progress_max)
-		OnProgressChanged.emit(normalized_progress)  # Emit signal with progress
+		progress_changed.emit(normalized_progress)  # Emit signal with progress
 		if _cutting_progress >= cutting_recipe_res.cutting_progress_max:
 			var output_kitchen_object_res = _get_output_for_input(kitchen_object.kitchen_object_res)
 			kitchen_object.queue_free()

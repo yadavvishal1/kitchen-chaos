@@ -3,7 +3,7 @@ extends Node
 # Declare the signal
 signal interact_pressed()
 signal interact_alternate_pressed()
-signal on_pause_action()
+signal pause_pressed()
 
 const keymaps_path = "user://keymaps.dat"
 var keymaps: Dictionary
@@ -41,7 +41,7 @@ func _input(_event):
 		interact_alternate_pressed.emit()
 
 	if Input.is_action_just_pressed("Pause"):
-		on_pause_action.emit()
+		pause_pressed.emit()
 
 func load_keymap() -> void:
 	if not FileAccess.file_exists(keymaps_path):

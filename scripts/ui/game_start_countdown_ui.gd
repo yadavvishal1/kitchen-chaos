@@ -8,11 +8,11 @@ const NUMBER_POPUP: String = "number_popup"
 var previous_countdown_number:int
 
 func _ready():
-	kitchen_manager.OnStateChanged.connect(_on_state_changed)
+	kitchen_manager.state_changed.connect(_on_state_changed)
 	hide()
 
 func _on_state_changed():
-	if kitchen_manager.IsCountdownToStartActive():
+	if kitchen_manager.is_countdown_to_start_active():
 		show()
 	else:
 		hide()

@@ -6,8 +6,8 @@ extends Control
 @onready var kitchen_manager = %KitchenManager
 
 func _ready():
-	kitchen_manager.OnGamePaused.connect(kitchen_manager_on_game_paused)
-	kitchen_manager.OnGameUnpaused.connect(kitchen_manager_on_game_unpaused)
+	kitchen_manager.game_paused.connect(kitchen_manager_on_game_paused)
+	kitchen_manager.game_unpaused.connect(kitchen_manager_on_game_unpaused)
 	hide()
 	options_ui.hide()
 
